@@ -6,17 +6,76 @@ Este documento establece las directivas operativas y de colaboración para cualq
 
 ## 1. Al comenzar cada sesión
 
-Antes de proponer, planificar o ejecutar cualquier modificación en el código o en la documentación:
+Antes de proponer, planificar o ejecutar cualquier modificación en el código o en la documentación, el agente debe cumplimentar rigurosamente los siguientes pasos:
 
-1. **Lectura obligatoria del contexto compartido:**
-   - Consultar `docs/contexto.md` para conocer los objetivos del proyecto, la consigna, requisitos, restricciones y convenciones vigentes.
-   - Consultar `docs/decisiones.md` para verificar qué decisiones técnicas y arquitectónicas están aprobadas y vigentes.
-   - Consultar `docs/estado.md` para conocer el estado actual de las tareas, los responsables asignados, las dudas pendientes y las definiciones requeridas.
-   - Consultar `docs/convenciones-commits.md` para conocer las pautas de confirmación, formato de mensajes y verificaciones obligatorias.
-2. **Revisión de cambios recientes y concurrencia:**
-   - Verificar si existen modificaciones recientes en los documentos compartidos o en el repositorio para evitar sobrescribir aportes de otros integrantes o agentes.
-3. **Detección de inconsistencias:**
-   - Si se detectan contradicciones entre la documentación, la consigna recibida o el código existente, señalarlas inmediatamente y solicitar aclaración humana antes de asumir cualquier interpretación o resolución por cuenta propia.
+### 1.1. Lectura obligatoria del contexto compartido
+- Consultar `docs/contexto.md` para conocer los objetivos del proyecto, la consigna, requisitos, restricciones y convenciones vigentes.
+- Consultar `docs/decisiones.md` para verificar qué decisiones técnicas y arquitectónicas están aprobadas y vigentes.
+- Consultar `docs/estado.md` para conocer el estado actual de las tareas, los responsables asignados, las dudas pendientes y las definiciones requeridas.
+- Consultar `docs/convenciones-commits.md` para conocer las pautas de confirmación, formato de mensajes y verificaciones obligatorias.
+
+### 1.2. Verificación inicial del repositorio Git
+El agente debe inspeccionar el estado del repositorio ejecutando las comprobaciones correspondientes:
+1. **Identificación local:** Identificar el repositorio, la ruta de trabajo y la rama local actual (`git branch --show-current`).
+2. **Rama principal:** Identificar la rama principal del proyecto si puede determinarse (p. ej., `master` o `main`).
+3. **Historial reciente:** Consultar el último commit registrado (`git log -1`) y los commits recientes.
+4. **Estado del árbol de trabajo (`git status`):**
+   - Archivos modificados con seguimiento.
+   - Archivos nuevos sin seguimiento (*untracked*).
+   - Cambios preparados en el área de preparación (*staged*).
+   - Estado general del directorio de trabajo (limpio o con modificaciones pendientes).
+5. **Configuración remota:** Comprobar si existe un repositorio remoto configurado (`git remote -v`).
+6. **Ramas y URLs remotas:** Si existe un remoto, identificar su URL y las ramas remotas disponibles.
+7. **Sincronización remota:** Cuando sea posible consultar el remoto, comprobar si existen cambios entrantes (*behind*), cambios salientes (*ahead*) o divergencias entre la rama local y la rama remota correspondiente.
+8. **Commits en la rama principal remota:** Comprobar si la rama principal remota cuenta con commits nuevos que aún no fueron incorporados a la rama local actual.
+
+### 1.3. Comportamiento según el estado del remoto
+- **Mientras no exista un remoto configurado:**
+  - Informar de manera explícita que el repositorio es exclusivamente local.
+  - Presentar la rama actual y el estado local.
+  - No intentar realizar operaciones de red ni sincronización remota.
+  - La ausencia de información remota no debe considerarse un error bajo ninguna circunstancia.
+- **Cuando exista un remoto configurado:**
+  - Consultar las referencias remotas actualizadas mediante `git fetch --prune`, siempre que la conexión esté disponible y la operación esté permitida.
+  - **Prohibición de sincronización destructiva o automática:** No ejecutar `git pull`, `git merge`, `git rebase`, `git reset` ni ninguna operación que altere el historial o integre cambios automáticamente.
+  - **Determinación de la rama principal:** Identificar la rama principal real configurada en el remoto; nunca asumir arbitrariamente que se denomina `main` o `master`.
+  - **Comparación rigurosa:** Comparar referencias locales y remotas para detectar commits pendientes de integrar o publicar.
+  - **Honestidad operativa:** Si no se pudo consultar el remoto (por falta de red, permisos o fallos de conexión), indicar claramente que la información puede estar desactualizada. Nunca afirmar que el repositorio está sincronizado sin haberlo verificado efectivamente.
+
+### 1.4. Informe obligatorio al iniciar cada sesión
+Antes de comenzar cualquier propuesta o tarea técnica, el agente debe presentar de forma visible al usuario un informe breve, estructurado según la siguiente plantilla (si una sección no corresponde, indicar el motivo explícito en lugar de omitirla silenciosamente):
+
+```text
+**Estado del repositorio**
+- Rama local actual: [nombre de la rama]
+- Rama principal: [nombre de la rama principal o motivo si no se puede determinar]
+- Último commit: [hash corto y título del último commit]
+- Estado del directorio de trabajo: [limpio / con cambios pendientes]
+
+**Sincronización**
+- Remoto configurado: [URL del remoto o "Ninguno (repositorio exclusivamente local)"]
+- Rama remota correspondiente: [nombre o "No aplica"]
+- Estado de sincronización: [al día / adelantado / retrasado / divergiendo / no verificable]
+- Cambios nuevos en la rama principal pendientes de incorporar: [cantidad y lista de commits, o "Ninguno" / "No aplica"]
+
+**Cambios locales**
+- Archivos modificados: [lista o "Ninguno"]
+- Archivos nuevos: [lista o "Ninguno"]
+- Cambios preparados para commit: [lista o "Ninguno"]
+
+**Advertencias**
+- Conflictos, divergencias, cambios cuyo origen no pueda determinarse o verificaciones pendientes: [detalle o "Ninguna"]
+```
+
+### 1.5. Reglas de seguridad y concurrencia
+1. **Preservación incondicional:** La inspección inicial jamás debe descartar, sobrescribir ni modificar cambios existentes en el directorio de trabajo o en el índice.
+2. **No asumir autoría local:** No asumir que las modificaciones locales no confirmadas pertenecen al agente que inicia la sesión.
+3. **Intervención ante cambios desconocidos:** Si se detectan cambios locales cuyo origen o propósito no pueda determinarse, señalarlo de inmediato y solicitar intervención humana antes de continuar o modificarlos.
+4. **No integración automática:** Si se detectan cambios entrantes en la rama principal, detallar cuáles son y explicar cómo impactan en la rama actual, pero no intentar integrarlos automáticamente.
+5. **Universalidad:** Estas revisiones deben ejecutarse obligatoriamente en todas las sesiones, independientemente de la herramienta o proveedor de IA utilizado.
+
+### 1.6. Detección de inconsistencias
+Si se detectan contradicciones entre la documentación, la consigna recibida o el código existente, señalarlas inmediatamente y solicitar aclaración humana antes de asumir cualquier interpretación o resolución por cuenta propia.
 
 ---
 

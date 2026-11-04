@@ -4,6 +4,18 @@ Bitácora cronológica y concisa de hitos y modificaciones significativas del pr
 
 ---
 
+## [2026-11-04] - Protocolo de verificación obligatoria del repositorio al iniciar sesión
+
+- **Resumen:**
+  - Incorporación a `AGENTS.md` de la rutina obligatoria de verificación inicial del repositorio y reporte estructurado al comienzo de cada sesión.
+  - Especificación del comportamiento frente a repositorios exclusivamente locales y con remotos configurados (consulta no destructiva vía `fetch`, prohibición de integración automática).
+  - Definición de reglas de seguridad, concurrencia y preservación del árbol de trabajo.
+- **Archivos modificados:**
+  - `AGENTS.md`
+  - `docs/historial.md`
+
+---
+
 ## [2026-11-04] - Inicialización del sistema de documentación persistente
 
 - **Resumen:**

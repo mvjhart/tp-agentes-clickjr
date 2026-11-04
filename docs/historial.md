@@ -4,6 +4,23 @@ Bitácora cronológica y concisa de hitos y modificaciones significativas del pr
 
 ---
 
+## [2026-11-04] - Incorporación de la consigna oficial y propuesta de organización colaborativa
+
+- **Resumen:**
+  - Análisis y catalogación de la consigna oficial del TP y del caso asignado ClickJr (bloque Postulación y permisos) en `docs/consigna.md`.
+  - Actualización de `docs/contexto.md` con objetivos, alcance y delimitaciones conceptuales.
+  - Incorporación de la propuesta integral de organización de trabajo colaborativo en `docs/organizacion.md` (4 roles coordinadores, 15 tareas en 5 etapas, metodología paralela con Git y futuras GitHub Issues).
+  - Actualización del estado de tareas y definiciones requeridas en `docs/estado.md`.
+- **Archivos creados:**
+  - `docs/consigna.md`
+  - `docs/organizacion.md`
+- **Archivos modificados:**
+  - `docs/contexto.md`
+  - `docs/estado.md`
+  - `docs/historial.md`
+
+---
+
 ## [2026-11-04] - Protocolo de verificación obligatoria del repositorio al iniciar sesión
 
 - **Resumen:**

@@ -8,7 +8,7 @@ Proyecto desarrollado para el **IFTS 29** (Instituto de Formación Técnica Supe
 - **Tecnología frontend aprobada:** React.
 - **Plataforma de despliegue aprobada:** Vercel.
 - **Fecha de entrega:** 26/11/2026.
-- **Repositorio Git:** *[Enlace público al repositorio a incorporar tras la configuración del remoto]*
+- **Repositorio Git:** *https://github.com/mvjhart/tp-agentes-clickjr*
 - **Landing page publicada:** *[Enlace público al sitio web a incorporar tras el despliegue efectivo en Vercel]*
 
 ---
@@ -63,7 +63,10 @@ TP-Agentes/
     ├── estado.md              # Estado de tareas, definiciones acordadas y pendientes
     ├── organizacion.md        # Organización del trabajo acordada, roles y flujo colaborativo
     ├── historial.md           # Bitácora cronológica de cambios relevantes por sesión
-    └── convenciones-commits.md# Estructura, plantilla y verificaciones obligatorias para commits
+    ├── convenciones-commits.md # Estructura, plantilla y verificaciones obligatorias para commits
+    └── github/                # Planificación y criterios de organización del trabajo en GitHub
+        ├── issues.md          # Borradores de Issues, entregables, criterios de aceptación y dependencias
+        └── etiquetas.md       # Catálogo de etiquetas para clasificar y organizar los Issues
 ```
 
 ---
@@ -81,6 +84,8 @@ La documentación compartida en `docs/` centraliza la memoria persistente del pr
 | [`docs/organizacion.md`](docs/organizacion.md) | Estructura acordada de 4 roles coordinadores y 15 tareas en 5 etapas. | Para coordinar asignaciones y flujo de integración con Git. |
 | [`docs/historial.md`](docs/historial.md) | Bitácora de modificaciones significativas y evolución del repositorio. | Al finalizar una sesión relevante de trabajo. |
 | [`docs/convenciones-commits.md`](docs/convenciones-commits.md) | Pautas de confirmación, plantilla obligatoria y chequeos pre-commit. | Antes de preparar y confirmar cualquier cambio en Git. |
+| [`docs/github/issues.md`](docs/github/issues.md) | Planificación de los Issues del proyecto, con sus objetivos, actividades, entregables, criterios de aceptación y dependencias. | Al crear, asignar, actualizar o revisar las tareas en GitHub. |
+| [`docs/github/etiquetas.md`](docs/github/etiquetas.md) | Catálogo de etiquetas para clasificar los Issues por tipo, etapa y área de trabajo. | Al crear o actualizar etiquetas e Issues en GitHub. |
 
 ---
 

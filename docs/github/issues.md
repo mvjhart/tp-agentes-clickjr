@@ -11,6 +11,7 @@ Su objetivo es trasladar la organización del trabajo acordada por el equipo a G
 - Los Issues principales se identificarán con la etiqueta `tipo:epica`.
 - Los Issues de tareas se identificarán con `tipo:tarea`.
 - Las etiquetas de etapa permitirán filtrar las actividades por agrupación.
+- Las etiquetas de área permitirán identificar la naturaleza principal de cada actividad cuando corresponda.
 - Los responsables se asignarán cuando el equipo los acuerde. Los roles de coordinación no implican asignaciones automáticas.
 - Las relaciones de dependencia se registrarán por separado de las relaciones padre-hijo.
 - Las tareas podrán avanzar en paralelo siempre que sus dependencias lo permitan.
@@ -36,7 +37,7 @@ Preparar el repositorio y reunir los materiales originales necesarios para comen
 
 ### Resultado esperado
 
-Repositorio inicializado, estructura de trabajo preparada y materiales originales de ClickJr disponibles.
+Repositorio inicializado, estructura de trabajo preparada, materiales originales de ClickJr disponibles y entorno de colaboración configurado.
 
 ### Criterios de finalización
 
@@ -44,6 +45,7 @@ Repositorio inicializado, estructura de trabajo preparada y materiales originale
 - [ ] La documentación inicial está incorporada al repositorio.
 - [ ] Los materiales originales están organizados y disponibles.
 - [ ] Las convenciones iniciales de trabajo están documentadas.
+- [ ] El entorno de colaboración del repositorio está configurado.
 
 ---
 
@@ -166,30 +168,38 @@ Landing revisada, documentación completa y repositorio y sitio publicados y acc
 ## T1 — Preparación del repositorio
 
 **Etapa:** A — Preparación y recuperación de materiales  
-**Etiquetas:** `tipo:tarea`, `etapa:a`  
+**Etiquetas:** `tipo:tarea`, `etapa:a`, `area:documentacion`  
 **Responsable:** Pendiente de asignación.
 
 ### Objetivo
 
-Crear y configurar el repositorio del grupo, preparar su estructura inicial e incorporar la documentación general.
+Crear y configurar el repositorio del grupo, preparar su estructura inicial e incorporar la documentación general y las herramientas necesarias para organizar el trabajo colaborativo.
 
 ### Actividades
 
-- Crear y configurar el repositorio del grupo.
+- Crear y configurar el repositorio del grupo en GitHub.
 - Preparar la estructura inicial de carpetas y archivos.
 - Incorporar la documentación general del proyecto.
-- Establecer las primeras convenciones de organización.
+- Establecer las primeras convenciones de organización y trabajo con Git.
+- Crear y configurar el GitHub Project asociado al repositorio para realizar el seguimiento de las tareas.
+- Incorporar a los integrantes del equipo como colaboradores y verificar sus permisos de acceso.
+- Definir y configurar el flujo de trabajo con ramas y Pull Requests.
+- Establecer las reglas de protección de la rama principal y los controles acordados para integrar cambios.
 
 ### Entregable
 
-Repositorio inicializado y estructura de trabajo preparada.
+Repositorio inicializado, documentación incorporada y entorno de trabajo colaborativo configurado para el desarrollo del proyecto.
 
 ### Criterios de aceptación
 
-- [ ] El repositorio está creado y configurado.
+- [ ] El repositorio está creado y configurado en GitHub.
 - [ ] La estructura inicial está organizada.
 - [ ] La documentación general está incorporada.
 - [ ] Las convenciones iniciales están documentadas.
+- [ ] El GitHub Project está creado y vinculado al repositorio.
+- [ ] Los integrantes del equipo tienen acceso al repositorio con los permisos correspondientes.
+- [ ] El flujo de trabajo con ramas y Pull Requests está definido y documentado.
+- [ ] Las reglas de protección de la rama principal están configuradas y verificadas.
 
 ---
 
@@ -226,7 +236,7 @@ Materiales originales de ClickJr organizados y disponibles para el desarrollo.
 ## T3 — Análisis lógico de R1
 
 **Etapa:** B — Análisis lógico y definición de propuestas  
-**Etiquetas:** `tipo:tarea`, `etapa:b`  
+**Etiquetas:** `tipo:tarea`, `etapa:b`, `area:analisis`  
 **Responsable:** Pendiente de asignación.
 
 ### Objetivo
@@ -257,7 +267,7 @@ Ficha de análisis lógico de R1.
 ## T4 — Análisis lógico de R2
 
 **Etapa:** B — Análisis lógico y definición de propuestas  
-**Etiquetas:** `tipo:tarea`, `etapa:b`  
+**Etiquetas:** `tipo:tarea`, `etapa:b`, `area:analisis`  
 **Responsable:** Pendiente de asignación.
 
 ### Objetivo
@@ -288,7 +298,7 @@ Ficha de análisis lógico de R2.
 ## T5 — Definición de la propuesta de solución R1
 
 **Etapa:** B — Análisis lógico y definición de propuestas  
-**Etiquetas:** `tipo:tarea`, `etapa:b`  
+**Etiquetas:** `tipo:tarea`, `etapa:b`, `area:analisis`  
 **Responsable:** Pendiente de asignación.
 
 ### Objetivo
@@ -325,7 +335,7 @@ Descripción conceptual completa de la propuesta R1, incluyendo acciones, herram
 ## T6 — Definición de la propuesta de solución R2
 
 **Etapa:** B — Análisis lógico y definición de propuestas  
-**Etiquetas:** `tipo:tarea`, `etapa:b`  
+**Etiquetas:** `tipo:tarea`, `etapa:b`, `area:analisis`  
 **Responsable:** Pendiente de asignación.
 
 ### Objetivo
@@ -362,7 +372,7 @@ Descripción conceptual completa de la propuesta R2, incluyendo acciones, herram
 ## T7 — Estructura y navegación general
 
 **Etapa:** C — Estructura y desarrollo de los módulos  
-**Etiquetas:** `tipo:tarea`, `etapa:c`  
+**Etiquetas:** `tipo:tarea`, `etapa:c`, `area:desarrollo`  
 **Responsable:** Pendiente de asignación.
 
 ### Objetivo
@@ -393,7 +403,7 @@ Estructura general y navegación preparadas.
 ## T8 — Desarrollo del módulo de presentación
 
 **Etapa:** C — Estructura y desarrollo de los módulos  
-**Etiquetas:** `tipo:tarea`, `etapa:c`  
+**Etiquetas:** `tipo:tarea`, `etapa:c`, `area:desarrollo`  
 **Responsable:** Pendiente de asignación.
 
 ### Objetivo
@@ -426,7 +436,7 @@ Primera versión funcional del módulo de presentación.
 ## T9 — Desarrollo del módulo de propuesta R1
 
 **Etapa:** C — Estructura y desarrollo de los módulos  
-**Etiquetas:** `tipo:tarea`, `etapa:c`  
+**Etiquetas:** `tipo:tarea`, `etapa:c`, `area:desarrollo`  
 **Responsable:** Pendiente de asignación.
 
 ### Objetivo
@@ -459,7 +469,7 @@ Primera versión funcional del módulo R1, con diagrama y desplegable.
 ## T10 — Desarrollo del módulo de propuesta R2
 
 **Etapa:** C — Estructura y desarrollo de los módulos  
-**Etiquetas:** `tipo:tarea`, `etapa:c`  
+**Etiquetas:** `tipo:tarea`, `etapa:c`, `area:desarrollo`  
 **Responsable:** Pendiente de asignación.
 
 ### Objetivo
@@ -492,7 +502,7 @@ Primera versión funcional del módulo R2, con diagrama y desplegable.
 ## T11 — Definición del diseño visual general
 
 **Etapa:** D — Diseño e integración  
-**Etiquetas:** `tipo:tarea`, `etapa:d`  
+**Etiquetas:** `tipo:tarea`, `etapa:d`, `area:diseno`  
 **Responsables:** Los cuatro integrantes.
 
 ### Objetivo
@@ -526,7 +536,7 @@ Criterios visuales acordados por el equipo.
 ## T12 — Integración de los módulos
 
 **Etapa:** D — Diseño e integración  
-**Etiquetas:** `tipo:tarea`, `etapa:d`  
+**Etiquetas:** `tipo:tarea`, `etapa:d`, `area:integracion`  
 **Responsable de coordinación:** Pendiente de asignación.
 
 ### Objetivo
@@ -560,7 +570,7 @@ La coordinación de la integración no implica que una sola persona deba reconst
 ## T13 — Pruebas y revisión general
 
 **Etapa:** E — Revisión, documentación y publicación  
-**Etiquetas:** `tipo:tarea`, `etapa:e`  
+**Etiquetas:** `tipo:tarea`, `etapa:e`, `area:revision`  
 **Responsables:** Los cuatro integrantes.
 
 ### Objetivo
@@ -599,7 +609,7 @@ Registro de pruebas, problemas detectados y correcciones realizadas.
 ## T14 — Documentación del proyecto
 
 **Etapa:** E — Revisión, documentación y publicación  
-**Etiquetas:** `tipo:tarea`, `etapa:e`  
+**Etiquetas:** `tipo:tarea`, `etapa:e`, `area:documentacion`  
 **Responsables:** Los cuatro integrantes.
 
 ### Objetivo
@@ -635,7 +645,7 @@ README completo y actualizado.
 ## T15 — Publicación y verificación final
 
 **Etapa:** E — Revisión, documentación y publicación  
-**Etiquetas:** `tipo:tarea`, `etapa:e`  
+**Etiquetas:** `tipo:tarea`, `etapa:e`, `area:publicacion`  
 **Responsable:** Pendiente de asignación.
 
 ### Objetivo

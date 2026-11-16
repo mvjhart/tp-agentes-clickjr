@@ -31,7 +31,7 @@ Identifica la naturaleza principal de la actividad. Puede combinarse con las eti
 
 | Etiqueta | Descripción | Aplicación |
 |---|---|---|
-| `area:documentacion` | Elaboración y actualización de documentación. | README, organización y documentación del proyecto. |
+| `area:documentacion` | Elaboración y actualización de documentación. | T1 y T14: documentación inicial, README, organización y documentación del proyecto. |
 | `area:analisis` | Análisis de sentencias, condiciones y propuestas conceptuales. | T3–T6. |
 | `area:desarrollo` | Construcción de la estructura y los módulos de la landing. | T7–T10. |
 | `area:diseno` | Definición de criterios visuales y presentación. | T11. |

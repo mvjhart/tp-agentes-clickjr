@@ -4,6 +4,41 @@ Bitácora cronológica y concisa de hitos y modificaciones significativas del pr
 
 ---
 
+## [2026-11-16] - Mantenimiento documental permanente en protocolo agéntico, adopción de Vite y plantilla de Pull Requests
+
+- **Resumen:**
+  - Ampliación de `AGENTS.md` incorporando la obligación de revisión documental continua en cada tarea, informe obligatorio de impacto documental y autorización procedimental permanente y limitada para el cierre factual en `docs/historial.md` y `docs/estado.md` con prevalencia de instrucciones restrictivas humanas.
+  - Registro formal de la decisión arquitectónica [`DEC-004`](file:///home/riajhart/Proyectos/TP-Agentes/docs/decisiones.md) en `docs/decisiones.md`: adopción de Vite como herramienta de scaffolding y build para la aplicación React ([`DEC-002`](file:///home/riajhart/Proyectos/TP-Agentes/docs/decisiones.md)).
+  - Creación de la plantilla colaborativa de Pull Requests en `.github/pull_request_template.md` con checklist de construcción agéntica, impacto documental y convenciones de commits.
+  - Actualización de referencias en `docs/contexto.md` y `docs/estado.md`.
+- **Archivos creados:**
+  - `.github/pull_request_template.md`
+- **Archivos modificados:**
+  - `AGENTS.md`
+  - `docs/contexto.md`
+  - `docs/decisiones.md`
+  - `docs/estado.md`
+  - `docs/historial.md`
+
+---
+
+## [2026-11-16] - Creación del README principal, confirmación de integrantes y aprobación de decisiones técnicas
+
+- **Resumen:**
+  - Creación del `README.md` principal del repositorio como puerta de entrada y guía de orientación, estructurado según los requisitos oficiales (`REQ-DOC-01` a `REQ-DOC-04`): presentación de ClickJr, sentencias textuales R1 y R2, delimitación conceptual, protocolos operativos y tablas para aportes e IA.
+  - Incorporación de la nómina completa y confirmada del equipo (Federico Acosta Maneiro, Candelaria Chazarreta, Marcos Aquino y Victoria Mariani) con enlaces a sus perfiles de GitHub y asignación formal de los cuatro roles coordinadores acordados en `docs/organizacion.md`.
+  - Formalización de las decisiones técnicas aprobadas por el equipo en `docs/decisiones.md`: React como tecnología frontend de la landing page ([`DEC-002`](file:///home/riajhart/Proyectos/TP-Agentes/docs/decisiones.md)) y Vercel como plataforma de despliegue web ([`DEC-003`](file:///home/riajhart/Proyectos/TP-Agentes/docs/decisiones.md)).
+  - Actualización de `docs/contexto.md` y `docs/estado.md` para reflejar los integrantes confirmados, las tecnologías adoptadas, las tareas completadas y la priorización de los próximos pasos inmediatos.
+- **Archivos creados:**
+  - `README.md`
+- **Archivos modificados:**
+  - `docs/contexto.md`
+  - `docs/decisiones.md`
+  - `docs/estado.md`
+  - `docs/historial.md`
+
+---
+
 ## [2026-11-04] - Incorporación de la consigna oficial y propuesta de organización colaborativa
 
 - **Resumen:**

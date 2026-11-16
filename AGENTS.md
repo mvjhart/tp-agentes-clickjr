@@ -81,6 +81,7 @@ Si se detectan contradicciones entre la documentación, la consigna recibida o e
 
 ## 2. Durante el trabajo y toma de decisiones
 
+### 2.1. Criterios para la toma de decisiones y registro
 1. **Separación estricta entre propuestas y decisiones confirmadas:**
    - **Propuestas:** Cualquier idea, enfoque técnico, arquitectura o cambio estructural debe registrarse únicamente en `docs/estado.md` bajo la sección *Dudas y decisiones que requieren aprobación humana*.
    - **Decisiones confirmadas:** Solo pasan a `docs/decisiones.md` cuando un integrante humano del equipo las haya aprobado explícitamente. Nunca registrar una propuesta como decisión confirmada por iniciativa del agente.
@@ -99,19 +100,63 @@ Si se detectan contradicciones entre la documentación, la consigna recibida o e
    - Conservar los usuarios técnicos (`mvjhart`, por ejemplo) cuando se haga referencia a cuentas, repositorios, commits, rutas o configuraciones técnicas.
    - No asumir que un nombre de usuario es el nombre personal de alguien.
 
+### 2.2. Mantenimiento y revisión documental permanente durante cada tarea
+- **Obligación general de revisión:** La documentación del proyecto debe mantenerse coherente y actualizada a lo largo de todo el desarrollo, no únicamente al cierre de una sesión.
+- **Antes de iniciar una tarea:** Consultar la documentación relevante y comprender en profundidad las decisiones técnicas, arquitectónicas y restricciones vigentes.
+- **Durante la tarea:** Identificar de manera continua qué información documentada existente en el repositorio podría verse afectada por las modificaciones en curso.
+- **Al finalizar cada tarea:** Realizar una revisión exhaustiva del impacto documental sobre todos los documentos existentes en el repositorio, incluidos `README.md`, `AGENTS.md`, los archivos del directorio `docs/` y cualquier otra documentación que se incorpore en el futuro.
+- **Amplitud del alcance:** No limitar la revisión a los archivos que parezcan directamente vinculados a primera vista: evaluar si los cambios afectan el contexto general, las decisiones, el estado de tareas, el historial, las instrucciones operativas, la arquitectura, las convenciones o las explicaciones del proyecto. (Esto no implica que todos los documentos deban modificarse en cada tarea, sino que todos deben ser activamente evaluados para asegurar que las actualizaciones necesarias no pasen inadvertidas).
+
+### 2.3. Informe obligatorio de impacto documental al finalizar cada tarea
+Al concluir cada tarea, el agente debe presentar de forma visible al usuario un apartado estructurado denominado **Impacto en la documentación**, con el siguiente desglose obligatorio:
+
+1. **Documentos que requieren actualización:**
+   - **Ruta del archivo:** Ruta exacta del documento afectado.
+   - **Sección afectada:** Encabezado o sección específica que requiere modificaciones.
+   - **Motivo:** Explicación concreta de por qué quedó desactualizada, incompleta o requiere incorporar información nueva.
+   - **Propuesta concreta de modificación:** Detalle explícito de qué se agregaría, modificaría o eliminaría, incluyendo el texto sugerido o la redacción exacta siempre que sea posible.
+   *(Si no se detectan documentos que requieran actualización, indicarlo expresamente con "Ninguno").*
+2. **Documentos revisados que no requieren cambios:**
+   - Listado de documentos evaluados, con constancia expresa de que fueron analizados y no presentan impacto documental derivado de la tarea.
+3. **Decisiones o información pendiente:**
+   - Identificación de cualquier dato, definición o consenso que requiera confirmación humana previa antes de poder documentarse.
+   - Diferenciación clara entre propuestas técnicas, hechos comprobados y decisiones formalmente aprobadas.
+   *(Si no existen pendientes, indicarlo expresamente con "Ninguna").*
+
+*Nota:* Quedan terminantemente prohibidos los informes genéricos o ambiguos (como «actualizar README» o «revisar documentación»). Debe especificarse con precisión qué cambiar, dónde y por qué.
+
+### 2.4. Aprobación humana de las actualizaciones documentales
+- **Principio general de autorización explícita:** Salvo por la autorización procedimental de cierre establecida en la sección 3, el agente debe presentar las propuestas de modificación documental y esperar la aprobación humana expresa antes de modificar los archivos compartidos de documentación (`README.md`, `AGENTS.md`, directorio `docs/` y futuros documentos compartidos).
+- **Autorización procedimental permanente y limitada para el cierre:** La obligación establecida en la sección 3 constituye autorización procedimental suficiente para actualizar exclusivamente `docs/historial.md` y `docs/estado.md` al finalizar una sesión o hito relevante, siempre que se registren estrictamente **hechos comprobados** (cambios efectivamente implementados y validados) y el **estado real** del proyecto (tareas concluidas, dudas y pendientes). No se requiere solicitar aprobación humana individual para estas actualizaciones factuales de mantenimiento rutinario.
+- **Exclusiones de la autorización automática:** Las decisiones nuevas, propuestas técnicas o arquitectónicas, cambios de alcance, interpretaciones no consensuadas o modificaciones a criterios de trabajo nunca forman parte de la autorización rutinaria de cierre y requieren obligatoriamente aprobación humana expresa antes de registrarse formalmente.
+- **Prevalencia de instrucciones restrictivas específicas:** Si durante una tarea o sesión el usuario indica expresamente no modificar documentación compartida, solicita revisar los textos previamente o requiere presentar propuestas sin aplicarlas, dicha instrucción específica prevalece en todos los casos sobre la autorización de cierre. En tales situaciones, el agente no debe editar los archivos: debe presentar la redacción propuesta completa en su informe final y aguardar confirmación humana.
+- **Límites de la autorización de tareas:** La autorización otorgada para ejecutar una tarea técnica o modificar código fuente no constituye en ningún caso un permiso tácito ni ilimitado para editar cualquier documento compartido.
+- **Separación de propuestas y acuerdos:** Bajo ninguna circunstancia se registrarán propuestas o sugerencias como decisiones aprobadas sin la intervención y validación expresa de una persona del equipo.
+- **Prohibición de invención de datos:** No inventar datos ni completar información faltante con suposiciones. Si una actualización depende de una definición grupal, se debe solicitar confirmación.
+- **Respeto a las decisiones tomadas:** Si una propuesta de actualización documental es rechazada por el usuario, el agente debe acatar estrictamente dicha decisión y no volver a proponerla a menos que surjan datos o circunstancias nuevas que justifiquen su reconsideración.
+- **Obligatoriedad de revisión vs. aprobación de cambios:** La revisión documental transversal es obligatoria en todos los casos; la edición efectiva de los archivos compartidos queda supeditada a las autorizaciones y límites establecidos.
+
 ---
 
 ## 3. Al finalizar cada sesión
 
-Antes de dar por concluida la interacción:
+Antes de dar por concluida la interacción, el agente debe cumplimentar las siguientes obligaciones de mantenimiento y consolidación documental (operando bajo la autorización procedimental permanente definida en la sección 2.4, registrando exclusivamente hechos comprobados y estado real sin inventar información ni registrar propuestas como hechos):
 
 1. **Actualizar `docs/historial.md`:**
    - Registrar de forma concisa los cambios relevantes implementados en la sesión y los archivos o módulos afectados.
    - No detallar cambios triviales o menores; Git complementa este registro a nivel granular.
+   - Si la sesión abarcó varias tareas, preservar los hitos significativos de cada una sin reemplazarlos por un resumen genérico que diluya el trabajo realizado.
 2. **Actualizar `docs/estado.md`:**
    - Reflejar el estado real y comprobado del trabajo.
    - **Criterio de verificación:** No declarar terminada ninguna tarea que no haya sido ejecutada, probada o validada de manera efectiva.
    - Dejar identificadas con claridad las tareas incompletas, las dudas abiertas y las próximas acciones sugeridas para retomar el trabajo.
+3. **Consolidación y coherencia documental general al cierre:**
+   - Realizar una revisión documental integral al cierre de la sesión para asegurar la coherencia transversal de toda la documentación del repositorio.
+   - Garantizar que el cierre de sesión no contradiga ni omita las revisiones documentales e informes de impacto realizados durante las tareas individuales de la sesión.
+   - Si durante la sesión se acumularon propuestas documentales pendientes de aprobación o discrepancias entre documentos, dejarlas registradas con claridad en `docs/estado.md` bajo la sección correspondiente para su posterior resolución grupal.
+4. **Mecanismo de aplicación y excepciones:**
+   - La actualización factual rutinaria de `docs/historial.md` y `docs/estado.md` se aplica directamente al cierre en virtud de la autorización permanente de la sección 2.4.
+   - *Excepción obligatoria:* Si el usuario indicó de forma expresa que no se editen documentos compartidos, solicitó revisar previamente la redacción o fijó un alcance restringido, el agente no aplicará las modificaciones directamente: presentará la redacción propuesta completa en su informe final y esperará la confirmación humana antes de alterar los archivos.
 
 ---
 
@@ -130,8 +175,20 @@ Antes de dar por concluida la interacción:
 ## 5. Pautas para la creación de commits
 
 1. **Consulta obligatoria previa al commit:**
-   - Consultar nuevamente `docs/convenciones-commits.md` antes de crear cualquier commit para asegurar el cumplimiento del formato, la granularidad y la plantilla requerida.
+   - Consultar nuevamente `docs/convenciones-commits.md` antes de proponer o crear cualquier commit para asegurar el cumplimiento del formato, la granularidad y la plantilla requerida.
 2. **Aplicabilidad universal:**
    - Estas convenciones son compartidas y rigen para todos los agentes de IA e integrantes del equipo, independientemente del proveedor, IDE o herramienta utilizada.
 3. **Prohibición de commits automáticos o sin validación:**
    - Ningún agente debe realizar commits automáticos sin inspeccionar previamente las diferencias (`git status`, `git diff`, `git diff --staged`) y ejecutar las verificaciones pre-commit obligatorias (`git diff --check`, pruebas pertinentes).
+4. **Revisión obligatoria del impacto documental previa a la confirmación:**
+   Antes de proponer o preparar cualquier commit, el agente debe:
+   - Inspeccionar los cambios específicos que efectivamente se incluirían en la confirmación.
+   - Evaluar su impacto sobre todos los documentos relevantes del proyecto (`README.md`, `AGENTS.md`, archivos en `docs/` y otros aplicables).
+   - Comprobar si las actualizaciones documentales requeridas ya fueron realizadas y validadas efectivamente.
+   - Si faltan actualizaciones documentales, presentar las propuestas concretas de modificación (detallando archivo, sección, motivo y texto sugerido) y solicitar aprobación humana antes de avanzar.
+   - Si la evaluación confirma que no hace falta actualizar documentación, dejar constancia explícita de que se realizó la revisión y no se detectó impacto.
+   - Esta revisión documental previa al commit complementa y sincroniza, pero en ningún caso reemplaza, la revisión documental obligatoria al finalizar cada tarea.
+5. **Propuesta del mensaje de commit:**
+   - Formular la propuesta del mensaje siguiendo rigurosamente las convenciones de `docs/convenciones-commits.md`, incluyendo tipo permitido, título conciso en tiempo imperativo o presente y cuerpo explicativo estructurado (qué, archivos afectados, por qué, verificaciones ejecutadas y limitaciones o pendientes).
+6. **Prohibición estricta de operaciones de Git sin autorización expresa:**
+   - Queda estrictamente prohibido para cualquier agente ejecutar operaciones que alteren el repositorio (`git add`, `git commit`, `git push`, cambios o creación de ramas, `git pull`, `git merge`, `git rebase`, `git reset` o configuración de remotos) sin una autorización humana expresa, previa e inequívoca.

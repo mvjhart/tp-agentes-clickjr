@@ -9,8 +9,10 @@ Este documento reúne la información central, objetivos, requisitos y convencio
 - **Institución:** IFTS 29 (desarrollo basado en casos de lógica formulados en IFTS 16)
 - **Repositorio:** [TP-Agentes](file:///home/riajhart/Proyectos/TP-Agentes)
 - **Integrantes confirmados:**
-  - Victoria Mariani (inició este espacio de trabajo y su sistema de documentación; usuario técnico de Git/GitHub: `mvjhart`).
-  - [Otros integrantes pendientes de confirmación por el equipo]
+  - Federico Acosta Maneiro (Git/GitHub: `federicosd06-dev`) — Rol 1: Presentación y contenido de ClickJr.
+  - Candelaria Chazarreta (Git/GitHub: `kndxt`) — Rol 2: Análisis y propuesta de solución R1.
+  - Marcos Aquino (Git/GitHub: `Marcos028`) — Rol 3: Análisis y propuesta de solución R2.
+  - Victoria Mariani (inició este espacio de trabajo y su sistema de documentación; usuario técnico de Git/GitHub: `mvjhart`) — Rol 4: Estructura e integración técnica.
 - **Fecha de Entrega:** 26/11/2026 (canal a definir por el docente).
 - **Documento oficial de referencia:** [`docs/consigna.md`](file:///home/riajhart/Proyectos/TP-Agentes/docs/consigna.md) (contiene el catálogo de requisitos REQ-xxx y la rúbrica de evaluación).
 
@@ -37,8 +39,8 @@ Este documento reúne la información central, objetivos, requisitos y convencio
 ## 4. Requisitos y Restricciones Principales
 - **Visualización y UX:** Evaluación exclusiva en formato de escritorio (desktop). Navegación de desplegables operable mediante clic y teclado.
 - **Logo oficial:** Obligatoriedad de incluir el logo original de ClickJr completo y legible (material provisto por cátedra).
-- **Tecnología Frontend:** A definir por el equipo (HTML/CSS/JS plano o framework; React es opcional).
-- **Publicación y entrega:** Repositorio público y sitio web desplegado accesibles sin necesidad de autenticación ni inicio de sesión.
+- **Tecnología Frontend y Herramientas:** React como framework/biblioteca frontend (decisión aprobada en [`docs/decisiones.md`](file:///home/riajhart/Proyectos/TP-Agentes/docs/decisiones.md) - DEC-002) y Vite como herramienta de scaffolding y build ([`docs/decisiones.md`](file:///home/riajhart/Proyectos/TP-Agentes/docs/decisiones.md) - DEC-004).
+- **Publicación y entrega:** Repositorio público y sitio web desplegado en Vercel (decisión aprobada en [`docs/decisiones.md`](file:///home/riajhart/Proyectos/TP-Agentes/docs/decisiones.md) - DEC-003), accesibles sin necesidad de autenticación ni inicio de sesión.
 - **README obligatorio:** Documentar integrantes, aportes concretos y registro detallado de herramientas de IA utilizadas (aplicación, modelo exacto, uso y cambios solicitados).
 
 ---

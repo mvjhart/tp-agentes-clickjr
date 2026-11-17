@@ -4,6 +4,57 @@ Bitácora cronológica y concisa de hitos y modificaciones significativas del pr
 
 ---
 
+## [2026-11-17] - Estructura y navegación general de la landing page y despliegue en Vercel (Tarea T7)
+
+- **Resumen:**
+  - Centralización de las opciones y rutas de navegación en una configuración modular compartida (`navigation.js`).
+  - Creación de componentes reutilizables: enlace de navegación con estados activos (`NavigationLink`) y renderizado de íconos SVG vectoriales (`Icon`).
+  - Implementación de navegación segmentada para resoluciones de escritorio y dock inferior (`MobileNavigation`) para dispositivos móviles.
+  - Actualización del layout general y encabezado con espaciado responsive (breakpoint de 768 px).
+  - Incorporación del selector de tema claro/oscuro (`ThemeToggle`) con detección de preferencia del sistema y persistencia en `localStorage`.
+  - Actualización del footer con el isotipo de ClickJr, créditos institucionales (Grupo 11 - IFTS Nº 29) y enlace externo al repositorio.
+  - Incorporación de metadatos Open Graph e imagen de vista previa (`clickjr-og.webp`).
+  - Optimización de la carga inicial en `index.html` trasladando los estilos globales y aplicando un script en cabecera para prevenir destellos visuales (FOUC).
+  - Puesta en marcha y verificación del despliegue continuo en Vercel en la URL pública https://tp-agentes-clickjr.vercel.app/ ([`DEC-003`](file:///home/riajhart/Proyectos/TP-Agentes/docs/decisiones.md), `REQ-PUB-01`).
+  - Verificación integral satisfactoria con `npm run format:check`, `npm run lint` y `npm run build`.
+- **Archivos creados:**
+  - `public/assets/clickjr/clickjr-og.webp`
+  - `src/components/layout/MobileNavigation.jsx`
+  - `src/components/layout/MobileNavigation.module.css`
+  - `src/components/navigation/navigation.js`
+  - `src/components/navigation/NavigationLink.jsx`
+  - `src/components/navigation/NavigationLink.module.css`
+  - `src/components/shared/Icon.jsx`
+  - `src/components/theme/ThemeToggle.jsx`
+  - `src/components/theme/ThemeToggle.module.css`
+- **Archivos modificados:**
+  - `index.html`
+  - `src/components/layout/Footer.jsx`
+  - `src/components/layout/Footer.module.css`
+  - `src/components/layout/Header.jsx`
+  - `src/components/layout/Header.module.css`
+  - `src/components/layout/Layout.jsx`
+  - `src/components/layout/Layout.module.css`
+  - `src/main.jsx`
+
+---
+
+## [2026-11-16] - Automatización de Integración Continua con GitHub Actions
+
+- **Resumen:**
+  - Configuración del flujo de integración continua en `.github/workflows/ci.yml`.
+  - Automatización de instalación limpia de dependencias (`npm ci`), verificación estática con ESLint (`npm run lint`) y compilación de producción con Vite (`npm run build`).
+  - Activación automática del flujo ante eventos de `push` y `pull_request` hacia la rama `master`.
+  - Formalización de la decisión técnica [`DEC-011`](file:///home/riajhart/Proyectos/TP-Agentes/docs/decisiones.md) en `docs/decisiones.md`.
+- **Archivos creados:**
+  - `.github/workflows/ci.yml`
+- **Archivos modificados:**
+  - `docs/decisiones.md`
+  - `docs/estado.md`
+  - `docs/historial.md`
+
+---
+
 ## [2026-11-16] - Actualización del README y documentación del entorno de desarrollo
 
 - **Resumen:**
@@ -16,6 +67,56 @@ Bitácora cronológica y concisa de hitos y modificaciones significativas del pr
 
 - **Archivos modificados:**
   - `README.md`
+  - `docs/historial.md`
+
+---
+
+## [2026-11-16] - Preparación de estructura, navegación y entorno de desarrollo de ClickJr
+
+- **Resumen:**
+  - Inicialización del entorno de desarrollo con Vite y React, configurando ESLint y Prettier como herramientas de calidad y formato.
+  - Implementación de la estructura base de componentes de layout (`Header`, `Footer`, `Layout`), estilos con CSS Modules y temas claro/oscuro.
+  - Configuración del enrutamiento con React Router (`/`, `/propuesta-r1`, `/propuesta-r2`, ruta 404).
+  - Incorporación de los recursos de marca originales de ClickJr en `public/assets/clickjr/`.
+- **Archivos creados:**
+  - `eslint.config.js`
+  - `index.html`
+  - `package.json`
+  - `public/assets/clickjr/clickjr-favicon.svg`
+  - `public/assets/clickjr/clickjr-logo-dark.svg`
+  - `public/assets/clickjr/clickjr-logo.svg`
+  - `src/App.jsx`
+  - `src/components/layout/Footer.jsx`
+  - `src/components/layout/Footer.module.css`
+  - `src/components/layout/Header.jsx`
+  - `src/components/layout/Header.module.css`
+  - `src/components/layout/Layout.jsx`
+  - `src/components/layout/Layout.module.css`
+  - `src/main.jsx`
+  - `src/pages/Inicio/Inicio.jsx`
+  - `src/pages/Inicio/Inicio.module.css`
+  - `src/pages/NoEncontrada/NoEncontrada.jsx`
+  - `src/pages/NoEncontrada/NoEncontrada.module.css`
+  - `src/pages/PropuestaR1/PropuestaR1.jsx`
+  - `src/pages/PropuestaR1/PropuestaR1.module.css`
+  - `src/pages/PropuestaR2/PropuestaR2.jsx`
+  - `src/pages/PropuestaR2/PropuestaR2.module.css`
+  - `src/styles/global.css`
+  - `vite.config.js`
+- **Archivos modificados:**
+  - `.gitignore`
+  - `docs/historial.md`
+
+---
+
+## [2026-11-16] - Incorporación de la guía de contribución al repositorio
+
+- **Resumen:**
+  - Redacción y publicación de `docs/CONTRIBUTING.md` para estandarizar el flujo colaborativo, trabajo con ramas, commits, Pull Requests y revisiones entre pares.
+  - Documentación de pautas para la interacción de los integrantes con agentes de programación y sincronización con GitHub Issues y Projects.
+- **Archivos creados:**
+  - `docs/CONTRIBUTING.md`
+- **Archivos modificados:**
   - `docs/historial.md`
 
 ---

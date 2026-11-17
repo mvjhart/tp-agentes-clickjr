@@ -12,9 +12,13 @@
   padding: 48px 32px;
 }
 
-/* Adaptación para celulares */
-@media (max-width: 640px) {
+/* Adaptación para celulares y tablets */
+@media (max-width: 768px) {
+  .layout {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom));
+  }
+
   .main {
-    padding: 32px 20px;
+    padding: 24px 16px;
   }
 }

@@ -1,7 +1,8 @@
 import { Outlet } from 'react-router-dom'
 
-import Header from './Header.jsx'
 import Footer from './Footer.jsx'
+import Header from './Header.jsx'
+import MobileNavigation from './MobileNavigation.jsx'
 import styles from './Layout.module.css'
 
 function Layout() {
@@ -12,6 +13,7 @@ function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <MobileNavigation />
     </div>
   )
 }

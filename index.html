@@ -12,7 +12,28 @@
       name="description"
       content="ClickJr: propuestas de automatización del proceso de postulación a vacantes."
     />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="ClickJr | Automatización de postulaciones"
+    />
+    <meta
+      property="og:image"
+      content="https://tp-agentes-clickjr.vercel.app/assets/clickjr/clickjr-og.webp"
+    />
+    <meta property="og:url" content="https://tp-agentes-clickjr.vercel.app/" />
+    <meta property="og:site_name" content="ClickJr" />
+
     <title>ClickJr</title>
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <script>
+      const savedTheme = localStorage.getItem('clickjr-theme')
+
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', savedTheme)
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

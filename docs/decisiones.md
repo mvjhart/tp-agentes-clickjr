@@ -2,7 +2,8 @@
 
 Este archivo almacena el historial cronológico de decisiones técnicas, funcionales y de diseño confirmadas para el proyecto.
 
-### Reglas de este registro:
+### Reglas de este registro
+
 1. **Trazabilidad histórica:** Las decisiones pasadas no se eliminan ni se modifican retroactivamente sin justificación; se preservan para mantener la memoria del proyecto.
 2. **Reemplazo:** Si una decisión cambia tras la revisión y acuerdo del equipo, se crea una nueva entrada con su propio ID indicando cuál reemplaza y justificando el cambio.
 3. **Aprobación humana:** Solo se registran decisiones explícitamente aprobadas por integrantes del equipo. Las propuestas previas se mantienen en `docs/estado.md`.
@@ -27,6 +28,7 @@ Este archivo almacena el historial cronológico de decisiones técnicas, funcion
 ## Decisiones Registradas
 
 ### [DEC-001] Adopción de sistema de documentación persistente y protocolo de agentes
+
 - **Fecha:** 2026-11-04
 - **Estado:** Vigente
 - **Propuesto por:** Agente de IA / Victoria Mariani
@@ -36,6 +38,7 @@ Este archivo almacena el historial cronológico de decisiones técnicas, funcion
 - **Reemplaza a:** N/A
 
 ### [DEC-002] Adopción de React como tecnología frontend para la landing page
+
 - **Fecha:** 2026-11-16
 - **Estado:** Vigente
 - **Propuesto por:** Equipo de trabajo
@@ -45,6 +48,7 @@ Este archivo almacena el historial cronológico de decisiones técnicas, funcion
 - **Reemplaza a:** N/A
 
 ### [DEC-003] Adopción de Vercel como plataforma de despliegue web
+
 - **Fecha:** 2026-11-16
 - **Estado:** Vigente
 - **Propuesto por:** Equipo de trabajo
@@ -54,10 +58,71 @@ Este archivo almacena el historial cronológico de decisiones técnicas, funcion
 - **Reemplaza a:** N/A
 
 ### [DEC-004] Adopción de Vite como herramienta de scaffolding y build para React
+
 - **Fecha:** 2026-11-16
 - **Estado:** Vigente
 - **Propuesto por:** Victoria Mariani
 - **Aprobado por:** Victoria Mariani
-- **Decisión:** Utilizar Vite como herramienta de inicialización (scaffolding), servidor de desarrollo y empaquetador (build tool) para la aplicación frontend en React ([`DEC-002`](file:///home/riajhart/Proyectos/TP-Agentes/docs/decisiones.md)). Vercel continúa siendo la plataforma aprobada para el despliegue y hospedaje web ([`DEC-003`](file:///home/riajhart/Proyectos/TP-Agentes/docs/decisiones.md)). La adopción de esta herramienta establece el estándar técnico de construcción, pero no implica que el proyecto React ya se encuentre inicializado.
+- **Decisión:** Utilizar Vite como herramienta de inicialización (scaffolding), servidor de desarrollo y empaquetador (build tool) para la aplicación frontend en React ([DEC-002](#dec-002-adopción-de-react-como-tecnología-frontend-para-la-landing-page)). Vercel continúa siendo la plataforma aprobada para el despliegue y hospedaje web ([DEC-003](#dec-003-adopción-de-vercel-como-plataforma-de-despliegue-web)). La adopción de esta herramienta establece el estándar técnico de construcción, pero no implica que el proyecto React ya se encuentre inicializado.
 - **Justificación y alternativas:** Vite ofrece tiempos de arranque y Hot Module Replacement (HMR) extremadamente rápidos mediante ES Modules nativos, configuración mínima y compatibilidad directa y sin fricciones con el pipeline de compilación de Vercel. Se evaluaron alternativas como Create React App (obsoleta y sin mantenimiento activo) y frameworks como Next.js (descartada al no requerir renderizado del lado del servidor ni arquitectura backend, conforme a la delimitación del TP).
+- **Reemplaza a:** N/A
+
+### [DEC-005] Adopción de Prettier para el formateo del código
+
+- **Fecha:** 2026-11-16
+- **Estado:** Vigente
+- **Propuesto por:** Victoria Mariani / Agente de IA
+- **Aprobado por:** Victoria Mariani
+- **Decisión:** Utilizar Prettier como herramienta de formateo automático del código fuente y los archivos compatibles del proyecto.
+- **Justificación y alternativas:** Mantener un formato consistente y predecible en los archivos del repositorio, independientemente del agente o integrante que haya generado o modificado el código. Se adopta una herramienta de formateo dedicada en lugar de depender exclusivamente del formato producido por cada editor o agente. Prettier se ocupa de la presentación y consistencia del formato, sin asumir las funciones de análisis de calidad de ESLint.
+- **Reemplaza a:** N/A
+
+### [DEC-006] Adopción de ESLint para el análisis estático del código
+
+- **Fecha:** 2026-11-16
+- **Estado:** Vigente
+- **Propuesto por:** Victoria Mariani / Agente de IA
+- **Aprobado por:** Victoria Mariani
+- **Decisión:** Utilizar ESLint para analizar estáticamente el código JavaScript y React, detectar problemas y mantener criterios de calidad y consistencia en el desarrollo.
+- **Justificación y alternativas:** Incorporar verificaciones automatizadas que permitan detectar errores potenciales y problemas de código antes de integrar los cambios. ESLint complementa a Prettier: el primero se ocupa del análisis estático y las reglas de calidad, mientras que el segundo se ocupa del formato. Se evita utilizar ambas herramientas como si cumplieran la misma función.
+- **Reemplaza a:** N/A
+
+### [DEC-007] Adopción de React Router para la navegación de la aplicación
+
+- **Fecha:** 2026-11-16
+- **Estado:** Vigente
+- **Propuesto por:** Victoria Mariani / Agente de IA
+- **Aprobado por:** Victoria Mariani
+- **Decisión:** Utilizar React Router para gestionar la navegación declarativa y las rutas de la landing page.
+- **Justificación y alternativas:** Permitir la navegación entre las distintas secciones de la aplicación sin recargar completamente la página y mantener las rutas organizadas de acuerdo con la estructura modular de React. Se opta por una biblioteca de enrutamiento en lugar de implementar manualmente la navegación y el manejo de rutas.
+- **Reemplaza a:** N/A
+
+### [DEC-008] Adopción de CSS Modules para la organización de estilos
+
+- **Fecha:** 2026-11-16
+- **Estado:** Vigente
+- **Propuesto por:** Victoria Mariani / Agente de IA
+- **Aprobado por:** Victoria Mariani
+- **Decisión:** Utilizar CSS Modules para encapsular los estilos asociados a los componentes y páginas de la aplicación, manteniendo una hoja de estilos global para las reglas y variables compartidas.
+- **Justificación y alternativas:** Reducir conflictos entre clases CSS, facilitar el mantenimiento de los estilos y permitir que los componentes y páginas conserven sus propias reglas de presentación. Se prefiere esta organización frente a concentrar todos los estilos en una única hoja global. Los estilos globales quedan reservados para los criterios visuales compartidos por toda la aplicación.
+- **Reemplaza a:** N/A
+
+### [DEC-009] Adopción de un sistema de temas claro y oscuro
+
+- **Fecha:** 2026-11-16
+- **Estado:** Vigente
+- **Propuesto por:** Victoria Mariani / Agente de IA
+- **Aprobado por:** Victoria Mariani
+- **Decisión:** Implementar un sistema visual con temas claro y oscuro, basado en variables CSS compartidas y adaptable a la preferencia de apariencia del sistema operativo. La aplicación contempla la posibilidad de establecer explícitamente un tema mediante el atributo `data-theme` en el elemento raíz.
+- **Justificación y alternativas:** Mantener una identidad visual coherente y legible en ambos esquemas de apariencia, centralizando los colores y demás valores visuales compartidos mediante propiedades personalizadas de CSS. La detección de la preferencia del sistema permite adaptar la presentación sin requerir una configuración manual inicial. El atributo `data-theme` permite establecer un tema explícito cuando corresponda.
+- **Reemplaza a:** N/A
+
+### [DEC-010] Adopción de una estructura modular para la organización del frontend
+
+- **Fecha:** 2026-11-16
+- **Estado:** Vigente
+- **Propuesto por:** Victoria Mariani / Agente de IA
+- **Aprobado por:** Victoria Mariani
+- **Decisión:** Organizar el código frontend mediante una estructura modular que separe los componentes reutilizables, los componentes de layout, las páginas y los estilos globales. Cada página y componente mantiene sus archivos relacionados agrupados en su correspondiente directorio.
+- **Justificación y alternativas:** Facilitar el desarrollo paralelo de las distintas secciones, la reutilización de componentes y la integración de los módulos de R1 y R2. La separación por responsabilidades permite localizar y mantener los archivos sin concentrar toda la aplicación en una única estructura o componente. Se prioriza una organización que pueda evolucionar con las necesidades reales del proyecto, evitando incorporar capas o abstracciones innecesarias de manera anticipada.
 - **Reemplaza a:** N/A

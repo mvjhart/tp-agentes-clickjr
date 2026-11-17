@@ -4,6 +4,22 @@ Bitácora cronológica y concisa de hitos y modificaciones significativas del pr
 
 ---
 
+## [2026-11-16] - Actualización del README y documentación del entorno de desarrollo
+
+- **Resumen:**
+  - Actualización del `README.md` como guía de entrada al proyecto, reflejando el estado actual del repositorio y de la aplicación.
+  - Incorporación de la estructura vigente de directorios y archivos de React, componentes, páginas, estilos y recursos gráficos de ClickJr.
+  - Actualización de las referencias a las decisiones técnicas aprobadas: React, Vite, React Router y CSS Modules.
+  - Documentación de las herramientas de calidad y formato del código: ESLint y Prettier.
+  - Incorporación de instrucciones verificadas para instalar dependencias, iniciar el servidor de desarrollo, generar la compilación, previsualizarla y ejecutar las verificaciones disponibles.
+  - Conservación de las secciones de organización, protocolo de agentes, integrantes y registro de herramientas de IA.
+
+- **Archivos modificados:**
+  - `README.md`
+  - `docs/historial.md`
+
+---
+
 ## [2026-11-16] - Mantenimiento documental permanente en protocolo agéntico, adopción de Vite y plantilla de Pull Requests
 
 - **Resumen:**

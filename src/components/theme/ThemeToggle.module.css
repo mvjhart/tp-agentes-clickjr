@@ -1,0 +1,33 @@
+.button {
+  display: inline-flex;
+  flex-shrink: 0;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.button:hover {
+  border-color: var(--border-strong);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Pantallas ultra compactas */
+@media (max-width: 360px) {
+  .button {
+    padding: 8px 10px;
+  }
+}

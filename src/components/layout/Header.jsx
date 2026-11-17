@@ -1,5 +1,8 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
+import navigationItems from '../navigation/navigation.js'
+import NavigationLink from '../navigation/NavigationLink.jsx'
+import ThemeToggle from '../theme/ThemeToggle.jsx'
 import styles from './Header.module.css'
 
 function Header() {
@@ -21,34 +24,12 @@ function Header() {
         </Link>
 
         <nav className={styles.navigation} aria-label="Navegación principal">
-          <NavLink
-            to="/"
-            end
-            className={({ isActive }) =>
-              isActive ? styles.activeLink : styles.link
-            }
-          >
-            Inicio
-          </NavLink>
-
-          <NavLink
-            to="/propuesta-r1"
-            className={({ isActive }) =>
-              isActive ? styles.activeLink : styles.link
-            }
-          >
-            Propuesta R1
-          </NavLink>
-
-          <NavLink
-            to="/propuesta-r2"
-            className={({ isActive }) =>
-              isActive ? styles.activeLink : styles.link
-            }
-          >
-            Propuesta R2
-          </NavLink>
+          {navigationItems.map((item) => (
+            <NavigationLink key={item.to} item={item} variant="segmented" />
+          ))}
         </nav>
+
+        <ThemeToggle />
       </div>
     </header>
   )

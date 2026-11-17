@@ -1,0 +1,20 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main {
+  width: 100%;
+  max-width: var(--content-width);
+  flex: 1;
+  margin-inline: auto;
+  padding: 48px 32px;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 640px) {
+  .main {
+    padding: 32px 20px;
+  }
+}

@@ -57,6 +57,7 @@ Este documento reúne la información central, objetivos, requisitos y convencio
 - **Idioma de la documentación:** Español.
 - **Protocolo de agentes de IA:** Obligatoriedad de seguir las pautas detalladas en [`AGENTS.md`](../AGENTS.md).
 - **Convenciones de commits:** Obligatoriedad de seguir las pautas, plantilla y verificaciones detalladas en [`docs/convenciones-commits.md`](convenciones-commits.md).
+- **Pautas de contribución:** Pautas de ramas, Pull Requests y colaboración en equipo documentadas en [`docs/CONTRIBUTING.md`](CONTRIBUTING.md).
 - **Organización del equipo:** La distribución de roles, responsabilidades de coordinación, etapas, tareas y criterios de colaboración se encuentra detallada en [`docs/organizacion.md`](organizacion.md).
 - **Gestión de versiones (Git):**
   - Los archivos compartidos se mantienen y coordinan en el repositorio Git.

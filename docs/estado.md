@@ -12,7 +12,7 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 - [ ] Elaborar la ficha lógica de la sentencia R2 de ClickJr según el paso 2.3 de la consigna (Responsable: Marcos Aquino / Rol 3 - Tarea T4).
 - [ ] Redactar el borrador conceptual de la propuesta agéntica R1 (paso 2.4 - Tarea T5) (Responsable: Candelaria Chazarreta / Rol 2).
 - [ ] Redactar el borrador conceptual de la propuesta agéntica R2 (paso 2.4 - Tarea T6) (Responsable: Marcos Aquino / Rol 3).
-- [ ] Continuar el desarrollo de la estructura general y navegación de la landing page (Responsable: Victoria Mariani / Rol 4 - Tarea T7).
+- [ ] Mantener la estructura general y coordinar la recepción de módulos para la landing page (Responsable: Victoria Mariani / Rol 4 - Tarea T7).
 
 ### Tareas pendientes de definición del equipo o condicionadas
 
@@ -52,6 +52,8 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 - [x] Implementar la estructura inicial del encabezado y su adaptación a dispositivos móviles.
 - [x] Incorporar la base de estilos globales, variables visuales y soporte para temas claro y oscuro.
 - [x] Crear el `README.md` principal del repositorio con la estructura de orientación, presentación del caso, nómina del equipo, protocolo de agentes y tablas para aportes e IA.
+- [x] Redactar e incorporar la guía de contribución del repositorio en `docs/CONTRIBUTING.md`.
+- [x] Definir e implementar el workflow de integración continua (CI) con GitHub Actions para validar ESLint y build ante pushes y PRs (DEC-011).
 
 ---
 

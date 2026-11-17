@@ -126,3 +126,13 @@ Este archivo almacena el historial cronológico de decisiones técnicas, funcion
 - **Decisión:** Organizar el código frontend mediante una estructura modular que separe los componentes reutilizables, los componentes de layout, las páginas y los estilos globales. Cada página y componente mantiene sus archivos relacionados agrupados en su correspondiente directorio.
 - **Justificación y alternativas:** Facilitar el desarrollo paralelo de las distintas secciones, la reutilización de componentes y la integración de los módulos de R1 y R2. La separación por responsabilidades permite localizar y mantener los archivos sin concentrar toda la aplicación en una única estructura o componente. Se prioriza una organización que pueda evolucionar con las necesidades reales del proyecto, evitando incorporar capas o abstracciones innecesarias de manera anticipada.
 - **Reemplaza a:** N/A
+
+### [DEC-011] Adopción de GitHub Actions para Integración Continua (CI)
+
+- **Fecha:** 2026-11-16
+- **Estado:** Vigente
+- **Propuesto por:** Victoria Mariani / Agente de IA
+- **Aprobado por:** Victoria Mariani
+- **Decisión:** Implementar un flujo automatizado de integración continua utilizando GitHub Actions (`.github/workflows/ci.yml`), que ejecute la instalación limpia de dependencias (`npm ci`), el análisis estático (`npm run lint`) y la compilación de producción (`npm run build`) ante cada evento de `push` y `pull_request` sobre la rama `master`.
+- **Justificación y alternativas:** Garantizar de forma automática que ningún cambio integrado a la rama principal rompa las reglas de calidad de código ni impida la compilación exitosa de la aplicación. Se evaluaron alternativas de integración continua externa (como servicios independientes de CI), optando por GitHub Actions debido a su integración nativa con el repositorio, soporte directo para ramas protegidas y nula necesidad de configuración de infraestructura adicional.
+- **Reemplaza a:** N/A

@@ -4,6 +4,22 @@ Bitácora cronológica y concisa de hitos y modificaciones significativas del pr
 
 ---
 
+## [2026-11-16] - Automatización de Integración Continua con GitHub Actions
+
+- **Resumen:**
+  - Configuración del flujo de integración continua en `.github/workflows/ci.yml`.
+  - Automatización de instalación limpia de dependencias (`npm ci`), verificación estática con ESLint (`npm run lint`) y compilación de producción con Vite (`npm run build`).
+  - Activación automática del flujo ante eventos de `push` y `pull_request` hacia la rama `master`.
+  - Formalización de la decisión técnica [`DEC-011`](file:///home/riajhart/Proyectos/TP-Agentes/docs/decisiones.md) en `docs/decisiones.md`.
+- **Archivos creados:**
+  - `.github/workflows/ci.yml`
+- **Archivos modificados:**
+  - `docs/decisiones.md`
+  - `docs/estado.md`
+  - `docs/historial.md`
+
+---
+
 ## [2026-11-16] - Actualización del README y documentación del entorno de desarrollo
 
 - **Resumen:**
@@ -16,6 +32,56 @@ Bitácora cronológica y concisa de hitos y modificaciones significativas del pr
 
 - **Archivos modificados:**
   - `README.md`
+  - `docs/historial.md`
+
+---
+
+## [2026-11-16] - Preparación de estructura, navegación y entorno de desarrollo de ClickJr
+
+- **Resumen:**
+  - Inicialización del entorno de desarrollo con Vite y React, configurando ESLint y Prettier como herramientas de calidad y formato.
+  - Implementación de la estructura base de componentes de layout (`Header`, `Footer`, `Layout`), estilos con CSS Modules y temas claro/oscuro.
+  - Configuración del enrutamiento con React Router (`/`, `/propuesta-r1`, `/propuesta-r2`, ruta 404).
+  - Incorporación de los recursos de marca originales de ClickJr en `public/assets/clickjr/`.
+- **Archivos creados:**
+  - `eslint.config.js`
+  - `index.html`
+  - `package.json`
+  - `public/assets/clickjr/clickjr-favicon.svg`
+  - `public/assets/clickjr/clickjr-logo-dark.svg`
+  - `public/assets/clickjr/clickjr-logo.svg`
+  - `src/App.jsx`
+  - `src/components/layout/Footer.jsx`
+  - `src/components/layout/Footer.module.css`
+  - `src/components/layout/Header.jsx`
+  - `src/components/layout/Header.module.css`
+  - `src/components/layout/Layout.jsx`
+  - `src/components/layout/Layout.module.css`
+  - `src/main.jsx`
+  - `src/pages/Inicio/Inicio.jsx`
+  - `src/pages/Inicio/Inicio.module.css`
+  - `src/pages/NoEncontrada/NoEncontrada.jsx`
+  - `src/pages/NoEncontrada/NoEncontrada.module.css`
+  - `src/pages/PropuestaR1/PropuestaR1.jsx`
+  - `src/pages/PropuestaR1/PropuestaR1.module.css`
+  - `src/pages/PropuestaR2/PropuestaR2.jsx`
+  - `src/pages/PropuestaR2/PropuestaR2.module.css`
+  - `src/styles/global.css`
+  - `vite.config.js`
+- **Archivos modificados:**
+  - `.gitignore`
+  - `docs/historial.md`
+
+---
+
+## [2026-11-16] - Incorporación de la guía de contribución al repositorio
+
+- **Resumen:**
+  - Redacción y publicación de `docs/CONTRIBUTING.md` para estandarizar el flujo colaborativo, trabajo con ramas, commits, Pull Requests y revisiones entre pares.
+  - Documentación de pautas para la interacción de los integrantes con agentes de programación y sincronización con GitHub Issues y Projects.
+- **Archivos creados:**
+  - `docs/CONTRIBUTING.md`
+- **Archivos modificados:**
   - `docs/historial.md`
 
 ---

@@ -4,6 +4,41 @@ Bitácora cronológica y concisa de hitos y modificaciones significativas del pr
 
 ---
 
+## [2026-11-17] - Estructura y navegación general de la landing page y despliegue en Vercel (Tarea T7)
+
+- **Resumen:**
+  - Centralización de las opciones y rutas de navegación en una configuración modular compartida (`navigation.js`).
+  - Creación de componentes reutilizables: enlace de navegación con estados activos (`NavigationLink`) y renderizado de íconos SVG vectoriales (`Icon`).
+  - Implementación de navegación segmentada para resoluciones de escritorio y dock inferior (`MobileNavigation`) para dispositivos móviles.
+  - Actualización del layout general y encabezado con espaciado responsive (breakpoint de 768 px).
+  - Incorporación del selector de tema claro/oscuro (`ThemeToggle`) con detección de preferencia del sistema y persistencia en `localStorage`.
+  - Actualización del footer con el isotipo de ClickJr, créditos institucionales (Grupo 11 - IFTS Nº 29) y enlace externo al repositorio.
+  - Incorporación de metadatos Open Graph e imagen de vista previa (`clickjr-og.webp`).
+  - Optimización de la carga inicial en `index.html` trasladando los estilos globales y aplicando un script en cabecera para prevenir destellos visuales (FOUC).
+  - Puesta en marcha y verificación del despliegue continuo en Vercel en la URL pública https://tp-agentes-clickjr.vercel.app/ ([`DEC-003`](file:///home/riajhart/Proyectos/TP-Agentes/docs/decisiones.md), `REQ-PUB-01`).
+  - Verificación integral satisfactoria con `npm run format:check`, `npm run lint` y `npm run build`.
+- **Archivos creados:**
+  - `public/assets/clickjr/clickjr-og.webp`
+  - `src/components/layout/MobileNavigation.jsx`
+  - `src/components/layout/MobileNavigation.module.css`
+  - `src/components/navigation/navigation.js`
+  - `src/components/navigation/NavigationLink.jsx`
+  - `src/components/navigation/NavigationLink.module.css`
+  - `src/components/shared/Icon.jsx`
+  - `src/components/theme/ThemeToggle.jsx`
+  - `src/components/theme/ThemeToggle.module.css`
+- **Archivos modificados:**
+  - `index.html`
+  - `src/components/layout/Footer.jsx`
+  - `src/components/layout/Footer.module.css`
+  - `src/components/layout/Header.jsx`
+  - `src/components/layout/Header.module.css`
+  - `src/components/layout/Layout.jsx`
+  - `src/components/layout/Layout.module.css`
+  - `src/main.jsx`
+
+---
+
 ## [2026-11-16] - Automatización de Integración Continua con GitHub Actions
 
 - **Resumen:**

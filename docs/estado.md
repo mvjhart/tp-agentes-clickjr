@@ -12,7 +12,6 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 - [ ] Elaborar la ficha lógica de la sentencia R2 de ClickJr según el paso 2.3 de la consigna (Responsable: Marcos Aquino / Rol 3 - Tarea T4).
 - [ ] Redactar el borrador conceptual de la propuesta agéntica R1 (paso 2.4 - Tarea T5) (Responsable: Candelaria Chazarreta / Rol 2).
 - [ ] Redactar el borrador conceptual de la propuesta agéntica R2 (paso 2.4 - Tarea T6) (Responsable: Marcos Aquino / Rol 3).
-- [ ] Mantener la estructura general y coordinar la recepción de módulos para la landing page (Responsable: Victoria Mariani / Rol 4 - Tarea T7).
 
 ### Tareas pendientes de definición del equipo o condicionadas
 
@@ -23,7 +22,7 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 - [ ] Integrar los componentes y módulos en la landing page (Tarea T12).
 - [ ] Realizar las pruebas, verificaciones y revisión integral del proyecto (Tarea T13).
 - [ ] Completar el registro de aportes y herramientas de IA en el `README.md` a medida que avance el desarrollo (Tarea T14).
-- [ ] Desplegar la landing page en Vercel y comprobar la accesibilidad pública sin sesión de ambos enlaces (Tarea T15 - `REQ-PUB-01`).
+- [ ] Comprobar la accesibilidad pública y el correcto funcionamiento en producción de la landing page y todos sus módulos integrados tras completar el desarrollo (Tarea T15 - `REQ-PUB-01` y `REQ-PUB-02`).
 
 ### Completadas
 
@@ -54,6 +53,8 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 - [x] Crear el `README.md` principal del repositorio con la estructura de orientación, presentación del caso, nómina del equipo, protocolo de agentes y tablas para aportes e IA.
 - [x] Redactar e incorporar la guía de contribución del repositorio en `docs/CONTRIBUTING.md`.
 - [x] Definir e implementar el workflow de integración continua (CI) con GitHub Actions para validar ESLint y build ante pushes y PRs (DEC-011).
+- [x] Implementar la estructura y navegación general de la landing page: navegación segmentada para escritorio, dock inferior para dispositivos móviles, configuración centralizada de rutas, componente compartido de íconos, selector de temas claro/oscuro con preferencia del sistema y persistencia en localStorage, footer con identidad visual y repositorio, y metadatos Open Graph con carga optimizada sin destello visual (Tarea T7 / Victoria Mariani).
+- [x] Configurar y poner en marcha el despliegue continuo en Vercel (https://tp-agentes-clickjr.vercel.app/), verificando la accesibilidad pública sin credenciales ni autenticación (DEC-003, REQ-PUB-01).
 
 ---
 
@@ -79,7 +80,7 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 ## 3. Próximos pasos recomendados
 
 1. Avanzar con el análisis lógico de R1 y R2 (Tareas T3 y T4) y la formulación de sus propuestas conceptuales (Tareas T5 y T6 / Candelaria Chazarreta y Marcos Aquino).
-2. Continuar el desarrollo de la estructura general y navegación de la landing page (Tarea T7 / Victoria Mariani).
+2. Iniciar el desarrollo del módulo de presentación de ClickJr (Tarea T8 / Federico Acosta Maneiro), aprovechando la estructura general, la navegación y el despliegue ya operativos.
 3. Definir en equipo el formato de los diagramas de flujo para orientar el desarrollo de los módulos.
 4. Desarrollar los módulos correspondientes a R1 y R2 (Tareas T8 y T9).
 5. Completar la presentación y el diseño visual de la landing page (Tareas T10 y T11).

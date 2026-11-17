@@ -10,7 +10,7 @@ Proyecto desarrollado para el **IFTS 29** (Instituto de Formación Técnica Supe
 - **Plataforma de despliegue aprobada:** Vercel.
 - **Fecha de entrega:** 26/11/2026.
 - **Repositorio Git:** [https://github.com/mvjhart/tp-agentes-clickjr](https://github.com/mvjhart/tp-agentes-clickjr)
-- **Landing page publicada:** Enlace público al sitio web a incorporar tras el despliegue efectivo en Vercel.
+- **Landing page publicada:** [https://tp-agentes-clickjr.vercel.app/](https://tp-agentes-clickjr.vercel.app/)
 
 ---
 
@@ -65,16 +65,28 @@ TP-Agentes/
 │       └── clickjr/
 │           ├── clickjr-favicon.svg
 │           ├── clickjr-logo.svg
-│           └── clickjr-logo-dark.svg
+│           ├── clickjr-logo-dark.svg
+│           └── clickjr-og.webp
 ├── src/
 │   ├── components/
-│   │   └── layout/
-│   │       ├── Footer.jsx
-│   │       ├── Footer.module.css
-│   │       ├── Header.jsx
-│   │       ├── Header.module.css
-│   │       ├── Layout.jsx
-│   │       └── Layout.module.css
+│   │   ├── layout/
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Footer.module.css
+│   │   │   ├── Header.jsx
+│   │   │   ├── Header.module.css
+│   │   │   ├── Layout.jsx
+│   │   │   ├── Layout.module.css
+│   │   │   ├── MobileNavigation.jsx
+│   │   │   └── MobileNavigation.module.css
+│   │   ├── navigation/
+│   │   │   ├── navigation.js
+│   │   │   ├── NavigationLink.jsx
+│   │   │   └── NavigationLink.module.css
+│   │   ├── shared/
+│   │   │   └── Icon.jsx
+│   │   └── theme/
+│   │       ├── ThemeToggle.jsx
+│   │       └── ThemeToggle.module.css
 │   ├── pages/
 │   │   ├── Inicio/
 │   │   │   ├── Inicio.jsx
@@ -206,7 +218,7 @@ El equipo acordó la organización del proyecto según lo establecido en [`docs/
 | **Federico Acosta Maneiro** | [federicosd06-dev](https://github.com/federicosd06-dev) | Rol 1 (Presentación y contenido de ClickJr) | *Pendiente de registrar a medida que avance el desarrollo de sus tareas* |
 | **Candelaria Chazarreta** | [kndxt](https://github.com/kndxt) | Rol 2 (Análisis y propuesta de solución R1) | *Pendiente de registrar a medida que avance el desarrollo de sus tareas* |
 | **Marcos Aquino** | [Marcos028](https://github.com/Marcos028) | Rol 3 (Análisis y propuesta de solución R2) | *Pendiente de registrar a medida que avance el desarrollo de sus tareas* |
-| **Victoria Mariani** | [mvjhart](https://github.com/mvjhart) | Rol 4 (Estructura e integración técnica) | Inicialización del repositorio Git, diseño del sistema de documentación persistente (`docs/`), redacción de `AGENTS.md`, `docs/convenciones-commits.md` y `docs/CONTRIBUTING.md`, scaffolding de React con Vite, estructura y navegación base de ClickJr, y configuración del workflow de CI con GitHub Actions. |
+| **Victoria Mariani** | [mvjhart](https://github.com/mvjhart) | Rol 4 (Estructura e integración técnica) | Inicialización del repositorio Git, diseño del sistema de documentación persistente (`docs/`), redacción de `AGENTS.md`, `docs/convenciones-commits.md` y `docs/CONTRIBUTING.md`, scaffolding de React con Vite, estructura y navegación general responsive de ClickJr (Tarea T7), selector de tema claro/oscuro, puesta en marcha del despliegue en Vercel y configuración del workflow de CI con GitHub Actions. |
 
 ---
 
@@ -219,7 +231,7 @@ El equipo acordó la organización del proyecto según lo establecido en [`docs/
 | Federico Acosta Maneiro | *Pendiente* | *Pendiente* | *Pendiente de registrar durante el desarrollo de su módulo* | *Pendiente* |
 | Candelaria Chazarreta | *Pendiente* | *Pendiente* | *Pendiente de registrar durante el desarrollo de su módulo* | *Pendiente* |
 | Marcos Aquino | *Pendiente* | *Pendiente* | *Pendiente de registrar durante el desarrollo de su módulo* | *Pendiente* |
-| Victoria Mariani | Antigravity / CLI | Gemini 3.8 Flash | Configuración de documentación, protocolos agénticos, entorno Vite/React, navegación base y workflow de CI | Ajustes en las pautas de verificación inicial de Git, estructuración modular de landing, reglas de ESLint/Prettier y workflow de GitHub Actions |
+| Victoria Mariani | Antigravity / CLI | Gemini 3.8 Flash | Configuración de documentación, protocolos agénticos, entorno Vite/React, estructura y navegación general responsive (T7), despliegue en Vercel y workflow de CI | Ajustes en las pautas de verificación inicial de Git, estructuración modular de landing, navegación segmentada y dock móvil, prevención de FOUC de temas, reglas de ESLint/Prettier y workflow de GitHub Actions |
 
 ---
 
@@ -287,6 +299,7 @@ npm run build
 
 ### Despliegue en Vercel
 
-- **Plataforma:** Vercel.
-- **Estado del despliegue:** Pendiente de configuración tras la finalización de los módulos integrados (Tarea T15).
-- **Accesibilidad pública:** Conforme a `REQ-PUB-01` y `REQ-PUB-02`, el despliegue final será accesible de forma libre y pública, sin requerir inicio de sesión ni autenticación.
+- **Plataforma:** Vercel ([`DEC-003`](docs/decisiones.md)).
+- **URL de producción:** [https://tp-agentes-clickjr.vercel.app/](https://tp-agentes-clickjr.vercel.app/)
+- **Estado del despliegue:** Activo y funcional, con despliegue continuo ante actualizaciones de la rama `master`. (La comprobación final de todos los módulos integrados se completará en la Tarea T15).
+- **Accesibilidad pública:** Conforme a `REQ-PUB-01` y `REQ-PUB-02`, el sitio es de acceso libre y público, sin requerir inicio de sesión ni autenticación.

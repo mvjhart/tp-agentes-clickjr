@@ -47,7 +47,7 @@ Este documento reúne la información central, objetivos, requisitos y convencio
 - **Visualización y UX:** Evaluación exclusiva en formato de escritorio (desktop). Navegación de desplegables operable mediante clic y teclado.
 - **Logo oficial:** Obligatoriedad de incluir el logo original de ClickJr completo y legible (material provisto por cátedra).
 - **Tecnología frontend y herramientas:** React como framework/biblioteca frontend (decisión aprobada en [`docs/decisiones.md`](decisiones.md) - DEC-002) y Vite como herramienta de scaffolding y build ([`docs/decisiones.md`](decisiones.md) - DEC-004).
-- **Publicación y entrega:** Repositorio público y sitio web desplegado en Vercel (decisión aprobada en [`docs/decisiones.md`](decisiones.md) - DEC-003), accesibles sin necesidad de autenticación ni inicio de sesión.
+- **Publicación y entrega:** Repositorio público y sitio web desplegado en Vercel ([https://tp-agentes-clickjr.vercel.app/](https://tp-agentes-clickjr.vercel.app/) - decisión aprobada en [`docs/decisiones.md`](decisiones.md) - DEC-003), accesible sin necesidad de autenticación ni inicio de sesión.
 - **README obligatorio:** Documentar integrantes, aportes concretos y registro detallado de herramientas de IA utilizadas (aplicación, modelo exacto, uso y cambios solicitados).
 
 ---

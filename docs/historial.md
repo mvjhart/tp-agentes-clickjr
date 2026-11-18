@@ -4,6 +4,24 @@ Bitácora cronológica y concisa de hitos y modificaciones significativas del pr
 
 ---
 
+## [2026-11-18] - Análisis lógico y propuesta conceptual de la solución agéntica de R1 (Tareas T3 y T5)
+
+- **Resumen:**
+  - Creación de la ficha de análisis lógico de la sentencia R1 (`docs/analisis-r1.md`): transcripción textual, desglose de la conjunción de seis condiciones (C1 a C6), datos necesarios y consecuencia («solicita el envío»), con las interpretaciones rotuladas y delimitadas respecto de los supuestos de diseño del grupo.
+  - Creación de la propuesta conceptual de solución agéntica de R1 (`docs/propuesta-r1.md`): herramientas conceptuales de consulta, tres alternativas de confirmación y privacidad antes de transmitir datos, orden de evaluación ante fallas simultáneas con derivación a R2 condicionada a C1, C2 y C6, caso límite de cambio de estado entre la verificación y el envío, intervención humana y opciones de título.
+  - Registro de los puntos a coordinar con Marcos Aquino (Rol 3 · R2) y de las decisiones de diseño pendientes de acuerdo del equipo.
+  - Actualización de `README.md` (aportes, registro de herramientas de IA con evidencia de iteración, estructura y tabla de documentación), `docs/estado.md` y `docs/historial.md`.
+  - Trabajo realizado en la rama `feat/propuesta-r1` (commits `f108694`, `41f2e10` y `8b247b9`), aún no integrado en `master`.
+- **Archivos creados:**
+  - `docs/analisis-r1.md`
+  - `docs/propuesta-r1.md`
+- **Archivos modificados:**
+  - `README.md`
+  - `docs/estado.md`
+  - `docs/historial.md`
+
+---
+
 ## [2026-11-17] - Estructura y navegación general de la landing page y despliegue en Vercel (Tarea T7)
 
 - **Resumen:**

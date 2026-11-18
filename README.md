@@ -108,6 +108,8 @@ TP-Agentes/
 │   ├── github/
 │   │   ├── issues.md
 │   │   └── etiquetas.md
+│   ├── analisis-r1.md
+│   ├── propuesta-r1.md
 │   ├── consigna.md
 │   ├── contexto.md
 │   ├── decisiones.md
@@ -154,6 +156,8 @@ La documentación compartida en `docs/` centraliza la memoria persistente del pr
 | [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md) | Criterios para ramas, PRs, revisiones y colaboración agéntica. | Antes de crear ramas, abrir Pull Requests o colaborar en el repositorio. |
 | [`docs/github/issues.md`](docs/github/issues.md) | Planificación de los Issues del proyecto, con sus objetivos, actividades, entregables, criterios de aceptación y dependencias. | Al crear, asignar, actualizar o revisar las tareas en GitHub. |
 | [`docs/github/etiquetas.md`](docs/github/etiquetas.md) | Catálogo de etiquetas para clasificar los Issues por tipo, etapa y área de trabajo. | Al crear o actualizar etiquetas e Issues en GitHub. |
+| [`docs/analisis-r1.md`](docs/analisis-r1.md) | Ficha de análisis lógico de la sentencia R1 (T3): datos necesarios, condiciones C1 a C6 y consecuencia, con las interpretaciones rotuladas. | Para conocer cómo se desarmó R1 antes de proponer la solución. |
+| [`docs/propuesta-r1.md`](docs/propuesta-r1.md) | Propuesta conceptual de solución agéntica para R1 (T5): herramientas, caminos del sí y del no, caso límite, intervención humana y alternativas de diseño. | Para consultar la propuesta antes de construir el diagrama y el desplegable de R1 (T9). |
 
 ---
 
@@ -216,7 +220,7 @@ El equipo acordó la organización del proyecto según lo establecido en [`docs/
 | Integrante | Perfil GitHub | Rol coordinador asignado | Aporte concreto al proyecto |
 |---|---|---|---|
 | **Federico Acosta Maneiro** | [federicosd06-dev](https://github.com/federicosd06-dev) | Rol 1 (Presentación y contenido de ClickJr) | *Pendiente de registrar a medida que avance el desarrollo de sus tareas* |
-| **Candelaria Chazarreta** | [kndxt](https://github.com/kndxt) | Rol 2 (Análisis y propuesta de solución R1) | *Pendiente de registrar a medida que avance el desarrollo de sus tareas* |
+| **Candelaria Chazarreta** | [kndxt](https://github.com/kndxt) | Rol 2 (Análisis y propuesta de solución R1) | Análisis lógico de la sentencia R1 (T3, `docs/analisis-r1.md`) y definición conceptual de la propuesta agéntica de R1 (T5, `docs/propuesta-r1.md`), dirigiendo el trabajo con agentes de IA, revisando críticamente cada versión y pidiendo las correcciones. Planteó el riesgo de privacidad de transmitir datos personales sin confirmación explícita de la persona, lo que llevó a incorporar tres alternativas de confirmación en la propuesta. Pendiente: módulo de R1 con diagrama y desplegable (T9). |
 | **Marcos Aquino** | [Marcos028](https://github.com/Marcos028) | Rol 3 (Análisis y propuesta de solución R2) | *Pendiente de registrar a medida que avance el desarrollo de sus tareas* |
 | **Victoria Mariani** | [mvjhart](https://github.com/mvjhart) | Rol 4 (Estructura e integración técnica) | Inicialización del repositorio Git, diseño del sistema de documentación persistente (`docs/`), redacción de `AGENTS.md`, `docs/convenciones-commits.md` y `docs/CONTRIBUTING.md`, scaffolding de React con Vite, estructura y navegación general responsive de ClickJr (Tarea T7), selector de tema claro/oscuro, puesta en marcha del despliegue en Vercel y configuración del workflow de CI con GitHub Actions. |
 
@@ -229,9 +233,17 @@ El equipo acordó la organización del proyecto según lo establecido en [`docs/
 | Integrante | Entorno / Aplicación | Modelo exacto | Tarea / Uso específico | Modificaciones o ajustes solicitados |
 |---|---|---|---|---|
 | Federico Acosta Maneiro | *Pendiente* | *Pendiente* | *Pendiente de registrar durante el desarrollo de su módulo* | *Pendiente* |
-| Candelaria Chazarreta | *Pendiente* | *Pendiente* | *Pendiente de registrar durante el desarrollo de su módulo* | *Pendiente* |
+| Candelaria Chazarreta | Antigravity | Gemini 3.8 Flash (High) | Elaboración de la ficha de análisis lógico de R1 (T3) y de la propuesta conceptual de solución agéntica de R1 (T5), a partir de instrucciones propias. | Ver "Evidencia de iteración" debajo de la tabla. |
 | Marcos Aquino | *Pendiente* | *Pendiente* | *Pendiente de registrar durante el desarrollo de su módulo* | *Pendiente* |
 | Victoria Mariani | Antigravity / CLI | Gemini 3.8 Flash | Configuración de documentación, protocolos agénticos, entorno Vite/React, estructura y navegación general responsive (T7), despliegue en Vercel y workflow de CI | Ajustes en las pautas de verificación inicial de Git, estructuración modular de landing, navegación segmentada y dock móvil, prevención de FOUC de temas, reglas de ESLint/Prettier y workflow de GitHub Actions |
+
+#### Evidencia de iteración — Candelaria Chazarreta (R1)
+
+Las revisiones, verificaciones y detección de problemas de cada versión fueron de autoría propia de Candelaria, quien pidió las correcciones correspondientes a Antigravity. El caso límite analizado en la propuesta (cambio de estado de la vacante o revocación de la autorización entre la verificación y el envío) fue planteado por Candelaria como candidato y queda sujeto a la aprobación del equipo. La objeción de privacidad que cambió el diseño fue de Candelaria.
+
+**Ficha de análisis lógico (T3).** Instrucción inicial: crear `docs/analisis-r1.md` desarmando la sentencia R1 en seis condiciones y una consecuencia. Problema detectado: la primera versión (commit `f108694`) mezclaba análisis con diseño, ya que descartaba la confirmación humana previa al envío, agregaba valores de estado y ejemplos que la sentencia no dice, anticipaba herramientas propias de T5 y hablaba de colas y subsistemas de envío. Pedido de mejora: limitar la ficha a lo que establece la sentencia, dejar la consecuencia como «solicita el envío» (no «envía») y rotular toda interpretación. Resultado: versión corregida y commit de ajuste `41f2e10`, que además agregó el resumen en el formato de la consigna y rotuló la lectura de C3 como interpretación.
+
+**Propuesta conceptual (T5).** Instrucción inicial: crear `docs/propuesta-r1.md` con el funcionamiento del agente, las herramientas, los caminos del sí y del no, un caso límite y un título. Problemas detectados: las alternativas posteriores a la solicitud de envío no reflejaban el criterio de privacidad planteado por Candelaria (que la persona autorice de forma explícita antes de que sus datos salgan del sistema), los títulos prometían inmediatez, las dos opciones de orden de evaluación contradecían la derivación a R2 y faltaban las fallas simultáneas y los estados compartidos frente a C6. Pedido de mejora: reemplazar las alternativas por tres políticas de confirmación con ventajas, costos y efecto sobre la automatización, presentar el orden de evaluación como un único supuesto fundamentado, neutralizar los títulos y completar los puntos a coordinar con R2. Resultado: commit `8b247b9`. Las decisiones entre alternativas (política de confirmación, orden de evaluación, tratamiento de cada condición y título) quedan pendientes de acuerdo con el equipo.
 
 ---
 

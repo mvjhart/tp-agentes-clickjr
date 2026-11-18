@@ -8,17 +8,17 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 
 ### Tareas inmediatas (pueden iniciarse)
 
-- [ ] Elaborar la ficha lógica de la sentencia R1 de ClickJr según el paso 2.3 de la consigna (Responsable: Candelaria Chazarreta / Rol 2 - Tarea T3).
 - [ ] Elaborar la ficha lógica de la sentencia R2 de ClickJr según el paso 2.3 de la consigna (Responsable: Marcos Aquino / Rol 3 - Tarea T4).
-- [ ] Redactar el borrador conceptual de la propuesta agéntica R1 (paso 2.4 - Tarea T5) (Responsable: Candelaria Chazarreta / Rol 2).
 - [ ] Redactar el borrador conceptual de la propuesta agéntica R2 (paso 2.4 - Tarea T6) (Responsable: Marcos Aquino / Rol 3).
 
 ### Tareas pendientes de definición del equipo o condicionadas
 
 - [ ] Definir el formato técnico para los diagramas de flujo en React (componentes SVG / HTML+CSS / imágenes acompañadas de texto).
 - [ ] Definir si el grupo utilizará la opción de identidad propia (nombre de grupo/consultora y logo con IA).
-- [ ] Completar el desarrollo de los módulos correspondientes a las propuestas R1 y R2 (Tareas T8 y T9), una vez disponibles sus definiciones y propuestas conceptuales.
-- [ ] Completar la presentación y el diseño visual de la landing page (Tareas T10 y T11), en coordinación con el contenido y los módulos.
+- [ ] Desarrollar el módulo de la propuesta R1 con su diagrama y desplegable (Tarea T9 / Candelaria Chazarreta), una vez acordados con Marcos Aquino los puntos indicados en la sección 2.
+- [ ] Desarrollar el módulo de la propuesta R2 con su diagrama y desplegable (Tarea T10 / Marcos Aquino).
+- [ ] Desarrollar el módulo de presentación de ClickJr (Tarea T8 / Federico Acosta Maneiro).
+- [ ] Completar el diseño visual de la landing page (Tarea T11), en coordinación con el contenido y los módulos.
 - [ ] Integrar los componentes y módulos en la landing page (Tarea T12).
 - [ ] Realizar las pruebas, verificaciones y revisión integral del proyecto (Tarea T13).
 - [ ] Completar el registro de aportes y herramientas de IA en el `README.md` a medida que avance el desarrollo (Tarea T14).
@@ -55,6 +55,8 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 - [x] Definir e implementar el workflow de integración continua (CI) con GitHub Actions para validar ESLint y build ante pushes y PRs (DEC-011).
 - [x] Implementar la estructura y navegación general de la landing page: navegación segmentada para escritorio, dock inferior para dispositivos móviles, configuración centralizada de rutas, componente compartido de íconos, selector de temas claro/oscuro con preferencia del sistema y persistencia en localStorage, footer con identidad visual y repositorio, y metadatos Open Graph con carga optimizada sin destello visual (Tarea T7 / Victoria Mariani).
 - [x] Configurar y poner en marcha el despliegue continuo en Vercel (https://tp-agentes-clickjr.vercel.app/), verificando la accesibilidad pública sin credenciales ni autenticación (DEC-003, REQ-PUB-01).
+- [x] Elaborar la ficha de análisis lógico de la sentencia R1: desglose de condiciones, datos necesarios y consecuencia, con las interpretaciones rotuladas frente a los supuestos de diseño del grupo (Tarea T3 / Candelaria Chazarreta · `docs/analisis-r1.md`, rama `feat/propuesta-r1`).
+- [x] Redactar la propuesta conceptual de solución agéntica para R1: herramientas de consulta, alternativas de confirmación y privacidad, orden de evaluación ante fallas múltiples, caso límite y puntos de coordinación con R2 (Tarea T5 / Candelaria Chazarreta · `docs/propuesta-r1.md`, rama `feat/propuesta-r1`). Las decisiones entre alternativas siguen pendientes de acuerdo del equipo.
 
 ---
 
@@ -70,20 +72,23 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 2. **Identidad del grupo (opcional):**
    - Evaluar si el equipo desea crear una identidad de consultora y un logo propio con IA, o enfocarse exclusivamente en la presentación institucional de ClickJr.
 
+3. **Decisiones de diseño de la propuesta R1 que requieren acuerdo del equipo** (`docs/propuesta-r1.md`, sección 8): política de confirmación antes de transmitir datos (confirmación siempre, condicionada al alcance de los datos, o sin confirmación con datos mínimos y registro), orden de evaluación ante fallas simultáneas y derivación a R2 solo si C1, C2 y C6 se cumplen, tratamiento de cada condición que falla, cómputo de estados intermedios frente a C6, equivalencia entre «cumple sus requisitos» (R1) y «es compatible» (R2), y título de la propuesta.
+
 ### Preguntas pendientes
 
 - ¿Qué formato técnico prefiere el equipo para los diagramas de flujo dentro de React?
 - ¿El grupo desea incorporar una identidad propia opcional o mantener exclusivamente la identidad institucional de ClickJr?
+- ¿Qué opción adopta el equipo para cada decisión de diseño de la propuesta R1, de modo que pueda construirse el diagrama (T9)?
 
 ---
 
 ## 3. Próximos pasos recomendados
 
-1. Avanzar con el análisis lógico de R1 y R2 (Tareas T3 y T4) y la formulación de sus propuestas conceptuales (Tareas T5 y T6 / Candelaria Chazarreta y Marcos Aquino).
+1. Completar el análisis lógico y la propuesta de R2 (Tareas T4 y T6 / Marcos Aquino). Las de R1 (T3 y T5) están redactadas y esperan el acuerdo del equipo sobre las decisiones de diseño.
 2. Iniciar el desarrollo del módulo de presentación de ClickJr (Tarea T8 / Federico Acosta Maneiro), aprovechando la estructura general, la navegación y el despliegue ya operativos.
 3. Definir en equipo el formato de los diagramas de flujo para orientar el desarrollo de los módulos.
-4. Desarrollar los módulos correspondientes a R1 y R2 (Tareas T8 y T9).
-5. Completar la presentación y el diseño visual de la landing page (Tareas T10 y T11).
+4. Desarrollar los módulos de R1 y R2 (Tareas T9 y T10).
+5. Completar el diseño visual de la landing page (Tarea T11).
 6. Integrar los módulos y componentes desarrollados (Tarea T12).
 7. Realizar las pruebas, verificaciones y revisión integral (Tarea T13).
 8. Completar la documentación y el registro de aportes y herramientas de IA en el `README.md` (Tarea T14).

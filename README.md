@@ -45,7 +45,7 @@ El trabajo práctico tiene como objetivo diseñar y construir una **landing page
 
 - **Construcción 100 % agéntica (`REQ-MET-01`):** Todo el código fuente del proyecto es generado, modificado y corregido exclusivamente por agentes de programación asistidos por IA. Los integrantes del equipo dirigen el desarrollo, establecen requerimientos y validan resultados, sin realizar edición manual de código.
 - **Alcance estrictamente conceptual (`REQ-ALC-01`):** La landing page cumple una función informativa y didáctica. **No debe integrar IA operativa, ejecutar agentes en backend, conectar APIs externas ni implementar automatizaciones reales**.
-- **Entorno de visualización (`REQ-LAN-08`):** La evaluación se realiza de forma exclusiva en resolución de escritorio (*desktop*), sin requerimiento de diseño adaptable a dispositivos móviles (*mobile responsive*).
+- **Entorno de visualización (`REQ-LAN-08`):** La evaluación se realiza de forma exclusiva en resolución de escritorio (_desktop_), sin requerimiento de diseño adaptable a dispositivos móviles (_mobile responsive_).
 - **Distinción de supuestos propios (`REQ-LAN-05`):** Cualquier comportamiento o decisión ante escenarios no contemplados por las sentencias textuales (como el tratamiento de alternativas frente a condiciones no cumplidas) se explicita como un supuesto de diseño formulado por el equipo.
 
 ---
@@ -89,8 +89,12 @@ TP-Agentes/
 │   │       └── ThemeToggle.module.css
 │   ├── pages/
 │   │   ├── Inicio/
+│   │   │   ├── ContextCard.jsx
+│   │   │   ├── ContextCard.module.css
 │   │   │   ├── Inicio.jsx
-│   │   │   └── Inicio.module.css
+│   │   │   ├── Inicio.module.css
+│   │   │   ├── SentenceCard.jsx
+│   │   │   └── SentenceCard.module.css
 │   │   ├── NoEncontrada/
 │   │   │   ├── NoEncontrada.jsx
 │   │   │   └── NoEncontrada.module.css
@@ -144,20 +148,20 @@ Los directorios generados durante la instalación o compilación, como `node_mod
 
 La documentación compartida en `docs/` centraliza la memoria persistente del proyecto para coordinar el trabajo humano y agéntico:
 
-| Documento | Propósito | Cuándo consultarlo |
-|---|---|---|
-| [`docs/contexto.md`](docs/contexto.md) | Marco general del proyecto, resumen del caso ClickJr y reglas base. | Al iniciar cualquier sesión de trabajo. |
-| [`docs/consigna.md`](docs/consigna.md) | Catálogo oficial de requisitos (`REQ-xxx`), entregables y rúbrica de evaluación. | Para verificar el cumplimiento de los criterios de cátedra. |
-| [`docs/decisiones.md`](docs/decisiones.md) | Registro histórico de decisiones técnicas y arquitectónicas confirmadas (ADRs). | Para comprobar qué acuerdos técnicos están vigentes. |
-| [`docs/estado.md`](docs/estado.md) | Seguimiento de tareas inmediatas, actividades en curso y definiciones pendientes. | Para conocer el estado real de avance y los próximos pasos. |
-| [`docs/organizacion.md`](docs/organizacion.md) | Estructura acordada de 4 roles coordinadores y 15 tareas en 5 etapas. | Para coordinar asignaciones y flujo de integración con Git. |
-| [`docs/historial.md`](docs/historial.md) | Bitácora de modificaciones significativas y evolución del repositorio. | Al finalizar una sesión relevante de trabajo. |
-| [`docs/convenciones-commits.md`](docs/convenciones-commits.md) | Pautas de confirmación, plantilla obligatoria y chequeos pre-commit. | Antes de preparar y confirmar cualquier cambio en Git. |
-| [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md) | Criterios para ramas, PRs, revisiones y colaboración agéntica. | Antes de crear ramas, abrir Pull Requests o colaborar en el repositorio. |
-| [`docs/github/issues.md`](docs/github/issues.md) | Planificación de los Issues del proyecto, con sus objetivos, actividades, entregables, criterios de aceptación y dependencias. | Al crear, asignar, actualizar o revisar las tareas en GitHub. |
-| [`docs/github/etiquetas.md`](docs/github/etiquetas.md) | Catálogo de etiquetas para clasificar los Issues por tipo, etapa y área de trabajo. | Al crear o actualizar etiquetas e Issues en GitHub. |
-| [`docs/analisis-r1.md`](docs/analisis-r1.md) | Ficha de análisis lógico de la sentencia R1 (T3): datos necesarios, condiciones C1 a C6 y consecuencia, con las interpretaciones rotuladas. | Para conocer cómo se desarmó R1 antes de proponer la solución. |
-| [`docs/propuesta-r1.md`](docs/propuesta-r1.md) | Propuesta conceptual de solución agéntica para R1 (T5): herramientas, caminos del sí y del no, caso límite, intervención humana y alternativas de diseño. | Para consultar la propuesta antes de construir el diagrama y el desplegable de R1 (T9). |
+| Documento                                                      | Propósito                                                                                                                                                 | Cuándo consultarlo                                                                      |
+| -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [`docs/contexto.md`](docs/contexto.md)                         | Marco general del proyecto, resumen del caso ClickJr y reglas base.                                                                                       | Al iniciar cualquier sesión de trabajo.                                                 |
+| [`docs/consigna.md`](docs/consigna.md)                         | Catálogo oficial de requisitos (`REQ-xxx`), entregables y rúbrica de evaluación.                                                                          | Para verificar el cumplimiento de los criterios de cátedra.                             |
+| [`docs/decisiones.md`](docs/decisiones.md)                     | Registro histórico de decisiones técnicas y arquitectónicas confirmadas (ADRs).                                                                           | Para comprobar qué acuerdos técnicos están vigentes.                                    |
+| [`docs/estado.md`](docs/estado.md)                             | Seguimiento de tareas inmediatas, actividades en curso y definiciones pendientes.                                                                         | Para conocer el estado real de avance y los próximos pasos.                             |
+| [`docs/organizacion.md`](docs/organizacion.md)                 | Estructura acordada de 4 roles coordinadores y 15 tareas en 5 etapas.                                                                                     | Para coordinar asignaciones y flujo de integración con Git.                             |
+| [`docs/historial.md`](docs/historial.md)                       | Bitácora de modificaciones significativas y evolución del repositorio.                                                                                    | Al finalizar una sesión relevante de trabajo.                                           |
+| [`docs/convenciones-commits.md`](docs/convenciones-commits.md) | Pautas de confirmación, plantilla obligatoria y chequeos pre-commit.                                                                                      | Antes de preparar y confirmar cualquier cambio en Git.                                  |
+| [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md)                 | Criterios para ramas, PRs, revisiones y colaboración agéntica.                                                                                            | Antes de crear ramas, abrir Pull Requests o colaborar en el repositorio.                |
+| [`docs/github/issues.md`](docs/github/issues.md)               | Planificación de los Issues del proyecto, con sus objetivos, actividades, entregables, criterios de aceptación y dependencias.                            | Al crear, asignar, actualizar o revisar las tareas en GitHub.                           |
+| [`docs/github/etiquetas.md`](docs/github/etiquetas.md)         | Catálogo de etiquetas para clasificar los Issues por tipo, etapa y área de trabajo.                                                                       | Al crear o actualizar etiquetas e Issues en GitHub.                                     |
+| [`docs/analisis-r1.md`](docs/analisis-r1.md)                   | Ficha de análisis lógico de la sentencia R1 (T3): datos necesarios, condiciones C1 a C6 y consecuencia, con las interpretaciones rotuladas.               | Para conocer cómo se desarmó R1 antes de proponer la solución.                          |
+| [`docs/propuesta-r1.md`](docs/propuesta-r1.md)                 | Propuesta conceptual de solución agéntica para R1 (T5): herramientas, caminos del sí y del no, caso límite, intervención humana y alternativas de diseño. | Para consultar la propuesta antes de construir el diagrama y el desplegable de R1 (T9). |
 
 ---
 
@@ -217,12 +221,12 @@ El equipo acordó la organización del proyecto según lo establecido en [`docs/
 
 ### Nómina del Equipo y Aportes Concretos
 
-| Integrante | Perfil GitHub | Rol coordinador asignado | Aporte concreto al proyecto |
-|---|---|---|---|
-| **Federico Acosta Maneiro** | [federicosd06-dev](https://github.com/federicosd06-dev) | Rol 1 (Presentación y contenido de ClickJr) | *Pendiente de registrar a medida que avance el desarrollo de sus tareas* |
-| **Candelaria Chazarreta** | [kndxt](https://github.com/kndxt) | Rol 2 (Análisis y propuesta de solución R1) | Análisis lógico de la sentencia R1 (T3, `docs/analisis-r1.md`) y definición conceptual de la propuesta agéntica de R1 (T5, `docs/propuesta-r1.md`), dirigiendo el trabajo con agentes de IA, revisando críticamente cada versión y pidiendo las correcciones. Planteó el riesgo de privacidad de transmitir datos personales sin confirmación explícita de la persona, lo que llevó a incorporar tres alternativas de confirmación en la propuesta. Pendiente: módulo de R1 con diagrama y desplegable (T9). |
-| **Marcos Aquino** | [Marcos028](https://github.com/Marcos028) | Rol 3 (Análisis y propuesta de solución R2) | *Pendiente de registrar a medida que avance el desarrollo de sus tareas* |
-| **Victoria Mariani** | [mvjhart](https://github.com/mvjhart) | Rol 4 (Estructura e integración técnica) | Inicialización del repositorio Git, diseño del sistema de documentación persistente (`docs/`), redacción de `AGENTS.md`, `docs/convenciones-commits.md` y `docs/CONTRIBUTING.md`, scaffolding de React con Vite, estructura y navegación general responsive de ClickJr (Tarea T7), selector de tema claro/oscuro, puesta en marcha del despliegue en Vercel y configuración del workflow de CI con GitHub Actions. |
+| Integrante                  | Perfil GitHub                                           | Rol coordinador asignado                    | Aporte concreto al proyecto                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| --------------------------- | ------------------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Federico Acosta Maneiro** | [federicosd06-dev](https://github.com/federicosd06-dev) | Rol 1 (Presentación y contenido de ClickJr) | Desarrollo del módulo de presentación de ClickJr (T8, `src/pages/Inicio/`): Servicio y problema que atiende, reconocimiento del origen en IFTS 16, bloque asignado, equipo IFTS 29 y las dos sentencias originales mediante el componente `SentenceCard`. Revisó visualmente el módulo en ambos temas, comparó las sentencias contra el caso asignado, ejecutó las verificaciones (lint, build, format) y abrió el Pull Request desde la rama `feat/modulo-presentacion`.                                    |
+| **Candelaria Chazarreta**   | [kndxt](https://github.com/kndxt)                       | Rol 2 (Análisis y propuesta de solución R1) | Análisis lógico de la sentencia R1 (T3, `docs/analisis-r1.md`) y definición conceptual de la propuesta agéntica de R1 (T5, `docs/propuesta-r1.md`), dirigiendo el trabajo con agentes de IA, revisando críticamente cada versión y pidiendo las correcciones. Planteó el riesgo de privacidad de transmitir datos personales sin confirmación explícita de la persona, lo que llevó a incorporar tres alternativas de confirmación en la propuesta. Pendiente: módulo de R1 con diagrama y desplegable (T9). |
+| **Marcos Aquino**           | [Marcos028](https://github.com/Marcos028)               | Rol 3 (Análisis y propuesta de solución R2) | _Pendiente de registrar a medida que avance el desarrollo de sus tareas_                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **Victoria Mariani**        | [mvjhart](https://github.com/mvjhart)                   | Rol 4 (Estructura e integración técnica)    | Inicialización del repositorio Git, diseño del sistema de documentación persistente (`docs/`), redacción de `AGENTS.md`, `docs/convenciones-commits.md` y `docs/CONTRIBUTING.md`, scaffolding de React con Vite, estructura y navegación general responsive de ClickJr (Tarea T7), selector de tema claro/oscuro, puesta en marcha del despliegue en Vercel y configuración del workflow de CI con GitHub Actions.                                                                                           |
 
 ---
 
@@ -230,11 +234,14 @@ El equipo acordó la organización del proyecto según lo establecido en [`docs/
 
 > Requisito obligatorio según `REQ-DOC-03` y dimensión 5 de la rúbrica de evaluación. Registra el entorno, el modelo utilizado, la tarea asignada y las iteraciones realizadas. Se irá actualizando colaborativamente por cada integrante a lo largo del desarrollo.
 
-| Integrante | Entorno / Aplicación | Modelo exacto | Tarea / Uso específico | Modificaciones o ajustes solicitados |
-|---|---|---|---|---|
-| Federico Acosta Maneiro | *Pendiente* | *Pendiente* | *Pendiente de registrar durante el desarrollo de su módulo* | *Pendiente* |
+| Integrante              | Entorno / Aplicación | Modelo exacto    | Tarea / Uso específico                                                                  | Modificaciones o ajustes solicitados |
+| ----------------------- | -------------------- | ---------------- | --------------------------------------------------------------------------------------- | ------------------------------------ |
+| Federico Acosta Maneiro | Antigravity          | Gemini 3.8 Flash | Generación del módulo de presentación (T8), de la redacción del problema y el servicio. |
+
+                                                                          |
+
 | Candelaria Chazarreta | Antigravity | Gemini 3.8 Flash (High) | Elaboración de la ficha de análisis lógico de R1 (T3) y de la propuesta conceptual de solución agéntica de R1 (T5), a partir de instrucciones propias. | Ver "Evidencia de iteración" debajo de la tabla. |
-| Marcos Aquino | *Pendiente* | *Pendiente* | *Pendiente de registrar durante el desarrollo de su módulo* | *Pendiente* |
+| Marcos Aquino | _Pendiente_ | _Pendiente_ | _Pendiente de registrar durante el desarrollo de su módulo_ | _Pendiente_ |
 | Victoria Mariani | Antigravity / CLI | Gemini 3.8 Flash | Configuración de documentación, protocolos agénticos, entorno Vite/React, estructura y navegación general responsive (T7), despliegue en Vercel y workflow de CI | Ajustes en las pautas de verificación inicial de Git, estructuración modular de landing, navegación segmentada y dock móvil, prevención de FOUC de temas, reglas de ESLint/Prettier y workflow de GitHub Actions |
 
 #### Evidencia de iteración — Candelaria Chazarreta (R1)
@@ -292,13 +299,13 @@ Vite mostrará en la terminal la dirección local desde la que se puede acceder 
 
 ### Comandos disponibles
 
-| Comando | Descripción |
-|---|---|
-| `npm run dev` | Inicia el servidor de desarrollo de Vite. |
-| `npm run build` | Genera la compilación de producción en `dist/`. |
-| `npm run preview` | Permite previsualizar localmente la compilación generada. |
-| `npm run lint` | Ejecuta ESLint sobre el proyecto. |
-| `npm run format` | Aplica Prettier a los archivos incluidos en el script de formateo. |
+| Comando                | Descripción                                                                    |
+| ---------------------- | ------------------------------------------------------------------------------ |
+| `npm run dev`          | Inicia el servidor de desarrollo de Vite.                                      |
+| `npm run build`        | Genera la compilación de producción en `dist/`.                                |
+| `npm run preview`      | Permite previsualizar localmente la compilación generada.                      |
+| `npm run lint`         | Ejecuta ESLint sobre el proyecto.                                              |
+| `npm run format`       | Aplica Prettier a los archivos incluidos en el script de formateo.             |
 | `npm run format:check` | Comprueba con Prettier el formato de los archivos incluidos, sin modificarlos. |
 
 Antes de integrar cambios, se recomienda ejecutar las verificaciones correspondientes:

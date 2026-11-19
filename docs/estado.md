@@ -17,7 +17,6 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 - [ ] Definir si el grupo utilizará la opción de identidad propia (nombre de grupo/consultora y logo con IA).
 - [ ] Desarrollar el módulo de la propuesta R1 con su diagrama y desplegable (Tarea T9 / Candelaria Chazarreta), una vez acordados con Marcos Aquino los puntos indicados en la sección 2.
 - [ ] Desarrollar el módulo de la propuesta R2 con su diagrama y desplegable (Tarea T10 / Marcos Aquino).
-- [ ] Desarrollar el módulo de presentación de ClickJr (Tarea T8 / Federico Acosta Maneiro).
 - [ ] Completar el diseño visual de la landing page (Tarea T11), en coordinación con el contenido y los módulos.
 - [ ] Integrar los componentes y módulos en la landing page (Tarea T12).
 - [ ] Realizar las pruebas, verificaciones y revisión integral del proyecto (Tarea T13).
@@ -57,6 +56,7 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 - [x] Configurar y poner en marcha el despliegue continuo en Vercel (https://tp-agentes-clickjr.vercel.app/), verificando la accesibilidad pública sin credenciales ni autenticación (DEC-003, REQ-PUB-01).
 - [x] Elaborar la ficha de análisis lógico de la sentencia R1: desglose de condiciones, datos necesarios y consecuencia, con las interpretaciones rotuladas frente a los supuestos de diseño del grupo (Tarea T3 / Candelaria Chazarreta · `docs/analisis-r1.md`, rama `feat/propuesta-r1`).
 - [x] Redactar la propuesta conceptual de solución agéntica para R1: herramientas de consulta, alternativas de confirmación y privacidad, orden de evaluación ante fallas múltiples, caso límite y puntos de coordinación con R2 (Tarea T5 / Candelaria Chazarreta · `docs/propuesta-r1.md`, rama `feat/propuesta-r1`). Las decisiones entre alternativas siguen pendientes de acuerdo del equipo.
+- [x] Desarrollar la primera versión del módulo de presentación de ClickJr: logo original con variantes clara y oscura, servicio y problema que atiende, origen en IFTS 16, bloque asignado, equipo IFTS 29 y las dos sentencias originales con su redacción exacta (Tarea T8 / Federico Acosta Maneiro · `src/pages/Inicio/`, rama `feat/modulo-presentacion`). Pendiente de revisión e integración en `master`.
 
 ---
 
@@ -85,14 +85,13 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 ## 3. Próximos pasos recomendados
 
 1. Completar el análisis lógico y la propuesta de R2 (Tareas T4 y T6 / Marcos Aquino). Las de R1 (T3 y T5) están redactadas y esperan el acuerdo del equipo sobre las decisiones de diseño.
-2. Iniciar el desarrollo del módulo de presentación de ClickJr (Tarea T8 / Federico Acosta Maneiro), aprovechando la estructura general, la navegación y el despliegue ya operativos.
-3. Definir en equipo el formato de los diagramas de flujo para orientar el desarrollo de los módulos.
-4. Desarrollar los módulos de R1 y R2 (Tareas T9 y T10).
-5. Completar el diseño visual de la landing page (Tarea T11).
-6. Integrar los módulos y componentes desarrollados (Tarea T12).
-7. Realizar las pruebas, verificaciones y revisión integral (Tarea T13).
-8. Completar la documentación y el registro de aportes y herramientas de IA en el `README.md` (Tarea T14).
-9. Desplegar el proyecto en Vercel y verificar el acceso público a los enlaces requeridos (Tarea T15).
+2. Definir en equipo el formato de los diagramas de flujo para orientar el desarrollo de los módulos.
+3. Desarrollar los módulos de R1 y R2 (Tareas T9 y T10).
+4. Completar el diseño visual de la landing page (Tarea T11).
+5. Integrar los módulos y componentes desarrollados (Tarea T12).
+6. Realizar las pruebas, verificaciones y revisión integral (Tarea T13).
+7. Completar la documentación y el registro de aportes y herramientas de IA en el `README.md` (Tarea T14).
+8. Desplegar el proyecto en Vercel y verificar el acceso público a los enlaces requeridos (Tarea T15).
 
 ---
 

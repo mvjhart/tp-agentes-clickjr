@@ -1,0 +1,56 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.content h2 {
+  font-size: 0.95rem;
+  margin: 0 0 0.5rem;
+  color: var(--text);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.content p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  width: 3.5rem;
+  height: 3.5rem;
+
+  color: var(--primary);
+  background: var(--context-icon-bg);
+  border-radius: 0.875rem;
+}
+
+@media (max-width: 480px) {
+  .card {
+    gap: 1rem;
+    padding: 1.125rem;
+  }
+
+  .icon {
+    width: 2.875rem;
+    height: 2.875rem;
+  }
+}

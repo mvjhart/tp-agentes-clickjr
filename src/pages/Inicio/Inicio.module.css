@@ -8,6 +8,32 @@
   max-width: 760px;
 }
 
+.brand {
+  margin-bottom: 28px;
+}
+
+.logoLight,
+.logoDark {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: 4.5rem;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.logoDark {
+  display: none;
+}
+
+:global(:root[data-theme='dark']) .logoLight {
+  display: none;
+}
+
+:global(:root[data-theme='dark']) .logoDark {
+  display: block;
+}
+
 .eyebrow {
   margin: 0 0 12px;
   color: var(--color-primary);
@@ -22,22 +48,25 @@
   font-size: 2.75rem;
 }
 
-.introduction > p:last-child,
-.sectionHeading p,
-.card p {
+.lead {
+  max-width: 650px;
+  margin: 0 0 24px;
   color: var(--color-muted);
+  font-size: 1.125rem;
   line-height: 1.7;
 }
 
-.introduction > p:last-child {
-  max-width: 650px;
-  font-size: 1.125rem;
-}
-
-.proposals {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+.scope {
+  display: inline-block;
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--highlight);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 .sectionHeading h2 {
@@ -47,6 +76,56 @@
 
 .sectionHeading p {
   margin: 0;
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+.contextCards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.sentences,
+.team,
+.proposals {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sentenceList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.teamList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.member a {
+  font-weight: 700;
+}
+
+.member span {
+  color: var(--text-muted);
+  font-size: 0.875rem;
 }
 
 .cards {
@@ -73,6 +152,8 @@
 
 .card p {
   margin: 0 0 24px;
+  color: var(--color-muted);
+  line-height: 1.7;
 }
 
 .cardLink {
@@ -88,16 +169,29 @@
 }
 
 /* Adaptación para celulares */
+@media (max-width: 768px) {
+  .contextCards,
+  .teamList {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 @media (max-width: 640px) {
   .container {
     gap: 40px;
+  }
+
+  .logoLight,
+  .logoDark {
+    height: 3.5rem;
   }
 
   .introduction h1 {
     font-size: 2rem;
   }
 
-  .introduction > p:last-child {
+  .lead {
     font-size: 1rem;
   }
 
@@ -113,18 +207,5 @@
   .card {
     min-height: 180px;
     padding: 24px;
-  }
-}
-
-.contextCards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-}
-
-@media (max-width: 768px) {
-  .contextCards {
-    grid-template-columns: 1fr;
-    gap: 16px;
   }
 }

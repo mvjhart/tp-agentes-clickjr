@@ -4,6 +4,24 @@ Bitácora cronológica y concisa de hitos y modificaciones significativas del pr
 
 ---
 
+## [2026-11-19] - Módulo de presentación de ClickJr en la página de inicio (Tarea T8)
+
+- **Resumen:**
+  - Rediseño de la página de inicio como módulo de presentación: logo original de ClickJr con variantes para tema claro y oscuro, descripción del servicio y del problema que atiende, reconocimiento del origen en IFTS 16, bloque asignado y equipo IFTS 29.
+  - Incorporación de las dos sentencias originales (R1 y R2) con su redacción exacta, mediante el nuevo componente `SentenceCard`.
+  - Verificación con `npm run lint` y `npm run build` sin errores. `npm run format:check` reporta advertencias en todo el proyecto por saltos de línea CRLF locales en Windows (`core.autocrlf=true`); no afecta a lo commiteado, que se guarda en LF.
+  - Trabajo realizado en la rama `feat/modulo-presentacion`, aún no integrado en `master`.
+- **Archivos creados:**
+  - `src/pages/Inicio/SentenceCard.jsx`
+  - `src/pages/Inicio/SentenceCard.module.css`
+- **Archivos modificados:**
+  - `src/pages/Inicio/Inicio.jsx`
+  - `src/pages/Inicio/Inicio.module.css`
+  - `docs/estado.md`
+  - `docs/historial.md`
+
+---
+
 ## [2026-11-18] - Análisis lógico y propuesta conceptual de la solución agéntica de R1 (Tareas T3 y T5)
 
 - **Resumen:**

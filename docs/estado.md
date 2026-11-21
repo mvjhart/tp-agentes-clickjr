@@ -57,6 +57,9 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 - [x] Elaborar la ficha de análisis lógico de la sentencia R1: desglose de condiciones, datos necesarios y consecuencia, con las interpretaciones rotuladas frente a los supuestos de diseño del grupo (Tarea T3 / Candelaria Chazarreta · `docs/analisis-r1.md`, rama `feat/propuesta-r1`).
 - [x] Redactar la propuesta conceptual de solución agéntica para R1: herramientas de consulta, alternativas de confirmación y privacidad, orden de evaluación ante fallas múltiples, caso límite y puntos de coordinación con R2 (Tarea T5 / Candelaria Chazarreta · `docs/propuesta-r1.md`, rama `feat/propuesta-r1`). Las decisiones entre alternativas siguen pendientes de acuerdo del equipo.
 - [x] Desarrollar la primera versión del módulo de presentación de ClickJr: logo original con variantes clara y oscura, servicio y problema que atiende, origen en IFTS 16, bloque asignado, equipo IFTS 29 y las dos sentencias originales con su redacción exacta (Tarea T8 / Federico Acosta Maneiro · `src/pages/Inicio/`, rama `feat/modulo-presentacion`). Pendiente de revisión e integración en `master`.
+- [x] Elaborar la ficha de análisis lógico de la sentencia R2 (Tarea T4 / Marcos Aquino · `docs/analisis-r2.md`).
+- [x] Redactar la propuesta conceptual de solución agéntica para R2 (Tarea T6 / Marcos Aquino · `docs/propuesta-r2.md`).
+- [x] Desarrollar el módulo de la propuesta R1 con su diagrama y desplegable (Tarea T9 / Candelaria Chazarreta · `src/pages/PropuestaR1/`, rama `feat/modulo-r1`). Incluye acordeón interactivo, diagramas HTML/CSS y descarga del diagrama completo en SVG.
 
 ---
 
@@ -72,24 +75,20 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 2. **Identidad del grupo (opcional):**
    - Evaluar si el equipo desea crear una identidad de consultora y un logo propio con IA, o enfocarse exclusivamente en la presentación institucional de ClickJr.
 
-
 ### Preguntas pendientes
 
-- ¿Qué formato técnico prefiere el equipo para los diagramas de flujo dentro de React?
 - ¿El grupo desea incorporar una identidad propia opcional o mantener exclusivamente la identidad institucional de ClickJr?
 
 ---
 
 ## 3. Próximos pasos recomendados
 
-1. Completar el análisis lógico y la propuesta de R2 (Tareas T4 y T6 / Marcos Aquino).
-2. Definir en equipo el formato de los diagramas de flujo para orientar el desarrollo de los módulos.
-3. Desarrollar los módulos de R1 y R2 (Tareas T9 y T10).
-4. Completar el diseño visual de la landing page (Tarea T11).
-5. Integrar los módulos y componentes desarrollados (Tarea T12).
-6. Realizar las pruebas, verificaciones y revisión integral (Tarea T13).
-7. Completar la documentación y el registro de aportes y herramientas de IA en el `README.md` (Tarea T14).
-8. Desplegar el proyecto en Vercel y verificar el acceso público a los enlaces requeridos (Tarea T15).
+1. Definir en equipo el formato de los diagramas de flujo para orientar el desarrollo de los módulos.
+2. Completar el diseño visual de la landing page (Tarea T11).
+3. Integrar los módulos y componentes desarrollados (Tarea T12).
+4. Realizar las pruebas, verificaciones y revisión integral (Tarea T13).
+5. Completar la documentación y el registro de aportes y herramientas de IA en el `README.md` (Tarea T14).
+6. Desplegar el proyecto en Vercel y verificar el acceso público a los enlaces requeridos (Tarea T15).
 
 ---
 

@@ -162,6 +162,8 @@ La documentación compartida en `docs/` centraliza la memoria persistente del pr
 | [`docs/github/etiquetas.md`](docs/github/etiquetas.md)         | Catálogo de etiquetas para clasificar los Issues por tipo, etapa y área de trabajo.                                                                       | Al crear o actualizar etiquetas e Issues en GitHub.                                     |
 | [`docs/analisis-r1.md`](docs/analisis-r1.md)                   | Ficha de análisis lógico de la sentencia R1 (T3): datos necesarios, condiciones C1 a C6 y consecuencia, con las interpretaciones rotuladas.               | Para conocer cómo se desarmó R1 antes de proponer la solución.                          |
 | [`docs/propuesta-r1.md`](docs/propuesta-r1.md)                 | Propuesta conceptual de solución agéntica para R1 (T5): herramientas, caminos del sí y del no, caso límite, intervención humana y alternativas de diseño. | Para consultar la propuesta antes de construir el diagrama y el desplegable de R1 (T9). |
+| [`docs/analisis-r2.md`](docs/analisis-r2.md)                   | Ficha de análisis lógico de la sentencia R2 (T4): estructura base B1/B2/B3, faltantes F1/F2/F3, consecuencia doble (solicitar + no enviar) e interpretaciones rotuladas. | Para conocer cómo se desarmó R2 antes de proponer la solución.                          |
+| [`docs/propuesta-r2.md`](docs/propuesta-r2.md)                 | Propuesta conceptual de solución agéntica para R2 (T6): herramientas, camino del SÍ en 7 pasos, handoff R1↔R2, camino del NO, vencimiento, tope, caso abierto único y 13 acuerdos (I1–I13). | Para consultar la propuesta antes de construir el diagrama y el desplegable de R2 (T10). |
 
 ---
 

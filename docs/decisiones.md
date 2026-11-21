@@ -136,3 +136,13 @@ Este archivo almacena el historial cronológico de decisiones técnicas, funcion
 - **Decisión:** Implementar un flujo automatizado de integración continua utilizando GitHub Actions (`.github/workflows/ci.yml`), que ejecute la instalación limpia de dependencias (`npm ci`), el análisis estático (`npm run lint`) y la compilación de producción (`npm run build`) ante cada evento de `push` y `pull_request` sobre la rama `master`.
 - **Justificación y alternativas:** Garantizar de forma automática que ningún cambio integrado a la rama principal rompa las reglas de calidad de código ni impida la compilación exitosa de la aplicación. Se evaluaron alternativas de integración continua externa (como servicios independientes de CI), optando por GitHub Actions debido a su integración nativa con el repositorio, soporte directo para ramas protegidas y nula necesidad de configuración de infraestructura adicional.
 - **Reemplaza a:** N/A
+
+### [DEC-012] Adopción de Mermaid para el renderizado de diagramas de flujo
+
+- **Fecha:** 2026-11-21
+- **Estado:** Vigente
+- **Propuesto por:** Candelaria Chazarreta / Agente de IA
+- **Aprobado por:** Marcos Aquino
+- **Decisión:** Utilizar la biblioteca Mermaid como dependencia de producción para renderizar el diagrama de flujo completo de la propuesta R1 (y potencialmente R2), permitiendo su exportación a formato SVG mediante código declarativo.
+- **Justificación y alternativas:** Se evaluó construir el diagrama completo dibujando SVG a mano (como en la primera versión), pero Mermaid facilita la representación de grafos complejos con múltiples ramas y retornos, reduciendo la cantidad de código necesario para su mantenimiento. Se importa de forma dinámica para no afectar el tamaño del bundle inicial.
+- **Reemplaza a:** N/A

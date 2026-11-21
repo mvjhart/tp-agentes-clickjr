@@ -2,8 +2,7 @@ Documento de análisis lógico y formal correspondiente a la sentencia R2 asigna
 
 
 
-\> **\*\*Estado de los acuerdos:\*\*** Los supuestos de esta ficha fueron confirmados por los coordinadores de R1 y R2 (Candelaria Chazarreta y Marcos Aquino). Su ratificación por Federico Acosta Maneiro y Victoria Mariani sigue pendiente mediante comentarios en el Pull Request.
-
+\> **\*\*Estado de los acuerdos:\*\*** Los supuestos de esta ficha fueron confirmados por los coordinadores de R1 y R2 (Candelaria Chazarreta y Marcos Aquino).
 
 
 **---**

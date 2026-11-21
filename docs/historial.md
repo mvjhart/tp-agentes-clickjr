@@ -1,6 +1,26 @@
 # Historial de Cambios Relevantes
 
 Bitácora cronológica y concisa de hitos y modificaciones significativas del proyecto. Complementa el historial granular de Git.
+---
+
+## [2026-11-20] - Ratificación grupal de los acuerdos de diseño R1–R2
+
+- **Resumen:**
+  - Incorporación de los ocho acuerdos de diseño R1–R2 consensuados previamente entre los coordinadores de R1 (Candelaria Chazarreta) y R2 (Marcos Aquino), documentados en la sección 8 de `docs/propuesta-r1.md`:
+    1. Tabla de notación compartida (B1=C1, B2=C2, B3=C6, F1=¬C4, F2=¬C3, F3=¬C5).
+    2. Equivalencia de compatibilidad (B2 = C2) y partición de casos entre ambas sentencias.
+    3. Política de privacidad y datos mínimos, con derivación a R2 de todo lo que exceda la autorización suficiente y sin confirmaciones separadas en R1.
+    4. Circuito de derivación con datos estructurados y cuatro estados de retorno (`resuelto`, `vencido`, `rechazado`, `no viable`); R1 retoma la potestad de decidir la solicitud de envío.
+    5. Caso abierto único por dupla persona–vacante; C6 solo cuenta lo efectivamente enviado.
+    6. Tope configurable de derivaciones antes de escalar a revisión de «el equipo de ClickJr».
+    7. Protocolo de corte preventivo en las tres ventanas críticas (cierre de vacante o revocación de permiso).
+    8. Representación gráfica coordinada del ciclo de derivación y retorno en los diagramas de ambas propuestas.
+  - Los acuerdos quedan ratificados por el equipo y habilitan el inicio del desarrollo de los módulos T9 y T10, sujeto a la definición del formato técnico de los diagramas.
+- **Archivos modificados:**
+  - `docs/analisis-r1.md`
+  - `docs/propuesta-r1.md`
+  - `docs/estado.md`
+  - `docs/historial.md`
 
 ---
 

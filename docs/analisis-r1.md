@@ -1,7 +1,5 @@
 Documento de análisis lógico y formal correspondiente a la sentencia R1 asignada al Rol 2 (Candelaria Chazarreta) en el marco del bloque «Postulación y permisos» de la startup ClickJr.
 
-> **Estado de los acuerdos:** Los supuestos de diseño incluidos en las secciones 7 y 8 fueron confirmados por los coordinadores de R1 y R2 (Candelaria Chazarreta y Marcos Aquino). Su ratificación por Federico Acosta Maneiro y Victoria Mariani continúa pendiente mediante comentarios en el Pull Request. La definición técnica del esquema de diagramas también debe coordinarse con Victoria, responsable de la integración.
-
 ---
 
 ## 1. Resumen Estructurado de la Ficha
@@ -127,8 +125,3 @@ Para articular formalmente el intercambio entre ambas soluciones, se adopta la s
 13. **Representación gráfica coordinada:** Los diagramas de R1 y R2 compartirán un esquema capaz de representar varias entradas, retornos hacia pasos anteriores, conectores entre diagramas, múltiples estados finales y marcadores para pasos agénticos, intervención humana, supuestos del grupo y elementos establecidos por las sentencias. Los marcadores tendrán forma o ícono y etiqueta, no dependerán solo del color, y contarán con una alternativa textual. Los requisitos funcionales fueron conversados entre los coordinadores; el formato técnico y la integración se terminan de acordar con Victoria Mariani.
 
 ---
-
-## 8. Puntos aún Abiertos
-
-1. **Formato técnico y esquema implementable de los diagramas:** Definición conjunta con Victoria Mariani (Rol 4) del modelo de datos y del formato de implementación en React (por ejemplo, SVG o estructuras HTML/CSS), respetando los requisitos funcionales enumerados en el punto 13 de la sección 7. También debe acordarse el flujo de revisión e integración mediante un Pull Request.
-2. **Parámetros ilustrativos de plataforma:** El máximo de tres derivaciones y el plazo de siete días para la espera de respuesta en R2 son valores ilustrativos, no establecidos por las sentencias. Su valor definitivo corresponde a una decisión de configuración de la plataforma. El plazo de espera de R2 no se aplica automáticamente a la validación humana de C2, cuyo plazo deberá definirse si la plataforma necesita limitar esa espera.

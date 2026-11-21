@@ -1,6 +1,26 @@
 # Historial de Cambios Relevantes
 
 Bitácora cronológica y concisa de hitos y modificaciones significativas del proyecto. Complementa el historial granular de Git.
+---
+
+## [2026-11-20] - Ratificación grupal de los acuerdos de diseño R1–R2
+
+- **Resumen:**
+  - Incorporación de los ocho acuerdos de diseño R1–R2 consensuados previamente entre los coordinadores de R1 (Candelaria Chazarreta) y R2 (Marcos Aquino), documentados en la sección 8 de `docs/propuesta-r1.md`:
+    1. Tabla de notación compartida (B1=C1, B2=C2, B3=C6, F1=¬C4, F2=¬C3, F3=¬C5).
+    2. Equivalencia de compatibilidad (B2 = C2) y partición de casos entre ambas sentencias.
+    3. Política de privacidad y datos mínimos, con derivación a R2 de todo lo que exceda la autorización suficiente y sin confirmaciones separadas en R1.
+    4. Circuito de derivación con datos estructurados y cuatro estados de retorno (`resuelto`, `vencido`, `rechazado`, `no viable`); R1 retoma la potestad de decidir la solicitud de envío.
+    5. Caso abierto único por dupla persona–vacante; C6 solo cuenta lo efectivamente enviado.
+    6. Tope configurable de derivaciones antes de escalar a revisión de «el equipo de ClickJr».
+    7. Protocolo de corte preventivo en las tres ventanas críticas (cierre de vacante o revocación de permiso).
+    8. Representación gráfica coordinada del ciclo de derivación y retorno en los diagramas de ambas propuestas.
+  - Los acuerdos quedan ratificados por el equipo y habilitan el inicio del desarrollo de los módulos T9 y T10, sujeto a la definición del formato técnico de los diagramas.
+- **Archivos modificados:**
+  - `docs/analisis-r1.md`
+  - `docs/propuesta-r1.md`
+  - `docs/estado.md`
+  - `docs/historial.md`
 
 ---
 
@@ -238,3 +258,19 @@ Bitácora cronológica y concisa de hitos y modificaciones significativas del pr
   - `docs/decisiones.md`
   - `docs/estado.md`
   - `docs/historial.md`
+  
+## [2026-11-19] - Análisis lógico y propuesta conceptual de la solución agéntica de R2 (Tareas T4 y T6)
+
+- *Resumen:*
+  - Creación de la ficha de análisis lógico de la sentencia R2 (docs/analisis-r2.md): transcripción textual, desglose de las tres condiciones base (B1, B2, B3) y de la disyunción inclusiva de faltantes (F1, F2, F3), datos necesarios, doble consecuencia («solicita lo pendiente» Y «no envía»), y aclaraciones de lectura sobre condicional simple, disyunción inclusiva, definición de «compatible», alcance de «información» y «autorización», cómputo de «postulación previa» y relación de partición con R1. Las interpretaciones quedan rotuladas y delimitadas respecto de los supuestos de diseño del grupo.
+  - Creación de la propuesta conceptual de solución agéntica de R2 (docs/propuesta-r2.md) bajo la denominación *PostuAyuda*: título y beneficio, rol del futuro agente, tabla de notación R1–R2, herramientas conceptuales de consulta y operación, camino del sí en siete pasos (recibir el caso, re-chequear la base, determinar faltantes, enviar solicitud consolidada, recibir respuesta, segundo re-chequeo, notificar el estado), camino del no con devolución de no viable y motivo (B1, B2 o B3), entregas entre flujos (paquete R1→R2 y estados de retorno), tratamiento de vencimiento, reintentos, caso abierto único y reapertura, casos límite e intervención humana, distinción entre pasos agénticos y reglas fijas, y resultado esperado.
+  - Registro de los trece insumos de diseño (I1–I13) acordados con Candelaria Chazarreta (Rol 2 · R1), con su estado y referencia a los archivos de R1, y de los tres insumos «solo en R2» propuestos por Marcos Aquino y pendientes de confirmar con Candelaria: re-chequeo al reanudar (I7), recordatorio previo al vencimiento (I8) y aplicación del estado no viable B1 a la vacante cerrada durante la espera (I8).
+  - Actualización de README.md (aporte concreto y registro de herramientas de IA con evidencia de iteración), docs/estado.md y docs/historial.md.
+  - Trabajo realizado en la rama feat/propuesta-r2, aún no integrado en master.
+- *Archivos creados:*
+  - docs/analisis-r2.md
+  - docs/propuesta-r2.md
+- *Archivos modificados:*
+  - README.md
+  - docs/estado.md
+  - docs/historial.md

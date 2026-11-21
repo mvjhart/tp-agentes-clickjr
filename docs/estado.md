@@ -72,19 +72,17 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 2. **Identidad del grupo (opcional):**
    - Evaluar si el equipo desea crear una identidad de consultora y un logo propio con IA, o enfocarse exclusivamente en la presentación institucional de ClickJr.
 
-3. **Decisiones de diseño de la propuesta R1 que requieren acuerdo del equipo** (`docs/propuesta-r1.md`, sección 8): política de confirmación antes de transmitir datos (confirmación siempre, condicionada al alcance de los datos, o sin confirmación con datos mínimos y registro), orden de evaluación ante fallas simultáneas y derivación a R2 solo si C1, C2 y C6 se cumplen, tratamiento de cada condición que falla, cómputo de estados intermedios frente a C6, equivalencia entre «cumple sus requisitos» (R1) y «es compatible» (R2), y título de la propuesta.
 
 ### Preguntas pendientes
 
 - ¿Qué formato técnico prefiere el equipo para los diagramas de flujo dentro de React?
 - ¿El grupo desea incorporar una identidad propia opcional o mantener exclusivamente la identidad institucional de ClickJr?
-- ¿Qué opción adopta el equipo para cada decisión de diseño de la propuesta R1, de modo que pueda construirse el diagrama (T9)?
 
 ---
 
 ## 3. Próximos pasos recomendados
 
-1. Completar el análisis lógico y la propuesta de R2 (Tareas T4 y T6 / Marcos Aquino). Las de R1 (T3 y T5) están redactadas y esperan el acuerdo del equipo sobre las decisiones de diseño.
+1. Completar el análisis lógico y la propuesta de R2 (Tareas T4 y T6 / Marcos Aquino).
 2. Definir en equipo el formato de los diagramas de flujo para orientar el desarrollo de los módulos.
 3. Desarrollar los módulos de R1 y R2 (Tareas T9 y T10).
 4. Completar el diseño visual de la landing page (Tarea T11).

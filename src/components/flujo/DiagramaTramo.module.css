@@ -1,0 +1,234 @@
+.contenedor {
+  min-width: 0;
+}
+
+.pista {
+  margin: 0 0 6px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.diagrama {
+  padding: 24px 16px 28px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-2);
+}
+
+/* Todo el dibujo vive en un lienzo que ocupa el ancho disponible y solo se
+   ensancha cuando ni con los textos en varias líneas entra: en ese caso el
+   contenedor se desplaza y las ramas siguen alineadas con su decisión. */
+.lienzo {
+  display: flex;
+  width: 100%;
+  min-width: min-content;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Nodos */
+
+.nodo {
+  --tono: var(--border-strong);
+
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 12px;
+  border: 2px solid var(--tono);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--tono) 12%, var(--surface));
+  color: var(--text);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+}
+
+button.nodoEnlace {
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button.nodoEnlace:hover {
+  background: color-mix(in srgb, var(--tono) 24%, var(--surface));
+}
+
+.inicio {
+  --tono: var(--primary);
+
+  max-width: 200px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.entrada {
+  --tono: var(--flujo-info);
+
+  border-style: dashed;
+}
+
+.accion {
+  background: var(--surface);
+}
+
+.decision {
+  --tono: var(--flujo-decision);
+
+  border-left-width: 6px;
+}
+
+.enlace {
+  --tono: var(--flujo-link);
+
+  border-radius: 24px;
+}
+
+.retorno {
+  --tono: var(--flujo-warn);
+
+  border-style: dashed;
+  border-radius: 24px;
+}
+
+.fin,
+.finMalo,
+.finAviso,
+.finNeutro,
+.finHumano {
+  border-radius: 24px;
+  font-weight: 700;
+}
+
+.fin {
+  --tono: var(--flujo-ok);
+}
+
+.finMalo {
+  --tono: var(--flujo-bad);
+}
+
+.finAviso {
+  --tono: var(--flujo-warn);
+}
+
+.finNeutro {
+  --tono: var(--border-strong);
+}
+
+.finHumano {
+  --tono: var(--flujo-human);
+}
+
+/* Flecha entre pasos */
+
+.flecha {
+  width: 12px;
+  height: 20px;
+  flex-shrink: 0;
+  background: var(--border-strong);
+  clip-path: polygon(42% 0, 58% 0, 58% 58%, 100% 58%, 50% 100%, 0 58%, 42% 58%);
+}
+
+/* Bifurcaciones: un tallo baja desde la decisión y cada rama cuelga de una
+   línea horizontal. */
+
+.ramas {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding-top: 16px;
+}
+
+.ramas::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  width: 2px;
+  height: 16px;
+  background: var(--border-strong);
+}
+
+.rama {
+  position: relative;
+  display: flex;
+  min-width: 112px;
+  padding: 16px 4px 0;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rama::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: var(--border-strong);
+}
+
+.rama:first-child::before {
+  left: 50%;
+}
+
+.rama:last-child::before {
+  right: 50%;
+}
+
+.rama:only-child::before {
+  display: none;
+}
+
+.rama::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  width: 2px;
+  height: 16px;
+  background: var(--border-strong);
+}
+
+.etiqueta {
+  --tono: var(--border-strong);
+
+  padding: 3px 10px;
+  border: 1px solid var(--tono);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--tono) 14%, var(--surface));
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.etiquetaSi {
+  --tono: var(--flujo-ok);
+}
+
+.etiquetaNo {
+  --tono: var(--flujo-bad);
+}
+
+.etiquetaCiclo {
+  --tono: var(--flujo-warn);
+}
+
+.nota {
+  max-width: 300px;
+  margin: 12px 0 0;
+  padding: 6px 12px;
+  border: 1px dashed var(--border-strong);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  text-align: center;
+}

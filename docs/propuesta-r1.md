@@ -4,8 +4,6 @@ Documento conceptual correspondiente a la propuesta de solución agéntica para 
 
 > **Criterio metodológico y delimitación de alcance:** Este documento describe un diseño estrictamente conceptual y expositivo para un futuro agente. Conforme a las restricciones del proyecto (`REQ-ALC-01`), no implica la implementación de modelos de inteligencia artificial en ejecución, llamadas a APIs externas ni backend operativo. En cada sección se distingue explícitamente lo que proviene de la sentencia normativa de aquello que constituye un supuesto de diseño formulado por el equipo.
 
-> **Estado de los acuerdos:** Los supuestos de diseño incluidos en la sección 8 fueron confirmados por los coordinadores de R1 y R2 (Candelaria Chazarreta y Marcos Aquino). Su ratificación por Federico Acosta Maneiro y Victoria Mariani continúa pendiente mediante comentarios en los Pull Requests correspondientes. La definición técnica del esquema de diagramas también debe coordinarse con Victoria, responsable de la integración. No quedan puntos de diseño de esta propuesta pendientes de confirmación entre los coordinadores de R1 y R2.
-
 ---
 
 ## 1. Título y Beneficio de la Propuesta
@@ -230,8 +228,3 @@ Los siguientes puntos son supuestos de diseño del grupo confirmados explícitam
 - `no viable` no se incluye entre los tres estados que impiden una nueva evaluación automática; la política de no reapertura se limita a `vencido`, `rechazado` y `escalado`.
 
 ---
-
-## 9. Puntos aún Abiertos
-
-1. **Formato técnico e integración de los diagramas:** Acordar con Victoria Mariani (Rol 4) el modelo de datos, la tecnología concreta de representación en React (por ejemplo, SVG o estructuras HTML/CSS), la accesibilidad textual y el flujo de integración mediante Pull Request. Los requisitos funcionales compartidos ya están definidos en la sección 8.1.
-2. **Parámetros ilustrativos de plataforma:** El máximo de tres derivaciones y el plazo de siete días para la espera en R2 son ejemplos de configuración, no valores impuestos por las sentencias. La plataforma deberá definir sus valores definitivos. Tampoco se fijó un plazo para la validación humana de C2; si se necesita limitar esa espera, deberá establecerse como parámetro independiente, sin aplicar automáticamente el plazo de R2.

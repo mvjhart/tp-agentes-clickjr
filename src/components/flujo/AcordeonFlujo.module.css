@@ -1,0 +1,69 @@
+.lista {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  list-style: none;
+}
+
+.item {
+  --banda: var(--primary);
+
+  padding-bottom: 24px;
+}
+
+.item[data-nivel] {
+  padding-left: 20px;
+  border-left: 4px solid var(--banda);
+}
+
+.item[data-nivel='tronco'] {
+  --banda: var(--primary);
+}
+
+.item[data-nivel='directo'] {
+  --banda: var(--flujo-ok);
+}
+
+.item[data-nivel='excepcion'] {
+  --banda: var(--flujo-warn);
+}
+
+.item:last-child {
+  padding-bottom: 0;
+}
+
+/* Más aire antes de un mensaje o de un nuevo nivel */
+.itemSeparado {
+  margin-top: 16px;
+}
+
+.nivel {
+  display: flex;
+  margin-bottom: 16px;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nivelTitulo {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.nivelDescripcion {
+  max-width: 70ch;
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.aviso {
+  margin: 0 0 20px;
+  padding: 12px 16px;
+  border: 1px dashed var(--border-strong);
+  border-radius: 10px;
+  background: var(--surface);
+  font-size: 0.925rem;
+  line-height: 1.5;
+}

@@ -1,0 +1,232 @@
+.tramo {
+  --banda: var(--primary);
+
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.tramo[data-nivel='tronco'] {
+  --banda: var(--primary);
+}
+
+.tramo[data-nivel='directo'] {
+  --banda: var(--flujo-ok);
+}
+
+.tramo[data-nivel='excepcion'] {
+  --banda: var(--flujo-warn);
+}
+
+.tramo[open] {
+  border-color: var(--banda);
+}
+
+.cabecera {
+  display: flex;
+  min-height: 64px;
+  padding: 14px 20px;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  scroll-margin-top: 96px;
+  transition: background-color 0.2s ease;
+}
+
+.cabecera:hover {
+  background: var(--surface-2);
+}
+
+.cabecera::-webkit-details-marker {
+  display: none;
+}
+
+/* El contorno queda hacia adentro porque .tramo recorta lo que sobresale. */
+.cabecera:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: -3px;
+}
+
+.numero {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  border: 1px solid var(--banda);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--banda) 16%, var(--surface));
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.titulos {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  margin: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.titulo {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.sintesis {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.tramo[open] .chevron {
+  transform: rotate(180deg);
+}
+
+/* Chips de procedencia y destino */
+
+.chips {
+  display: flex;
+  margin: 0;
+  padding: 14px 20px 0;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-top: 1px solid var(--border);
+  list-style: none;
+}
+
+.chip {
+  display: block;
+  padding: 5px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.chipEnlace {
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.chipEnlace:hover {
+  background: var(--accent-soft);
+}
+
+.chipCiclo {
+  border-style: dashed;
+  border-color: var(--flujo-warn);
+  background: var(--flujo-warn-soft);
+}
+
+.chipFin {
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+}
+
+/* Cuerpo: explicación a la izquierda, diagrama a la derecha */
+
+.cuerpo {
+  display: grid;
+  padding: 18px 20px 28px;
+  grid-template-columns: minmax(0, 9fr) minmax(0, 11fr);
+  align-items: start;
+  gap: 32px;
+}
+
+.descripcion {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.descripcion h4 {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.descripcion p,
+.descripcion ul {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.descripcion p + p {
+  margin-top: 8px;
+}
+
+.descripcion ul {
+  display: flex;
+  padding-left: 18px;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Secciones resaltadas */
+
+.bloque {
+  --marca: var(--border-strong);
+
+  padding: 12px 16px;
+  border-left: 4px solid var(--marca);
+  border-radius: 0 10px 10px 0;
+  background: color-mix(in srgb, var(--marca) 10%, var(--surface));
+}
+
+.sentencia {
+  --marca: var(--primary);
+}
+
+.supuesto {
+  --marca: var(--accent);
+}
+
+.humana {
+  --marca: var(--flujo-human);
+}
+
+@media (max-width: 800px) {
+  .cabecera {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .titulo {
+    font-size: 0.98rem;
+  }
+
+  .numero {
+    padding: 3px 10px;
+    font-size: 0.78rem;
+  }
+
+  .chips {
+    padding: 12px 16px 0;
+  }
+
+  /* Primero la información, después el diagrama completo */
+  .cuerpo {
+    padding: 16px 16px 20px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+}

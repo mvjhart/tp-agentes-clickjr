@@ -137,8 +137,6 @@ Como alternativa considerada y no adoptada por los coordinadores de R1 y R2: si 
 
 ## 7. Correspondencia y Acuerdos con Candelaria Chazarreta (Rol 2 · R1)
 
-**Estado:** Confirmado entre los coordinadores de R1 y R2 (Candelaria Chazarreta y Marcos Aquino), con ratificación pendiente de Federico Acosta Maneiro y Victoria Mariani mediante comentarios en el Pull Request. Nada de lo registrado en esta sección es una decisión aprobada por el equipo.
-
 ### Tabla de correspondencia entre condiciones de R2 y R1
 
 | Elemento R2 | Enunciado en R2 | Elemento R1 | Enunciado en R1 | Relación conceptual |

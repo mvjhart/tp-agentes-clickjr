@@ -42,8 +42,12 @@ function DiagramaCompleto({ codigo, titulo, nombreArchivo }) {
     setErrorDescarga(false)
 
     try {
-      // Se descarga siempre con el tema claro, para que se lea en cualquier visor.
-      const contenido = await generarSvg(codigo, 'light')
+      // Se descarga siempre con tema claro y en modo portable, para que el
+      // archivo sea un SVG válido y se lea en cualquier visor.
+      const contenido = await generarSvg(codigo, {
+        tema: 'light',
+        portable: true,
+      })
       descargarSvg(contenido, nombreArchivo)
     } catch {
       setErrorDescarga(true)

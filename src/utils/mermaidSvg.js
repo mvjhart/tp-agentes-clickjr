@@ -50,18 +50,23 @@ export function obtenerTemaActual() {
     : 'light'
 }
 
-async function renderizar(codigo, tema) {
+async function renderizar(codigo, tema, portable) {
   const mermaid = await cargarMermaid()
 
+  // Con htmlLabels el texto va en HTML dentro de <foreignObject>: se ve bien en
+  // la página, pero no es XML válido ni se abre en editores de imagen.
+  // En modo portable el texto se dibuja como SVG puro.
   mermaid.initialize({
     startOnLoad: false,
     theme: 'base',
     themeVariables: VARIABLES_POR_TEMA[tema],
+    htmlLabels: !portable,
     flowchart: {
-      htmlLabels: true,
+      htmlLabels: !portable,
       curve: 'basis',
       padding: 20,
-      useMaxWidth: true,
+      // En modo portable el SVG lleva su tamaño real (sin width="100%").
+      useMaxWidth: !portable,
     },
   })
 
@@ -72,14 +77,18 @@ async function renderizar(codigo, tema) {
 }
 
 /**
- * Devuelve (como promesa) el SVG del diagrama. El resultado se guarda por
- * tema y código, y los renders se hacen de a uno para que no se pisen.
+ * Devuelve (como promesa) el SVG del diagrama.
+ * - tema: 'light' o 'dark' (por defecto, el de la página).
+ * - portable: true para generar un SVG válido como archivo independiente.
+ * El resultado se guarda por tema, modo y código, y los renders se hacen de a
+ * uno para que no se pisen.
  */
-export function generarSvg(codigo, tema = obtenerTemaActual()) {
-  const clave = `${tema}::${codigo}`
+export function generarSvg(codigo, { tema, portable = false } = {}) {
+  const temaFinal = tema ?? obtenerTemaActual()
+  const clave = `${temaFinal}::${portable ? 'portable' : 'pagina'}::${codigo}`
 
   if (!cache.has(clave)) {
-    const tarea = cola.then(() => renderizar(codigo, tema))
+    const tarea = cola.then(() => renderizar(codigo, temaFinal, portable))
 
     cola = tarea.catch(() => {})
     cache.set(clave, tarea)

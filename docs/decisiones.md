@@ -146,3 +146,13 @@ Este archivo almacena el historial cronológico de decisiones técnicas, funcion
 - **Decisión:** Utilizar la biblioteca Mermaid como dependencia de producción para renderizar el diagrama de flujo completo de la propuesta R1 (y potencialmente R2), permitiendo su exportación a formato SVG mediante código declarativo.
 - **Justificación y alternativas:** Se evaluó construir el diagrama completo dibujando SVG a mano (como en la primera versión), pero Mermaid facilita la representación de grafos complejos con múltiples ramas y retornos, reduciendo la cantidad de código necesario para su mantenimiento. Se importa de forma dinámica para no afectar el tamaño del bundle inicial.
 - **Reemplaza a:** N/A
+
+### [DEC-013] Mantenimiento exclusivo de la identidad institucional de ClickJr
+
+- **Fecha:** 2026-11-23
+- **Estado:** Vigente
+- **Propuesto por:** Equipo de trabajo / Victoria Mariani
+- **Aprobado por:** Victoria Mariani
+- **Decisión:** Conservar y aplicar de manera exclusiva la identidad gráfica, imagotipo y colores institucionales originales de la startup ClickJr, descartando la creación o incorporación de un nombre y logotipo de consultora o grupo generado con IA.
+- **Justificación y alternativas:** La consigna (`REQ-LAN-04`) exige el uso estricto y visible del logotipo oficial de ClickJr y establece la identidad grupal como una alternativa opcional. El equipo resolvió enfocar todos los recursos visuales y de desarrollo en la representación clara, legible y profesional de ClickJr y en la explicación didáctica de las sentencias agénticas asignadas, evitando duplicidad marcaria o elementos accesorios que no aporten valor explicativo.
+- **Reemplaza a:** N/A

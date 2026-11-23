@@ -4,6 +4,44 @@ Bitácora cronológica y concisa de hitos y modificaciones significativas del pr
 
 ---
 
+## [2026-11-23] - Integración técnica final, definición visual, pruebas integrales y decisión de identidad (Tareas T11, T12 y T13)
+
+- **Resumen:**
+  - Coordinación de la integración técnica final de todos los módulos desarrollados en la landing page (`src/pages/Inicio/`, `src/pages/PropuestaR1/`, `src/pages/PropuestaR2/`, layout general y navegación centralizada en `navigation.js`), completando la Tarea T12 bajo la coordinación de Victoria Mariani.
+  - Consolidación del diseño visual general (Tarea T11) mediante la unificación de tokens globales de estilo (`src/styles/global.css`), tokens semánticos compartidos de flujo (`src/components/flujo/flujo-tokens.css`), y verificación de legibilidad y contraste en temas claro y oscuro, documentado en `docs/diseno-visual.md`.
+  - Formalización de la decisión [DEC-013](decisiones.md#dec-013-mantenimiento-exclusivo-de-la-identidad-institucional-de-clickjr) en `docs/decisiones.md`: conservación exclusiva de la identidad institucional original de ClickJr, descartando la creación de un nombre o logotipo de consultora generado por IA.
+  - Realización y documentación de las pruebas y revisión integral del proyecto (Tarea T13) en Linux Fedora KDE sobre Mozilla Firefox y Brave Browser, constatando accesibilidad por teclado, persistencia de temas, recorridos lógicos y registrando dos incidencias visuales/técnicas para su corrección (`docs/registro-pruebas.md`).
+  - Verificación satisfactoria de calidad y compilación con `npm run lint` y `npm run build`.
+- **Archivos creados:**
+  - `docs/diseno-visual.md` (especificación del sistema visual, paleta de colores y tokens)
+  - `docs/registro-pruebas.md` (protocolo y resultados de las pruebas integrales)
+- **Archivos modificados:**
+  - `docs/decisiones.md`
+  - `docs/estado.md`
+  - `docs/historial.md`
+  - `README.md`
+
+---
+
+## [2026-11-22] - Módulo interactivo de PostuAyuda con acordeón y diagrama (Tarea T10)
+
+- **Resumen:**
+  - Implementación del módulo interactivo de la propuesta R2 (PostuAyuda) en `src/pages/PropuestaR2/`, completando la Tarea T10 (Issue #15) bajo la coordinación de Marcos Aquino.
+  - Reutilización de los componentes compartidos de flujo (`src/components/flujo/`) creados en T9: `AcordeonFlujo`, `TramoFlujo`, `DiagramaTramo` y `DiagramaCompleto`.
+  - Configuración del recorrido en 4 tramos con chips interactivos de navegación, distinción entre sentencias y supuestos, y exportación del diagrama en formato SVG.
+  - Creación del diagrama completo declarativo con Mermaid en `src/pages/PropuestaR2/datos/diagramaPostuAyuda.js` y los datos estructurados en `src/pages/PropuestaR2/datos/tramosPostuAyuda.js`.
+  - Verificación exitosa de compilación (`npm run build`), análisis estático (`npm run lint`), navegación por teclado y soporte de temas claro y oscuro.
+- **Archivos creados:**
+  - `src/pages/PropuestaR2/datos/diagramaPostuAyuda.js`
+  - `src/pages/PropuestaR2/datos/tramosPostuAyuda.js`
+- **Archivos modificados:**
+  - `src/pages/PropuestaR2/PropuestaR2.jsx`
+  - `src/pages/PropuestaR2/PropuestaR2.module.css`
+  - `README.md`
+  - `docs/historial.md`
+
+---
+
 ## [2026-11-21] - Módulo de R1 con acordeón por tramos y diagrama completo (Tarea T9)
 
 - **Resumen:**
@@ -82,6 +120,25 @@ Bitácora cronológica y concisa de hitos y modificaciones significativas del pr
   - `src/pages/Inicio/Inicio.module.css`
   - `docs/estado.md`
   - `docs/historial.md`
+
+---
+
+## [2026-11-19] - Optimización de temas claro/oscuro y tarjetas de contexto en Inicio
+
+- **Resumen:**
+  - Simplificación y centralización de las variables CSS de los temas claro y oscuro en `:root` dentro de `src/styles/global.css`, eliminando duplicaciones en bloques automáticos y priorizando el valor persistido en `localStorage` sobre la preferencia del sistema operativo.
+  - Creación del componente reutilizable `ContextCard` (`src/pages/Inicio/ContextCard.jsx` y su módulo de estilos) para presentar las tarjetas informativas de contexto institucional (origen en IFTS 16) y problemática que aborda ClickJr en la página de inicio.
+  - Ampliación del catálogo de íconos vectoriales SVG en `src/components/shared/Icon.jsx` para dar soporte a las nuevas tarjetas de contexto.
+  - Trabajo realizado por Victoria Mariani en el commit `dd36aaa` (PR #23).
+- **Archivos creados:**
+  - `src/pages/Inicio/ContextCard.jsx`
+  - `src/pages/Inicio/ContextCard.module.css`
+- **Archivos modificados:**
+  - `index.html`
+  - `src/components/shared/Icon.jsx`
+  - `src/pages/Inicio/Inicio.jsx`
+  - `src/pages/Inicio/Inicio.module.css`
+  - `src/styles/global.css`
 
 ---
 

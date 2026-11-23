@@ -69,6 +69,17 @@ TP-Agentes/
 │           └── clickjr-og.webp
 ├── src/
 │   ├── components/
+│   │   ├── flujo/
+│   │   │   ├── AcordeonFlujo.jsx
+│   │   │   ├── AcordeonFlujo.module.css
+│   │   │   ├── DiagramaCompleto.jsx
+│   │   │   ├── DiagramaCompleto.module.css
+│   │   │   ├── DiagramaTramo.jsx
+│   │   │   ├── DiagramaTramo.module.css
+│   │   │   ├── TramoFlujo.jsx
+│   │   │   ├── TramoFlujo.module.css
+│   │   │   ├── destinoTramo.js
+│   │   │   └── flujo-tokens.css
 │   │   ├── layout/
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Footer.module.css
@@ -99,13 +110,22 @@ TP-Agentes/
 │   │   │   ├── NoEncontrada.jsx
 │   │   │   └── NoEncontrada.module.css
 │   │   ├── PropuestaR1/
+│   │   │   ├── datos/
+│   │   │   │   ├── diagramaAutoPost.js
+│   │   │   │   └── tramosAutoPost.js
 │   │   │   ├── PropuestaR1.jsx
 │   │   │   └── PropuestaR1.module.css
 │   │   └── PropuestaR2/
+│   │       ├── datos/
+│   │       │   ├── diagramaPostuAyuda.js
+│   │       │   └── tramosPostuAyuda.js
 │   │       ├── PropuestaR2.jsx
 │   │       └── PropuestaR2.module.css
 │   ├── styles/
 │   │   └── global.css
+│   ├── utils/
+│   │   ├── descargarSvg.js
+│   │   └── mermaidSvg.js
 │   ├── App.jsx
 │   └── main.jsx
 ├── docs/
@@ -114,6 +134,8 @@ TP-Agentes/
 │   │   └── etiquetas.md
 │   ├── analisis-r1.md
 │   ├── propuesta-r1.md
+│   ├── analisis-r2.md
+│   ├── propuesta-r2.md
 │   ├── consigna.md
 │   ├── contexto.md
 │   ├── decisiones.md
@@ -121,6 +143,8 @@ TP-Agentes/
 │   ├── organizacion.md
 │   ├── historial.md
 │   ├── convenciones-commits.md
+│   ├── diseno-visual.md
+│   ├── registro-pruebas.md
 │   └── CONTRIBUTING.md
 ├── .gitignore
 ├── .prettierignore
@@ -164,6 +188,8 @@ La documentación compartida en `docs/` centraliza la memoria persistente del pr
 | [`docs/propuesta-r1.md`](docs/propuesta-r1.md)                 | Propuesta conceptual de solución agéntica para R1 (T5): herramientas, caminos del sí y del no, caso límite, intervención humana y alternativas de diseño.                                   | Para consultar la propuesta antes de construir el diagrama y el desplegable de R1 (T9).  |
 | [`docs/analisis-r2.md`](docs/analisis-r2.md)                   | Ficha de análisis lógico de la sentencia R2 (T4): estructura base B1/B2/B3, faltantes F1/F2/F3, consecuencia doble (solicitar + no enviar) e interpretaciones rotuladas.                    | Para conocer cómo se desarmó R2 antes de proponer la solución.                           |
 | [`docs/propuesta-r2.md`](docs/propuesta-r2.md)                 | Propuesta conceptual de solución agéntica para R2 (T6): herramientas, camino del SÍ en 7 pasos, handoff R1↔R2, camino del NO, vencimiento, tope, caso abierto único y 13 acuerdos (I1–I13). | Para consultar la propuesta antes de construir el diagrama y el desplegable de R2 (T10). |
+| [`docs/diseno-visual.md`](docs/diseno-visual.md)               | Especificación del sistema visual (T11): paleta de colores para temas claro y oscuro, tipografía y tokens semánticos de diagramas de flujo.                                                   | Para consultar o extender los criterios estéticos y variables CSS compartidas.            |
+| [`docs/registro-pruebas.md`](docs/registro-pruebas.md)         | Protocolo y resultados de las pruebas integrales (T13): matriz de requisitos, entorno de ejecución (Firefox/Brave en Fedora) e incidencias detectadas.                                      | Para verificar el cumplimiento de los criterios de cátedra e incidencias pendientes.       |
 
 ---
 
@@ -227,8 +253,8 @@ El equipo acordó la organización del proyecto según lo establecido en [`docs/
 | --------------------------- | ------------------------------------------------------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Federico Acosta Maneiro** | [federicosd06-dev](https://github.com/federicosd06-dev) | Rol 1 (Presentación y contenido de ClickJr) | Desarrollo del módulo de presentación de ClickJr (T8, `src/pages/Inicio/`): Servicio y problema que atiende, reconocimiento del origen en IFTS 16, bloque asignado, equipo IFTS 29 y las dos sentencias originales mediante el componente `SentenceCard`. Revisó visualmente el módulo en ambos temas, comparó las sentencias contra el caso asignado, ejecutó las verificaciones (lint, build, format) y abrió el Pull Request desde la rama `feat/modulo-presentacion`.                                                        |
 | **Candelaria Chazarreta**   | [kndxt](https://github.com/kndxt)                       | Rol 2 (Análisis y propuesta de solución R1) | Análisis lógico de la sentencia R1 (T3) y definición conceptual de la propuesta agéntica de R1 (T5). Planteó el riesgo de privacidad de transmitir datos personales sin confirmación explícita, lo que llevó a incorporar alternativas de confirmación en la propuesta. Desarrolló el módulo interactivo de R1 (T9, `src/pages/PropuestaR1/`), con acordeón por tramos, diagramas HTML/CSS y descarga del diagrama completo en SVG, además de coordinar la creación de los componentes reutilizables en `src/components/flujo/`. |
-| **Marcos Aquino**           | [Marcos028](https://github.com/Marcos028)               | Rol 3 (Análisis y propuesta de solución R2) | Análisis lógico de la sentencia R2 (T4, `docs/analisis-r2.md`) y definición conceptual de la propuesta agéntica de R2 (T6, `docs/propuesta-r2.md`). Detectó el solapamiento entre el caso "compatible" de R2 y "cumple requisitos" de R1, que derivó en la equivalencia B2=C2 ratificada en el PR #24. Identificó el requisito de re-chequeo en dos momentos (al recibir el caso y al reanudar) y coordinó los 13 acuerdos de integración R1–R2 (derivación, estados de retorno, caso abierto único, tope de reintentos). También propuso el enfoque de visualización de diagramas (SVG de Graphviz preservado + zoom + panel interactivo con click por nodo + desplegable con las 7 secciones de REQ-LAN-06). |
-| **Victoria Mariani**        | [mvjhart](https://github.com/mvjhart)                   | Rol 4 (Estructura e integración técnica)    | Inicialización del repositorio Git, diseño del sistema de documentación persistente (`docs/`), redacción de `AGENTS.md`, `docs/convenciones-commits.md` y `docs/CONTRIBUTING.md`, scaffolding de React con Vite, estructura y navegación general responsive de ClickJr (Tarea T7), selector de tema claro/oscuro, puesta en marcha del despliegue en Vercel y configuración del workflow de CI con GitHub Actions.                                                                                                               |
+| **Marcos Aquino**           | [Marcos028](https://github.com/Marcos028)               | Rol 3 (Análisis y propuesta de solución R2) | Análisis lógico de la sentencia R2 (T4, `docs/analisis-r2.md`) y definición conceptual de la propuesta agéntica de R2 (T6, `docs/propuesta-r2.md`). Detectó el solapamiento entre el caso "compatible" de R2 y "cumple requisitos" de R1, que derivó en la equivalencia B2=C2 ratificada en el PR #24. Identificó el requisito de re-chequeo en dos momentos (al recibir el caso y al reanudar) y coordinó los 13 acuerdos de integración R1–R2 (derivación, estados de retorno, caso abierto único, tope de reintentos). Desarrolló el módulo interactivo de R2 (T10, `src/pages/PropuestaR2/`), adaptando el contenido de PostuAyuda al acordeón por tramos, diagrama declarativo con Mermaid y exportación SVG mediante la reutilización de los componentes compartidos de flujo. |
+| **Victoria Mariani**        | [mvjhart](https://github.com/mvjhart)                   | Rol 4 (Estructura e integración técnica)    | Inicialización del repositorio Git, diseño del sistema de documentación persistente (`docs/`), redacción de `AGENTS.md`, `docs/convenciones-commits.md` y `docs/CONTRIBUTING.md`, scaffolding de React con Vite, estructura y navegación general responsive de ClickJr (Tarea T7), optimización de temas claro/oscuro y tarjetas de contexto institucional en Inicio (commit `dd36aaa`), coordinación de la definición del diseño visual general (Tarea T11) y de la integración técnica final de todos los módulos en la landing page (Tarea T12), puesta en marcha del despliegue en Vercel y configuración del workflow de CI con GitHub Actions. |
 
 ---
 
@@ -238,13 +264,10 @@ El equipo acordó la organización del proyecto según lo establecido en [`docs/
 
 | Integrante              | Entorno / Aplicación | Modelo exacto    | Tarea / Uso específico                                                                  | Modificaciones o ajustes solicitados |
 | ----------------------- | -------------------- | ---------------- | --------------------------------------------------------------------------------------- | ------------------------------------ |
-| Federico Acosta Maneiro | Antigravity          | Gemini 3.8 Flash | Generación del módulo de presentación (T8), de la redacción del problema y el servicio. |
-
-                                                                          |
-
-| Candelaria Chazarreta | Antigravity | Gemini 3.8 Flash (High) | Elaboración de la ficha de análisis lógico de R1 (T3), propuesta conceptual de R1 (T5) y desarrollo del módulo interactivo de R1 (T9). | Ver "Evidencia de iteración" debajo de la tabla. |
-| Marcos Aquino | Antigravity | Claude Sonnet 4.6 (thinking) | Elaboración de la ficha de análisis lógico de R2 (T4), propuesta conceptual de R2 (T6) y exploración del módulo interactivo de R2 (T10). | Ver "Evidencia de iteración — Marcos Aquino" debajo de la tabla. |
-| Victoria Mariani | Antigravity / CLI | Gemini 3.8 Flash | Configuración de documentación, protocolos agénticos, entorno Vite/React, estructura y navegación general responsive (T7), despliegue en Vercel y workflow de CI | Ajustes en las pautas de verificación inicial de Git, estructuración modular de landing, navegación segmentada y dock móvil, prevención de FOUC de temas, reglas de ESLint/Prettier y workflow de GitHub Actions |
+| Federico Acosta Maneiro | Antigravity          | Gemini 3.8 Flash | Generación del módulo de presentación (T8), de la redacción del problema y el servicio. | Pendiente de registrar evidencia de iteración en subsección propia. |
+| Candelaria Chazarreta   | Antigravity          | Gemini 3.8 Flash (High) | Elaboración de la ficha de análisis lógico de R1 (T3), propuesta conceptual de R1 (T5) y desarrollo del módulo interactivo de R1 (T9). | Ver "Evidencia de iteración — Candelaria Chazarreta" debajo de la tabla. |
+| Marcos Aquino           | Antigravity          | Claude Sonnet 4.6 (thinking) | Elaboración de la ficha de análisis lógico de R2 (T4), propuesta conceptual de R2 (T6) y desarrollo del módulo interactivo de R2 (T10). | Ver "Evidencia de iteración — Marcos Aquino" debajo de la tabla. |
+| Victoria Mariani        | Antigravity / CLI    | Gemini 3.8 Flash | Configuración de documentación, protocolos agénticos, entorno Vite/React, estructura y navegación responsive (T7), tarjetas de contexto (PR #23), diseño visual (T11), integración de módulos (T12), despliegue en Vercel y workflow de CI | Ajustes en las pautas de verificación inicial de Git, estructuración modular de landing, navegación segmentada y dock móvil, componentes ContextCard, tokens de diseño y temas, y coordinación técnica |
 
 #### Evidencia de iteración — Candelaria Chazarreta (R1)
 
@@ -256,7 +279,7 @@ Las revisiones, verificaciones y detección de problemas de cada versión fueron
 
 **Módulo interactivo de R1 (T9).** Instrucción inicial: construir la página de AutoPost con un acordeón por tramos, diagramas en HTML/CSS y la opción de ver/descargar el diagrama completo. Problemas detectados: el primer diseño (probado en demo) usaba CDN para Mermaid, lo cual era incorrecto para Vite; había un exceso de espacios en blanco (trailing whitespace) que rompía las convenciones de Git; y las advertencias de formato de Prettier eran globales por el tema de los saltos de línea CRLF. Pedido de mejora: instalar Mermaid como dependencia de producción, corregir el formato exclusivamente de los archivos de T9, y ajustar la responsividad para que en móvil la descripción quede arriba y el diagrama abajo. Resultado: componente finalizado en la rama `feat/modulo-r1`, verificado con lint, build y pruebas manuales de teclado/temas.
 
-#### Evidencia de iteración — Marcos Aquino (T4 y T6)
+#### Evidencia de iteración — Marcos Aquino (T4, T6 y T10)
 
 **T4 — Ficha de análisis lógico de R2 (`docs/analisis-r2.md`, PR #25)**
 
@@ -271,6 +294,12 @@ Las revisiones, verificaciones y detección de problemas de cada versión fueron
 - **Instrucción inicial:** prompt con estructura espejo de `propuesta-r1.md` (título y beneficio, rol del agente, notación compartida, herramientas conceptuales, camino del SÍ, handoff R1↔R2, camino del NO, vencimiento/reintentos/caso abierto único, casos límite, resultado esperado, acuerdos I1–I13).
 - **Sin correcciones de contenido:** el agente respetó la estructura y los acuerdos de `analisis-r1.md` §7 desde la primera pasada.
 - **Incidencia técnica registrada:** el primer commit (`a26b9bd`) se corrompió por un problema de PowerShell con el parámetro `-m` en mensajes multilínea (concatenación errónea, `\x0a` literales, UUIDs al final del string). Se corrigió con `git commit --amend -F archivo.txt` usando `Out-File -Encoding ascii`, generando el commit limpio `69495b3`, luego reemplazado por `3ba8b6d` tras un ...cherry-pick para sacar T6 del squash merge de T4.
+
+**T10 — Módulo interactivo de R2 (`src/pages/PropuestaR2/`, PR #32)**
+
+- **Instrucción inicial:** Desarrollar el módulo interactivo de PostuAyuda reutilizando la suite de componentes de flujo (`src/components/flujo/`) creada en T9, construyendo los cuatro tramos de acordeón y el diagrama declarativo en Mermaid.
+- **Implementación y validaciones:** Generación de `tramosPostuAyuda.js` y `diagramaPostuAyuda.js`, configuración de chips de navegación inter-tramo, integración de exportación SVG y verificación de funcionamiento en temas claro y oscuro.
+- **Resultado:** Integración completa de la propuesta R2 validada con `npm run lint` y `npm run build` sin errores, manteniendo coherencia con el diseño y la accesibilidad por teclado establecida para el proyecto.
 
 ---
 

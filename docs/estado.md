@@ -6,22 +6,11 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 
 ## 1. Tareas en curso y pendientes
 
-### Tareas inmediatas (pueden iniciarse)
+### Tareas inmediatas (en curso)
 
-- [ ] Elaborar la ficha lógica de la sentencia R2 de ClickJr según el paso 2.3 de la consigna (Responsable: Marcos Aquino / Rol 3 - Tarea T4).
-- [ ] Redactar el borrador conceptual de la propuesta agéntica R2 (paso 2.4 - Tarea T6) (Responsable: Marcos Aquino / Rol 3).
-
-### Tareas pendientes de definición del equipo o condicionadas
-
-- [ ] Definir el formato técnico para los diagramas de flujo en React (componentes SVG / HTML+CSS / imágenes acompañadas de texto).
-- [ ] Definir si el grupo utilizará la opción de identidad propia (nombre de grupo/consultora y logo con IA).
-- [ ] Desarrollar el módulo de la propuesta R1 con su diagrama y desplegable (Tarea T9 / Candelaria Chazarreta), una vez acordados con Marcos Aquino los puntos indicados en la sección 2.
-- [ ] Desarrollar el módulo de la propuesta R2 con su diagrama y desplegable (Tarea T10 / Marcos Aquino).
-- [ ] Completar el diseño visual de la landing page (Tarea T11), en coordinación con el contenido y los módulos.
-- [ ] Integrar los componentes y módulos en la landing page (Tarea T12).
-- [ ] Realizar las pruebas, verificaciones y revisión integral del proyecto (Tarea T13).
-- [ ] Completar el registro de aportes y herramientas de IA en el `README.md` a medida que avance el desarrollo (Tarea T14).
-- [ ] Comprobar la accesibilidad pública y el correcto funcionamiento en producción de la landing page y todos sus módulos integrados tras completar el desarrollo (Tarea T15 - `REQ-PUB-01` y `REQ-PUB-02`).
+- [ ] Subsanar las incidencias detectadas durante las pruebas (T13): exportación de texto en SVG de Mermaid y unificación del margen del encabezado en `/propuesta-r2` (`docs/registro-pruebas.md`).
+- [ ] Completar las secciones pendientes de aportes individuales y registro de evidencias de iteración de IA en el `README.md` (Tarea T14 / Los cuatro integrantes).
+- [ ] Comprobar la accesibilidad pública y el correcto funcionamiento en producción de la landing page y todos sus módulos integrados en Vercel (Tarea T15 - `REQ-PUB-01` y `REQ-PUB-02` / Los cuatro integrantes).
 
 ### Completadas
 
@@ -55,40 +44,31 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 - [x] Implementar la estructura y navegación general de la landing page: navegación segmentada para escritorio, dock inferior para dispositivos móviles, configuración centralizada de rutas, componente compartido de íconos, selector de temas claro/oscuro con preferencia del sistema y persistencia en localStorage, footer con identidad visual y repositorio, y metadatos Open Graph con carga optimizada sin destello visual (Tarea T7 / Victoria Mariani).
 - [x] Configurar y poner en marcha el despliegue continuo en Vercel (https://tp-agentes-clickjr.vercel.app/), verificando la accesibilidad pública sin credenciales ni autenticación (DEC-003, REQ-PUB-01).
 - [x] Elaborar la ficha de análisis lógico de la sentencia R1: desglose de condiciones, datos necesarios y consecuencia, con las interpretaciones rotuladas frente a los supuestos de diseño del grupo (Tarea T3 / Candelaria Chazarreta · `docs/analisis-r1.md`, rama `feat/propuesta-r1`).
-- [x] Redactar la propuesta conceptual de solución agéntica para R1: herramientas de consulta, alternativas de confirmación y privacidad, orden de evaluación ante fallas múltiples, caso límite y puntos de coordinación con R2 (Tarea T5 / Candelaria Chazarreta · `docs/propuesta-r1.md`, rama `feat/propuesta-r1`). Las decisiones entre alternativas siguen pendientes de acuerdo del equipo.
-- [x] Desarrollar la primera versión del módulo de presentación de ClickJr: logo original con variantes clara y oscura, servicio y problema que atiende, origen en IFTS 16, bloque asignado, equipo IFTS 29 y las dos sentencias originales con su redacción exacta (Tarea T8 / Federico Acosta Maneiro · `src/pages/Inicio/`, rama `feat/modulo-presentacion`). Pendiente de revisión e integración en `master`.
+- [x] Redactar la propuesta conceptual de solución agéntica para R1: herramientas de consulta, alternativas de confirmación y privacidad, orden de evaluación ante fallas múltiples, caso límite y puntos de coordinación con R2 (Tarea T5 / Candelaria Chazarreta · `docs/propuesta-r1.md`, rama `feat/propuesta-r1`).
+- [x] Desarrollar el módulo de presentación de ClickJr: logo original con variantes clara y oscura, servicio y problema que atiende, origen en IFTS 16, bloque asignado, equipo IFTS 29 y las dos sentencias originales con su redacción exacta mediante `SentenceCard` y tarjetas de contexto `ContextCard` (Tarea T8 / Federico Acosta Maneiro y Victoria Mariani · `src/pages/Inicio/`, integrado en `master`).
 - [x] Elaborar la ficha de análisis lógico de la sentencia R2 (Tarea T4 / Marcos Aquino · `docs/analisis-r2.md`).
 - [x] Redactar la propuesta conceptual de solución agéntica para R2 (Tarea T6 / Marcos Aquino · `docs/propuesta-r2.md`).
-- [x] Desarrollar el módulo de la propuesta R1 con su diagrama y desplegable (Tarea T9 / Candelaria Chazarreta · `src/pages/PropuestaR1/`, rama `feat/modulo-r1`). Incluye acordeón interactivo, diagramas HTML/CSS y descarga del diagrama completo en SVG.
+- [x] Desarrollar el módulo de la propuesta R1 con su diagrama y desplegable (Tarea T9 / Candelaria Chazarreta · `src/pages/PropuestaR1/`). Incluye acordeón interactivo, diagramas HTML/CSS, suite compartida `src/components/flujo/` y descarga del diagrama completo en SVG mediante Mermaid ([DEC-012](decisiones.md#dec-012-adopción-de-mermaid-para-el-renderizado-de-diagramas-de-flujo)).
+- [x] Desarrollar el módulo de la propuesta R2 con su diagrama y desplegable (Tarea T10 / Marcos Aquino · `src/pages/PropuestaR2/`). Reutiliza los componentes compartidos de flujo, acordeón de 4 tramos y diagrama Mermaid interactivo de PostuAyuda.
+- [x] Definir y acordar el diseño visual general de la landing page, paleta de colores, tipografía, variables de tema claro/oscuro y tokens compartidos para diagramas de flujo (Tarea T11 / Los cuatro integrantes · `docs/diseno-visual.md`).
+- [x] Coordinar la integración técnica final de todos los módulos y componentes en la landing page (Inicio, PropuestaR1, PropuestaR2, navegación, layout y soporte responsive) (Tarea T12 / Victoria Mariani).
+- [x] Definir y ratificar el mantenimiento exclusivo de la identidad institucional de ClickJr, descartando la creación de logos o identidades de consultora con IA ([DEC-013](decisiones.md#dec-013-mantenimiento-exclusivo-de-la-identidad-institucional-de-clickjr)).
+- [x] Realizar las pruebas, verificaciones y revisión integral del proyecto en múltiples navegadores desktop, documentando los casos evaluados, incidencias detectadas y ajustes pendientes (Tarea T13 / Los cuatro integrantes · `docs/registro-pruebas.md`).
 
 ---
 
 ## 2. Dudas y decisiones que requieren aprobación humana
 
-### Propuestas técnicas y arquitectónicas en evaluación
-
-1. **Formato de los diagramas de flujo en React:**
-   - Alternativa A: componentes SVG interactivos o estilizados (escalables, livianos y accesibles).
-   - Alternativa B: componentes HTML/CSS modulares con Flexbox/Grid.
-   - Alternativa C: imágenes generadas o exportadas acompañadas de texto explicativo estructurado.
-
-2. **Identidad del grupo (opcional):**
-   - Evaluar si el equipo desea crear una identidad de consultora y un logo propio con IA, o enfocarse exclusivamente en la presentación institucional de ClickJr.
-
-### Preguntas pendientes
-
-- ¿El grupo desea incorporar una identidad propia opcional o mantener exclusivamente la identidad institucional de ClickJr?
+### Estado actual de definiciones
+- **Ninguna al momento.** Todas las decisiones técnicas, metodológicas y de identidad se encuentran acordadas por el equipo y formalizadas en [`docs/decisiones.md`](decisiones.md).
 
 ---
 
 ## 3. Próximos pasos recomendados
 
-1. Definir en equipo el formato de los diagramas de flujo para orientar el desarrollo de los módulos.
-2. Completar el diseño visual de la landing page (Tarea T11).
-3. Integrar los módulos y componentes desarrollados (Tarea T12).
-4. Realizar las pruebas, verificaciones y revisión integral (Tarea T13).
-5. Completar la documentación y el registro de aportes y herramientas de IA en el `README.md` (Tarea T14).
-6. Desplegar el proyecto en Vercel y verificar el acceso público a los enlaces requeridos (Tarea T15).
+1. Consolidar el registro documental de las pruebas y verificaciones integrales realizadas sobre la landing page integrada (Tarea T13 / `docs/registro-pruebas.md`).
+2. Completar las secciones pendientes de aportes individuales y evidencias de iteración de IA en el `README.md` (Tarea T14).
+3. Verificar en producción el despliegue final en Vercel y comprobar los enlaces de acceso público requeridos por la consigna (Tarea T15 - `REQ-PUB-01` y `REQ-PUB-02`).
 
 ---
 

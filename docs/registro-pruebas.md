@@ -24,7 +24,7 @@ A continuación se detalla la comprobación punto por punto respecto de los requ
 | Requisito / Área | Aspecto evaluado | Resultado | Observaciones del equipo |
 |---|---|---|---|
 | **`REQ-LAN-01`** | Presentación de ClickJr, origen IFTS 16 y sentencias textuales R1 y R2. | **Conforme** | Se constató la redacción textual exacta en `SentenceCard`, el reconocimiento del IFTS 16 en `ContextCard` y la descripción del servicio. |
-| **`REQ-LAN-02`** | Diagramas de flujo agénticos gráficos y legibles en R1 y R2. | **Conforme en pantalla** | Ambos módulos renderizan los tramos en HTML/CSS y el diagrama completo en Mermaid con la simbología y colores acordados. |
+| **`REQ-LAN-02`** | Diagramas de flujo agénticos gráficos y legibles en R1 y R2. | **Conforme** | Ambos módulos renderizan los tramos en HTML/CSS y el diagrama completo en Mermaid con la simbología y colores acordados. Exportación a SVG corregida en modo portable (PR #34). |
 | **`REQ-LAN-03`** | Desplegables interactivos y accesibilidad por teclado. | **Conforme** | Apertura/cierre fluido con mouse y teclado (`Tab`, `Enter`, `Espacio`), foco visible en chips de salto inter-tramo y desplazamiento automático hacia el tramo de destino. |
 | **`REQ-LAN-04`** | Logotipo original de ClickJr y temas claro y oscuro. | **Conforme** | Visualización correcta del imagotipo y variantes clara y oscura. Persistencia del tema en `localStorage` comprobada al recargar en ambos navegadores. |
 | **`REQ-LAN-05`** | Recorrido lógico: camino del sí, camino del no y distinción de supuestos. | **Conforme** | Se verificaron los recorridos de cumplimiento pleno y de retención/excepción. Los supuestos adicionales están rotulados explícitamente frente a las sentencias normativas. |
@@ -42,24 +42,24 @@ Durante las pruebas integrales se identificaron dos incidencias técnicas/visual
 ### Incidencia 1: Descarga del SVG completo con cajas geométricas vacías (sin texto)
 - **Módulo afectado:** `PropuestaR1` y `PropuestaR2` (botón «Descargar SVG completo» en `DiagramaCompleto.jsx`).
 - **Problema detectado:** Al descargar el archivo SVG generado por Mermaid y abrirlo en visores externos de imágenes o navegadores, se descargan los rectángulos y conectores gráficos pero sin el texto de los nodos (cajas vacías).
-- **Diagnóstico técnico:** En `src/utils/mermaidSvg.js`, la inicialización de Mermaid utiliza `flowchart: { htmlLabels: true }`. Esto renderiza las etiquetas de texto mediante elementos HTML embebidos (`<foreignObject><div>...</div></foreignObject>`) que dependen de hojas de estilos externas del DOM activo. Al serializar el SVG aislado para la descarga, los visores externos no procesan el HTML dentro de `<foreignObject>`, resultando en texto invisible.
-- **Acción requerida:** Ajustar la utilidad de exportación o la configuración de Mermaid para asegurar que las etiquetas de texto se rendericen mediante elementos nativos `<text>` de SVG (`htmlLabels: false`) o incrustar las reglas CSS requeridas al exportar.
-- **Estado:** Informado al equipo para su corrección.
+- **Diagnóstico técnico:** En `src/utils/mermaidSvg.js`, la inicialización de Mermaid utilizaba `flowchart: { htmlLabels: true }`. Esto renderizaba las etiquetas de texto mediante elementos HTML embebidos (`<foreignObject><div>...</div></foreignObject>`) que dependen de hojas de estilos externas del DOM activo. Al serializar el SVG aislado para la descarga, los visores externos no procesaban el HTML dentro de `<foreignObject>`, resultando en texto invisible.
+- **Acción aplicada:** Se actualizó `src/utils/mermaidSvg.js` para admitir `{ tema, portable }` (`htmlLabels: !portable` y `useMaxWidth: !portable`), y `DiagramaCompleto.jsx` pasó a invocar la descarga con `{ tema: 'light', portable: true }`, generando un SVG nativo con tamaño real y sin `<foreignObject>`.
+- **Estado:** Resuelta (PR #34, commit `c819290`).
 
 ### Incidencia 2: Centrado dispar del bloque de encabezado en `/propuesta-r2`
 - **Módulo afectado:** `src/pages/PropuestaR2/PropuestaR2.module.css`.
-- **Problema detectado:** En la página de PostuAyuda (`/propuesta-r2`), el primer bloque (encabezado con título y descripción) quedó centrado respecto al ancho total de la pantalla, mientras que en AutoPost (`/propuesta-r1`) y en el resto de los tramos del acordeón el texto se alinea con el margen izquierdo de la columna de lectura.
-- **Diagnóstico técnico:** En `src/pages/PropuestaR2/PropuestaR2.module.css`, la clase `.encabezado` cuenta con la propiedad `margin-inline: auto;`, a diferencia de `src/pages/PropuestaR1/PropuestaR1.module.css` que no la incluye.
-- **Acción requerida:** Remover `margin-inline: auto;` en `PropuestaR2.module.css` para unificar la alineación de todas las páginas secundarias.
-- **Estado:** Informado a Marcos Aquino / equipo para su ajuste.
+- **Problema detectado:** En la página de PostuAyuda (`/propuesta-r2`), el primer bloque (encabezado con título y descripción) había quedado centrado respecto al ancho total de la pantalla, mientras que en AutoPost (`/propuesta-r1`) y en el resto de los tramos del acordeón el texto se alinea con el margen izquierdo de la columna de lectura.
+- **Diagnóstico técnico:** En `src/pages/PropuestaR2/PropuestaR2.module.css`, la clase `.encabezado` contaba con la propiedad `margin-inline: auto;`, a diferencia de `src/pages/PropuestaR1/PropuestaR1.module.css` que no la incluye.
+- **Acción aplicada:** Se eliminó `margin-inline: auto;` en `PropuestaR2.module.css` y se normalizó el formato del archivo con Prettier, unificando la alineación izquierda entre `/propuesta-r1` y `/propuesta-r2`.
+- **Estado:** Resuelta (PR #36, commit `d25a6ba`, y ajuste de formato posterior).
 
 ### Oportunidad de Mejora 3: Títulos dinámicos de pestaña en el navegador
-- **Componente afectado:** `index.html` y enrutador (`src/App.jsx` o hook de título).
-- **Observación:** Actualmente todas las rutas mantienen el título estático `<title>Clickjr</title>` en la pestaña del navegador. Se evaluó conveniente actualizar dinámicamente el título según la ruta activa (p. ej., `ClickJr · Inicio`, `ClickJr · Propuesta R1 (AutoPost)`, `ClickJr · Propuesta R2 (PostuAyuda)`).
-- **Estado:** Anotada para evaluación grupal según conveniencia y tiempo disponible antes de la entrega.
+- **Componente afectado:** `src/components/layout/PageTitle.jsx`, `src/components/layout/Layout.jsx` y `src/components/navigation/navigation.js`.
+- **Observación:** Todas las rutas mantenían originalmente el título estático `<title>ClickJr</title>` en la pestaña del navegador. Se incorporó la actualización dinámica del título según la ruta activa (`ClickJr`, `ClickJr | AutoPost`, `ClickJr | PostuAyuda` y `ClickJr | Página no encontrada`).
+- **Estado:** Implementada (PR #35, commit `ba28f5f`).
 
 ---
 
 ## 4. Dictamen Final del Equipo
 
-El funcionamiento general de la landing page, su navegación interactiva, accesibilidad por teclado, sistema de temas y lógica de las sentencias agénticas se encuentran **aprobados por el equipo**, quedando la versión final sujeta a la corrección de las dos incidencias visuales y de exportación reportadas.
+El funcionamiento general de la landing page, su navegación interactiva, accesibilidad por teclado, sistema de temas y lógica de las sentencias agénticas se encuentran **aprobados por el equipo**, con las dos incidencias detectadas y la mejora de títulos dinámicos ya resueltas en `master` y verificadas en el despliegue de Vercel (Tarea T15). Resta únicamente completar el registro de evidencia de iteración en `README.md` (Tarea T14).

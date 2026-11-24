@@ -4,6 +4,29 @@ Bitácora cronológica y concisa de hitos y modificaciones significativas del pr
 
 ---
 
+## [2026-11-24] - Correcciones post-pruebas, títulos dinámicos, verificación en producción y cierre documental (Seguimiento T13, T14 y T15)
+
+- **Resumen:**
+  - Corrección de la descarga del diagrama completo en SVG (PR #34, `c819290`, Candelaria Chazarreta): incorporación de la opción `portable: true` en `src/utils/mermaidSvg.js` (`htmlLabels: false` y `useMaxWidth: false`) invocada desde `src/components/flujo/DiagramaCompleto.jsx` en tema claro, generando archivos SVG válidos sin `<foreignObject>` y legibles en visores externos.
+  - Incorporación de títulos dinámicos en la pestaña del navegador según la ruta activa (PR #35, `ba28f5f`, Victoria Mariani): creación de `src/components/layout/PageTitle.jsx`, integración en `Layout.jsx` y definición de títulos por ruta en `src/components/navigation/navigation.js`.
+  - Unificación del margen izquierdo del encabezado en `/propuesta-r2` respecto a `/propuesta-r1` (PR #36, `d25a6ba`, Marcos Aquino): eliminación de `margin-inline: auto;` en `.encabezado` dentro de `src/pages/PropuestaR2/PropuestaR2.module.css` y normalización posterior con Prettier.
+  - Verificación en producción del despliegue final integrado en Vercel (`https://tp-agentes-clickjr.vercel.app/`), completando la Tarea T15 (`REQ-PUB-01` y `REQ-PUB-02`).
+  - Incorporación de la evidencia de iteración de Federico Acosta Maneiro (T8) en `README.md`, cerrando la Tarea T14, y actualización documental en `docs/registro-pruebas.md`, `docs/estado.md`, `docs/historial.md` y `README.md`.
+- **Archivos creados:**
+  - `src/components/layout/PageTitle.jsx`
+- **Archivos modificados:**
+  - `src/utils/mermaidSvg.js`
+  - `src/components/flujo/DiagramaCompleto.jsx`
+  - `src/components/layout/Layout.jsx`
+  - `src/components/navigation/navigation.js`
+  - `src/pages/PropuestaR2/PropuestaR2.module.css`
+  - `docs/registro-pruebas.md`
+  - `docs/estado.md`
+  - `docs/historial.md`
+  - `README.md`
+
+---
+
 ## [2026-11-23] - Integración técnica final, definición visual, pruebas integrales y decisión de identidad (Tareas T11, T12 y T13)
 
 - **Resumen:**

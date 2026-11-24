@@ -88,7 +88,8 @@ TP-Agentes/
 │   │   │   ├── Layout.jsx
 │   │   │   ├── Layout.module.css
 │   │   │   ├── MobileNavigation.jsx
-│   │   │   └── MobileNavigation.module.css
+│   │   │   ├── MobileNavigation.module.css
+│   │   │   └── PageTitle.jsx
 │   │   ├── navigation/
 │   │   │   ├── navigation.js
 │   │   │   ├── NavigationLink.jsx
@@ -189,7 +190,7 @@ La documentación compartida en `docs/` centraliza la memoria persistente del pr
 | [`docs/analisis-r2.md`](docs/analisis-r2.md)                   | Ficha de análisis lógico de la sentencia R2 (T4): estructura base B1/B2/B3, faltantes F1/F2/F3, consecuencia doble (solicitar + no enviar) e interpretaciones rotuladas.                    | Para conocer cómo se desarmó R2 antes de proponer la solución.                           |
 | [`docs/propuesta-r2.md`](docs/propuesta-r2.md)                 | Propuesta conceptual de solución agéntica para R2 (T6): herramientas, camino del SÍ en 7 pasos, handoff R1↔R2, camino del NO, vencimiento, tope, caso abierto único y 13 acuerdos (I1–I13). | Para consultar la propuesta antes de construir el diagrama y el desplegable de R2 (T10). |
 | [`docs/diseno-visual.md`](docs/diseno-visual.md)               | Especificación del sistema visual (T11): paleta de colores para temas claro y oscuro, tipografía y tokens semánticos de diagramas de flujo.                                                   | Para consultar o extender los criterios estéticos y variables CSS compartidas.            |
-| [`docs/registro-pruebas.md`](docs/registro-pruebas.md)         | Protocolo y resultados de las pruebas integrales (T13): matriz de requisitos, entorno de ejecución (Firefox/Brave en Fedora) e incidencias detectadas.                                      | Para verificar el cumplimiento de los criterios de cátedra e incidencias pendientes.       |
+| [`docs/registro-pruebas.md`](docs/registro-pruebas.md)         | Protocolo y resultados de las pruebas integrales (T13): matriz de requisitos, entorno de ejecución (Firefox/Brave en Fedora) e incidencias detectadas y resueltas.                 | Para verificar el cumplimiento de los criterios de cátedra y las correcciones aplicadas. |
 
 ---
 
@@ -264,10 +265,21 @@ El equipo acordó la organización del proyecto según lo establecido en [`docs/
 
 | Integrante              | Entorno / Aplicación | Modelo exacto    | Tarea / Uso específico                                                                  | Modificaciones o ajustes solicitados |
 | ----------------------- | -------------------- | ---------------- | --------------------------------------------------------------------------------------- | ------------------------------------ |
-| Federico Acosta Maneiro | Antigravity          | Gemini 3.8 Flash | Generación del módulo de presentación (T8), de la redacción del problema y el servicio. | Pendiente de registrar evidencia de iteración en subsección propia. |
+| Federico Acosta Maneiro | Antigravity          | Gemini 3.8 Flash | Generación del módulo de presentación (T8), de la redacción del problema y el servicio. | Ver "Evidencia de iteración — Federico Acosta Maneiro" debajo de la tabla. |
 | Candelaria Chazarreta   | Antigravity          | Gemini 3.8 Flash (High) | Elaboración de la ficha de análisis lógico de R1 (T3), propuesta conceptual de R1 (T5) y desarrollo del módulo interactivo de R1 (T9). | Ver "Evidencia de iteración — Candelaria Chazarreta" debajo de la tabla. |
 | Marcos Aquino           | Antigravity          | Claude Sonnet 4.6 (thinking) | Elaboración de la ficha de análisis lógico de R2 (T4), propuesta conceptual de R2 (T6) y desarrollo del módulo interactivo de R2 (T10). | Ver "Evidencia de iteración — Marcos Aquino" debajo de la tabla. |
 | Victoria Mariani        | Antigravity / CLI    | Gemini 3.8 Flash | Configuración de documentación, protocolos agénticos, entorno Vite/React, estructura y navegación responsive (T7), tarjetas de contexto (PR #23), diseño visual (T11), integración de módulos (T12), despliegue en Vercel y workflow de CI | Ajustes en las pautas de verificación inicial de Git, estructuración modular de landing, navegación segmentada y dock móvil, componentes ContextCard, tokens de diseño y temas, y coordinación técnica |
+
+#### Evidencia de iteración — Federico Acosta Maneiro (T8)
+
+**Módulo de presentación (`src/pages/Inicio/`, PR #26)**
+
+- **Instrucción inicial:** Rediseñar la página de inicio como módulo de presentación de ClickJr utilizando Antigravity (`Gemini 3.8 Flash`), incorporando la descripción del servicio y del problema que atiende, el reconocimiento del origen en IFTS 16, el bloque asignado, la nómina del equipo IFTS 29 y las dos sentencias originales (`R1` y `R2`) en un componente específico (`SentenceCard`).
+- **Problemas detectados y pedidos de mejora:**
+  1. *Duplicación del logotipo:* En la primera versión generada, el agente incluyó el logo de ClickJr dentro de la página de inicio. Al revisar la vista en navegador, se detectó que resultaba redundante porque el logotipo institucional ya estaba presente en el encabezado (`Header`). Se solicitó retirarlo del cuerpo de `Inicio`.
+  2. *Orden de las secciones:* El agente había ubicado la sección «Equipo IFTS 29» en el medio del recorrido, entre las sentencias asignadas y «Explorá las propuestas». Se pidió reordenar las secciones pasando el bloque del equipo al final de la página, después de las propuestas, para mantener un flujo de lectura progresivo (presentación → contexto e IFTS 16 → sentencias R1/R2 → acceso a propuestas → equipo).
+  3. *Verificación de formato en entorno local:* Al ejecutar `npm run format:check`, el comando reportó advertencias en 34 archivos; con `git ls-files --eol` se comprobó que respondían a saltos de línea locales CRLF en Windows (`core.autocrlf=true`) frente al índice en LF, validando el estilo de `src/` con `npx prettier --check --end-of-line crlf`.
+- **Resultado:** Módulo integrado en `src/pages/Inicio/Inicio.jsx`, `Inicio.module.css`, `SentenceCard.jsx` y `SentenceCard.module.css` (rama `feat/modulo-presentacion`, PR #26), con las sentencias R1 y R2 verificadas carácter por carácter contra `docs/consigna.md`, revisión visual en temas claro y oscuro, y validación limpia con `npm run lint`, `npm run build` y `git diff --check`.
 
 #### Evidencia de iteración — Candelaria Chazarreta (R1)
 
@@ -369,5 +381,5 @@ npm run build
 
 - **Plataforma:** Vercel ([`DEC-003`](docs/decisiones.md)).
 - **URL de producción:** [https://tp-agentes-clickjr.vercel.app/](https://tp-agentes-clickjr.vercel.app/)
-- **Estado del despliegue:** Activo y funcional, con despliegue continuo ante actualizaciones de la rama `master`. (La comprobación final de todos los módulos integrados se completará en la Tarea T15).
+- **Estado del despliegue:** Activo, verificado en producción con todos los módulos integrados y últimas correcciones publicadas (Tarea T15 completada).
 - **Accesibilidad pública:** Conforme a `REQ-PUB-01` y `REQ-PUB-02`, el sitio es de acceso libre y público, sin requerir inicio de sesión ni autenticación.

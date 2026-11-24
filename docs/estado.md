@@ -8,9 +8,7 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 
 ### Tareas inmediatas (en curso)
 
-- [ ] Subsanar las incidencias detectadas durante las pruebas (T13): exportación de texto en SVG de Mermaid y unificación del margen del encabezado en `/propuesta-r2` (`docs/registro-pruebas.md`).
-- [ ] Completar las secciones pendientes de aportes individuales y registro de evidencias de iteración de IA en el `README.md` (Tarea T14 / Los cuatro integrantes).
-- [ ] Comprobar la accesibilidad pública y el correcto funcionamiento en producción de la landing page y todos sus módulos integrados en Vercel (Tarea T15 - `REQ-PUB-01` y `REQ-PUB-02` / Los cuatro integrantes).
+- **Ninguna al momento.** Todas las tareas planificadas (T1–T15) se encuentran completadas y verificadas.
 
 ### Completadas
 
@@ -54,6 +52,9 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 - [x] Coordinar la integración técnica final de todos los módulos y componentes en la landing page (Inicio, PropuestaR1, PropuestaR2, navegación, layout y soporte responsive) (Tarea T12 / Victoria Mariani).
 - [x] Definir y ratificar el mantenimiento exclusivo de la identidad institucional de ClickJr, descartando la creación de logos o identidades de consultora con IA ([DEC-013](decisiones.md#dec-013-mantenimiento-exclusivo-de-la-identidad-institucional-de-clickjr)).
 - [x] Realizar las pruebas, verificaciones y revisión integral del proyecto en múltiples navegadores desktop, documentando los casos evaluados, incidencias detectadas y ajustes pendientes (Tarea T13 / Los cuatro integrantes · `docs/registro-pruebas.md`).
+- [x] Subsanar las incidencias detectadas en T13 e incorporar mejora de títulos dinámicos: exportación SVG portable en `mermaidSvg.js`/`DiagramaCompleto.jsx` (PR #34), componente `PageTitle` para títulos por ruta (PR #35), alineación del encabezado en `/propuesta-r2` (PR #36) y normalización de formato con Prettier.
+- [x] Comprobar la accesibilidad pública y el correcto funcionamiento en producción de la landing page integrada en Vercel (`https://tp-agentes-clickjr.vercel.app/`), completando la verificación final (Tarea T15 - `REQ-PUB-01` y `REQ-PUB-02`).
+- [x] Completar la documentación del proyecto y el registro de aportes y evidencias de iteración de IA de los cuatro integrantes en el `README.md` (Tarea T14 / Los cuatro integrantes).
 
 ---
 
@@ -66,9 +67,7 @@ Documento vivo para el seguimiento del trabajo diario, sincronización entre ses
 
 ## 3. Próximos pasos recomendados
 
-1. Consolidar el registro documental de las pruebas y verificaciones integrales realizadas sobre la landing page integrada (Tarea T13 / `docs/registro-pruebas.md`).
-2. Completar las secciones pendientes de aportes individuales y evidencias de iteración de IA en el `README.md` (Tarea T14).
-3. Verificar en producción el despliegue final en Vercel y comprobar los enlaces de acceso público requeridos por la consigna (Tarea T15 - `REQ-PUB-01` y `REQ-PUB-02`).
+- Proyecto completo (T1–T15 finalizadas). Realizar únicamente la revisión final de la rama/commits y entrega por el canal indicado por la cátedra el 26/11/2026.
 
 ---
 
